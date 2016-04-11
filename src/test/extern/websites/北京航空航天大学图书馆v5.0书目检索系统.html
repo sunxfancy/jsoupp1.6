@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>北京航空航天大学图书馆v5.0书目检索系统 </title>
+<link type="text/css" rel="stylesheet" href="../tpl/css/style.css">
+<link type="text/css" rel="stylesheet" href="../tpl/css/mylib.css" />
+<link type="text/css" rel="stylesheet" href="../tpl/css/ui-lightness/jquery-ui-1.8.13.custom.css">
+<script  type="text/javascript" src="../tpl/js/jquery.1.7.1.min.js"></script>
+<script  type="text/javascript" src="../tpl/js/jquery-ui-1.8.13.custom.min.js"></script>
+<script  type="text/javascript" src="../tpl/js/highlighter.js"></script>
+</head>
+<body>
+<div id="header_opac">
+	<h1 class="header_opac_img">
+    <div class="header_opac_logo">
+    	北京航空航天大学图书馆书目检索系统<br>
+        <p>Online Public Access Catalogue</p>
+        
+    </div>
+    </h1>
+    <div class="header_right header_right_top">
+      <p class="header_right_font">       </p>
+      <p style="margin-top:60px;" class="header_right_font">
+        <a href="../opac/book_cart.php">暂存书架(<span id="bookcartCount">0</span>)</a> | <font color="blue"></font> <a href="../reader/login.php" style="color:#ff0000;">登录</a></p>
+       </div>
+</div>
+<div id="menubar">
+    <ul id="menu_top">
+    		  	<li><a class="menu_top_on" style="color:#6C5B23;"	href="../opac/search.php" target="_self" >书目检索</a></li>
+	  		  	<li><a href="../top/top_lend.php" target="_self" >热门推荐</a></li>
+	  		  	<li><a href="../browse/cls_browsing.php" target="_self" >分类浏览</a></li>
+	  		  	<li><a href="../newbook/newbook_cls_browse.php" target="_self" >新书通报</a></li>
+	  		  	<li><a href="../peri/peri_nav_e.php" target="_self" >期刊导航</a></li>
+	  		  	<li><a href="../shelf/curriculum.php" target="_self" >学科参考</a></li>
+	  		  	<li><a href="../info/info_guide.php" target="_self" >信息发布</a></li>
+	  		  	<li><a href="../reader/redr_info.php" target="_self" >我的图书馆</a></li>
+	  		  	         <div class="clear"></div>
+    </ul>
+</div>
+<div id="submenu">
+	  	
+	  	<a href="../opac/search.php" target="_self" >简单检索</a>
+	  	
+	  	<a href="../opac/search_adv.php" target="_self" >全文检索</a>
+	  	
+	  	<a href="../opac/search_more.php" target="_self" >多字段检索</a>
+	        <div class="clear"></div>
+</div>
+
+
+<style type="text/css">
+	.prompt {
+		position: relative;
+		border: 1px dot #EDD28B;
+		background: #FFFDEE;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+		border-radius: 1px;
+		padding: 9px;
+	}
+
+.tooltip s {
+margin-left: 2px;
+border: 4px dashed;
+border-color: #005A9D transparent transparent;
+border-top-style: solid;
+}
+.tooltip s, .tooltip i {
+display: inline-block;
+line-height: 0;
+font-size: 0;
+height: 0;
+overflow: hidden;
+vertical-align: middle;
+}
+	
+</style>
+<div id="mainbox">
+	<div id="container">
+    	<div id="sidebar">
+    	<div class="left_content left_content_line">
+          <h4>参考翻译</h4>
+          <p><span id="dict"></span></p>
+        </div>
+    	  <div class="left_content left_content_line">
+          <h4>缩小检索范围</h4>
+	          <dl class="s_l_list">
+	         	<dd><b>分类：</b></dd>
+	         					    <dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&callno=T">工业技术</a>(28)</dd>
+								    <dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&callno=N">自然科学总论</a>(1)</dd>
+							 </dl>
+	         <dl class="s_l_list">
+	            <dt><strong>文献类型： </strong></dt>
+	            	            	<dd>&middot;<a href="?dept=ALL&title=compiler&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&doctype=02">西文图书</a>(17)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&doctype=01">中文图书</a>(11)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&doctype=18">西文科技报告</a>(6)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&doctype=42">缩微制品</a>(5)</dd>
+					         </dl>
+	         <dl class="s_l_list">
+	            <dt><strong>馆藏地： </strong></dt>
+	            	            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=01101">二层北中外文书库(外文区)</a>(17)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=01401">四层中文图书借阅室(T类)</a>(11)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=02303">三层北过刊阅览室</a>(11)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=02501">五层东外文图书借阅室</a>(5)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=60001">沙河校区图书馆（教二，1-3层）</a>(4)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=01203">中文旧书库（二层北夹二层）</a>(1)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=01205">单本书库(二层北夹一层)</a>(1)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=02201">二层西知行书斋</a>(1)</dd>
+					            	<dd>&middot;<a href="?title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&location=&location=&location=&location=01206">单本书2库(二层北夹一层)</a>(1)</dd>
+					         </dl>
+	         <dl class="s_l_list">
+	            <dt><strong>主题：</strong></dt>
+	            	            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=compilers+computer+programs">compilers computer programs</a>(14)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F">编译程序</a>(9)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">程序设计</a>(7)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1">高等学校</a>(3)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=compiling+electronic+computers">compiling electronic computers</a>(3)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E7%BC%96%E8%AF%91%E5%99%A8">编译器</a>(2)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=computer+operations">computer operations</a>(2)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=computer">computer</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=pascal+computer+program+language">pascal computer program language</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=automatic">automatic</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E8%8B%B1%E8%AF%AD">英语</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=computer+programming+and+software">computer programming and software</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=java%E8%AF%AD%E8%A8%80">java语言</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=pascalp">pascalp</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=computer+programming">computer programming</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E6%B1%89%E8%AF%AD">汉语</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=numerical+analysis">numerical analysis</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=%E5%8F%8C%E8%AF%AD%E6%95%99%E5%AD%A6">双语教学</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=compiler">compiler</a>(1)</dd>
+					            	<dd>&middot;<a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&with_ebook=on&hist_cont=hist&subject=computer+programs">computer programs</a>(1)</dd>
+					         </dl>
+	        </div>
+  		</div> 
+		
+        <div id="content">
+              	<div class="book_article">
+                    <div class="search_form bulk-actions" >
+					 <p style="font-size:14px;">检索到 <strong class="red">39</strong> 条  题名=<font color="red">compiler</font> </font> 的结果
+                	&nbsp;&nbsp;&nbsp;<a target="_blank" href="search_rss.php?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=yes&with_ebook=on&with_ebook=on"><img src="../tpl/images/rss.gif" title="此检索条件下的结果RSS源" border="0" /></a>
+					 </p>
+                 	</div>
+                    <div class="search_form bulk-actions" >
+					   <form action="openlink.php" method="get" id="f" >
+				         <p><select name="s2_type" class="option" size="1">
+				             				             <option value="title">题&nbsp;&nbsp;名</option>
+				             				             <option value="author">责任者</option>
+				             				             <option value="keyword">主题词</option>
+				             				             <option value="isbn">ISBN/ISSN</option>
+				             				             <option value="asordno">订购号</option>
+				             				             <option value="coden">分类号</option>
+				             				             <option value="callno">索书号</option>
+				             				             <option value="publisher">出版社</option>
+				             				             <option value="series">丛书名</option>
+				             				             <option value="tpinyin">题名拼音</option>
+				             				             <option value="apinyin">责任者拼音</option>
+				             				           </select>      <input type="text" maxlength="250" name="s2_text" id="s2_text" value="" style="width:330px;"/>
+				         <input type="button" class="btn btn-primary" onclick="my_submit('result');" value="在结果中检索" />&nbsp;<input  class="btn btn-primary" type="button" onclick="my_submit('new');" value="重新检索" />
+				                   <input type="hidden" id="search_bar" name="search_bar" value="result" />
+				               				                             <input name="title" type="hidden" value="compiler" />
+				                
+				                            <input type="hidden" name="doctype" value="ALL" />
+											<input type="hidden" name="with_ebook" value="on" />
+				                            <input type="hidden" name="match_flag" value="forward" />
+				                            <input type="hidden" name="showmode" value="list" />
+				          <input type="hidden" name="dept" value="ALL" />
+				         </p>
+						</form></div>
+       	  </div>
+				
+                <div class="book_article">
+                	<br/>       
+                </div>   
+  <div class="book_article">
+			      	<p class="booktab_line">
+											        <span class="booktab_current"><a href="#">所有图书</a></span>
+			          		<span class="booktab"><a href="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=yes&with_ebook=on&with_ebook=on">可借图书</a></span>
+					    									        </p>
+		                <div id="num">
+		                  <span class="pagination"> 上一页 <b><font color=red>1</font> / <font color=black>2</font></b> &nbsp;<a class=blue href='?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&count=39&with_ebook=on&page=2'>下一页</a> 到第 <select name='topage' size='1' onchange='window.location="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&count=39&with_ebook=on&page="+this.value'>
+<option value='1' selected>1</option>
+<option value='2'>2</option>
+</select>页</span>
+		                  <div class="bulk-actions">
+		                   	 <form action="openlink.php" method="get">
+					        	<div class="num"><label for="sortField"> 按照：</label>
+                                <select name="sort" name="dropdown">
+					            					            	<option value="M_TITLE" > 题名</option>
+					                <option value="M_AUTHOR" > 责任者</option>
+					                <option value="M_CALL_NO" > 索书号 </option>
+					                <option value="M_PUBLISHER" > 出版社</option>
+					                <option value="M_PUB_YEAR" > 出版日期</option>
+					                <option value="CATA_DATE" selected="selected">入藏日期</option>
+                                    					                 </select>
+                                     <select name="orderby" name="dropdown">
+					            					                  <option value="ASC" >升序</option>
+					                  <option value="DESC" selected="selected"> 降序</option>
+					            					                  </select>
+									  <input type="submit" name="pailie" class="btn btn-success" value="排列" />
+					            					                  <input type="hidden" name="title" value="compiler" />					                  <input type="hidden" name="doctype" value="ALL" />
+					                  <input type="hidden" name="match_flag" value="forward" />
+					                  <input type="hidden" name="showmode" value="list" />
+									  <input type="hidden" name="with_ebook" value="on" />
+									  <input type="hidden" name="onlylendable" value="" />
+					                  <input type="hidden" name="dept" value="ALL" />
+					            </div>
+					         </form>
+			  				</div>
+		      			</div>  
+      			</div>	
+	            <div class="book_article">
+	                  <ol id="search_book_list">
+	                                	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001532872" >1.&#x7f16;&#x8bd1;&#x539f;&#x7406;&#x5b9e;&#x8df5;&#x4e0e;&#x6307;&#x5bfc;&#x6559;&#x7a0b;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0039;&#x0039;  </h3>
+	                                        <p> <span>馆藏复本：3 <br>
+	                                          可借复本：3</span> &#x8bb8;&#x7545;&#x002c;&#x0020;&#x9648;&#x5609;&#x002c;&#x0020;&#x6731;&#x6653;&#x745e;&#x7f16;&#x8457; <br />
+	            &#x673a;&#x68b0;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0031;&#x0035; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001532872" class="tooltip" onmouseover="showDetail('0001532872')" onmouseout="hideDetail('0001532872')">馆藏<s></s></a> </p>
+	                                <div id="detail0001532872" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000189373" >2.&#x0050;&#x0061;&#x0073;&#x0063;&#x0061;&#x006c;&#x0020;&#x0069;&#x006d;&#x0070;&#x006c;&#x0065;&#x006d;&#x0065;&#x006e;&#x0074;&#x0061;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0030;  </h3>
+	                                        <p> <span>馆藏复本：2 <br>
+	                                          可借复本：2</span> &#x0053;&#x0074;&#x0065;&#x0076;&#x0065;&#x006e;&#x0020;&#x0050;&#x0065;&#x006d;&#x0062;&#x0065;&#x0072;&#x0074;&#x006f;&#x006e;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x004d;&#x0061;&#x0072;&#x0074;&#x0069;&#x006e;&#x0020;&#x0044;&#x0061;&#x006e;&#x0069;&#x0065;&#x006c;&#x0073;&#x002e; <br />
+	            &#x0045;&#x002e;&#x0020;&#x0048;&#x006f;&#x0072;&#x0077;&#x006f;&#x006f;&#x0064;&#x0020;&#x003b;&nbsp;&#x0031;&#x0039;&#x0038;&#x0032;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000189373" class="tooltip" onmouseover="showDetail('0000189373')" onmouseout="hideDetail('0000189373')">馆藏<s></s></a> </p>
+	                                <div id="detail0000189373" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001462968" >3.&#x7f16;&#x8bd1;&#x5668;&#x6784;&#x9020;&#x003a;&#x004a;&#x0061;&#x0076;&#x0061;&#x8bed;&#x8a00;&#x7248;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0039;&#x0036;  </h3>
+	                                        <p> <span>馆藏复本：2 <br>
+	                                          可借复本：2</span> &#x0041;&#x006e;&#x0074;&#x0068;&#x006f;&#x006e;&#x0079;&#x0020;&#x004a;&#x002e;&#x0020;&#x0044;&#x006f;&#x0073;&#x0020;&#x0052;&#x0065;&#x0069;&#x0073;&#x8457; <br />
+	            &#x6e05;&#x534e;&#x5927;&#x5b66;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0031;&#x0034; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001462968" class="tooltip" onmouseover="showDetail('0001462968')" onmouseout="hideDetail('0001462968')">馆藏<s></s></a> </p>
+	                                <div id="detail0001462968" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000707105" >4.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0073;&#x002c;&#x0020;&#x0070;&#x0072;&#x0069;&#x006e;&#x0063;&#x0069;&#x0070;&#x006c;&#x0065;&#x0073;&#x002c;&#x0020;&#x0074;&#x0065;&#x0063;&#x0068;&#x006e;&#x0069;&#x0071;&#x0075;&#x0065;&#x0073;&#x002c;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x0074;&#x006f;&#x006f;&#x006c;&#x0073;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0036;&#x0041;  </h3>
+	                                        <p> <span>馆藏复本：3 <br>
+	                                          可借复本：3</span> &#x0041;&#x006c;&#x0066;&#x0072;&#x0065;&#x0064;&#x0020;&#x0056;&#x002e;&#x0020;&#x0041;&#x0068;&#x006f;&#x002c;&#x0020;&#x0052;&#x0061;&#x0076;&#x0069;&#x0020;&#x0053;&#x0065;&#x0074;&#x0068;&#x0069;&#x002c;&#x0020;&#x004a;&#x0065;&#x0066;&#x0066;&#x0072;&#x0065;&#x0079;&#x0020;&#x0044;&#x002e;&#x0020;&#x0055;&#x006c;&#x006c;&#x006d;&#x0061;&#x006e;&#x002e; <br />
+	            &#x0041;&#x0064;&#x0064;&#x0069;&#x0073;&#x006f;&#x006e;&#x002d;&#x0057;&#x0065;&#x0073;&#x006c;&#x0065;&#x0079;&#x0020;&#x0050;&#x0075;&#x0062;&#x002e;&#x0020;&#x0043;&#x006f;&#x002e;&#x002c;&nbsp;&#x0063;&#x0031;&#x0039;&#x0038;&#x0036;&#x002e; <br />
+				<img src="../tpl/images/star3.gif" title="总体评分及评价人数"/>(2) <a href="item.php?marc_no=0000707105" class="tooltip" onmouseover="showDetail('0000707105')" onmouseout="hideDetail('0000707105')">馆藏<s></s></a> </p>
+	                                <div id="detail0000707105" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108309" >5.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0073;&#x0020;&#x003a;&#x0020;&#x0070;&#x0072;&#x0069;&#x006e;&#x0063;&#x0069;&#x0070;&#x006c;&#x0065;&#x0073;&#x002c;&#x0020;&#x0074;&#x0065;&#x0063;&#x0068;&#x006e;&#x0069;&#x0071;&#x0075;&#x0065;&#x0073;&#x002c;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x0074;&#x006f;&#x006f;&#x006c;&#x0073;&#x0020;&#x003d;&#x0020;&#x7f16;&#x8bd1;&#x539f;&#x7406;&#x6280;&#x672f;&#x4e0e;&#x5de5;&#x5177;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0036;  </h3>
+	                                        <p> <span>馆藏复本：4 <br>
+	                                          可借复本：4</span> &#x0041;&#x006c;&#x0066;&#x0072;&#x0065;&#x0064;&#x0020;&#x0056;&#x002e;&#x0020;&#x0041;&#x0068;&#x006f;&#x002c;&#x0020;&#x0052;&#x0061;&#x0076;&#x0069;&#x0020;&#x0053;&#x0065;&#x0074;&#x0068;&#x0069;&#x002c;&#x0020;&#x004a;&#x0065;&#x0066;&#x0066;&#x0072;&#x0065;&#x0079;&#x0020;&#x0044;&#x002e;&#x0020;&#x0055;&#x006c;&#x006c;&#x006d;&#x0061;&#x006e;&#x002e; <br />
+	            &#x4eba;&#x6c11;&#x90ae;&#x7535;&#x51fa;&#x7248;&#x793e;&#x002c;&nbsp;&#x0032;&#x0030;&#x0030;&#x0032;&#x002e; <br />
+				<img src="../tpl/images/star5.gif" title="总体评分及评价人数"/>(3) <a href="item.php?marc_no=0000108309" class="tooltip" onmouseover="showDetail('0000108309')" onmouseout="hideDetail('0000108309')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108309" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108307" >6.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0020;&#x0063;&#x006f;&#x006e;&#x0073;&#x0074;&#x0072;&#x0075;&#x0063;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0034;  </h3>
+	                                        <p> <span>馆藏复本：1 <br>
+	                                          可借复本：1</span> &#x0057;&#x0069;&#x006c;&#x006c;&#x0069;&#x0061;&#x006d;&#x0020;&#x004d;&#x002e;&#x0020;&#x0057;&#x0061;&#x0069;&#x0074;&#x0065;&#x002c;&#x0020;&#x0047;&#x0065;&#x0072;&#x0068;&#x0061;&#x0072;&#x0064;&#x0020;&#x0047;&#x006f;&#x006f;&#x0073;&#x002e; <br />
+	            &#x0053;&#x0070;&#x0072;&#x0069;&#x006e;&#x0067;&#x0065;&#x0072;&#x002d;&#x0056;&#x0065;&#x0072;&#x006c;&#x0061;&#x0067;&#x002c;&nbsp;&#x0063;&#x0031;&#x0039;&#x0038;&#x0034;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000108307" class="tooltip" onmouseover="showDetail('0000108307')" onmouseout="hideDetail('0000108307')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108307" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108310" >7.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0073;&#x0020;&#x003a;&#x0020;&#x0074;&#x0068;&#x0065;&#x0069;&#x0072;&#x0020;&#x0064;&#x0065;&#x0073;&#x0069;&#x0067;&#x006e;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x0063;&#x006f;&#x006e;&#x0073;&#x0074;&#x0072;&#x0075;&#x0063;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x0075;&#x0073;&#x0069;&#x006e;&#x0067;&#x0020;&#x0050;&#x0061;&#x0073;&#x0063;&#x0061;&#x006c;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0037;  </h3>
+	                                        <p> <span>馆藏复本：4 <br>
+	                                          可借复本：4</span> &#x0052;&#x006f;&#x0062;&#x0069;&#x006e;&#x0020;&#x0048;&#x0075;&#x006e;&#x0074;&#x0065;&#x0072;&#x002e; <br />
+	            &#x0057;&#x0069;&#x006c;&#x0065;&#x0079;&#x002c;&nbsp;&#x0063;&#x0031;&#x0039;&#x0038;&#x0035;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000108310" class="tooltip" onmouseover="showDetail('0000108310')" onmouseout="hideDetail('0000108310')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108310" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108299" >8.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0020;&#x0064;&#x0065;&#x0073;&#x0069;&#x0067;&#x006e;&#x0020;&#x0074;&#x0068;&#x0065;&#x006f;&#x0072;&#x0079;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0030;&#x0035;  </h3>
+	                                        <p> <span>馆藏复本：3 <br>
+	                                          可借复本：3</span> &#x0050;&#x0068;&#x0069;&#x006c;&#x0069;&#x0070;&#x0020;&#x004d;&#x002e;&#x0020;&#x004c;&#x0065;&#x0077;&#x0069;&#x0073;&#x0020;&#x0049;&#x0049;&#x002c;&#x0020;&#x0044;&#x0061;&#x006e;&#x0069;&#x0065;&#x006c;&#x0020;&#x004a;&#x002e;&#x0020;&#x0052;&#x006f;&#x0073;&#x0065;&#x006e;&#x006b;&#x0072;&#x0061;&#x006e;&#x0074;&#x007a;&#x002c;&#x0020;&#x0052;&#x0069;&#x0063;&#x0068;&#x0061;&#x0072;&#x0064;&#x0020;&#x0045;&#x002e;&#x0020;&#x0053;&#x0074;&#x0065;&#x0061;&#x0072;&#x006e;&#x0073;&#x002e; <br />
+	            &#x0041;&#x0064;&#x0064;&#x0069;&#x0073;&#x006f;&#x006e;&#x002d;&#x0057;&#x0065;&#x0073;&#x006c;&#x0065;&#x0079;&#x0020;&#x0050;&#x0075;&#x0062;&#x002e;&#x0020;&#x0043;&#x006f;&#x002e;&#x002c;&nbsp;&#x0031;&#x0039;&#x0037;&#x0038;&#x002c;&#x0020;&#x0063;&#x0031;&#x0039;&#x0037;&#x0036;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000108299" class="tooltip" onmouseover="showDetail('0000108299')" onmouseout="hideDetail('0000108299')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108299" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108293" >9.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0020;&#x0063;&#x006f;&#x006e;&#x0073;&#x0074;&#x0072;&#x0075;&#x0063;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x003a;&#x0020;&#x0061;&#x006e;&#x0020;&#x0061;&#x0064;&#x0076;&#x0061;&#x006e;&#x0063;&#x0065;&#x0064;&#x0020;&#x0063;&#x006f;&#x0075;&#x0072;&#x0073;&#x0065;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0030;&#x0034;  </h3>
+	                                        <p> <span>馆藏复本：2 <br>
+	                                          可借复本：2</span> &#x0065;&#x0064;&#x0069;&#x0074;&#x0065;&#x0064;&#x0020;&#x0062;&#x0079;&#x0020;&#x0046;&#x002e;&#x004c;&#x002e;&#x0020;&#x0042;&#x0061;&#x0075;&#x0065;&#x0072;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x004a;&#x002e;&#x0020;&#x0045;&#x0069;&#x0063;&#x006b;&#x0065;&#x006c;&#x002e; <br />
+	            &#x0053;&#x0070;&#x0072;&#x0069;&#x006e;&#x0067;&#x0065;&#x0072;&#x002d;&#x0056;&#x0065;&#x0072;&#x006c;&#x0061;&#x0067;&#x002c;&nbsp;&#x0031;&#x0039;&#x0037;&#x0034;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000108293" class="tooltip" onmouseover="showDetail('0000108293')" onmouseout="hideDetail('0000108293')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108293" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108297" >10.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0020;&#x0074;&#x0065;&#x0063;&#x0068;&#x006e;&#x0069;&#x0071;&#x0075;&#x0065;&#x0073;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0030;&#x0032;  </h3>
+	                                        <p> <span>馆藏复本：5 <br>
+	                                          可借复本：5</span> &#x0065;&#x0064;&#x0069;&#x0074;&#x0065;&#x0064;&#x0020;&#x0062;&#x0079;&#x0020;&#x0042;&#x0061;&#x0072;&#x0079;&#x0020;&#x0057;&#x002e;&#x0020;&#x0050;&#x006f;&#x006c;&#x006c;&#x0061;&#x0063;&#x006b;&#x002e; <br />
+	            &#x0041;&#x0075;&#x0065;&#x0072;&#x0062;&#x0061;&#x0063;&#x0068;&#x0020;&#x0050;&#x0075;&#x0062;&#x006c;&#x0069;&#x0073;&#x0068;&#x0065;&#x0072;&#x0073;&#x002c;&nbsp;&#x0031;&#x0039;&#x0037;&#x0032;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000108297" class="tooltip" onmouseover="showDetail('0000108297')" onmouseout="hideDetail('0000108297')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108297" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000108296" >11.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0020;&#x0063;&#x006f;&#x006e;&#x0073;&#x0074;&#x0072;&#x0075;&#x0063;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x0066;&#x006f;&#x0072;&#x0020;&#x0064;&#x0069;&#x0067;&#x0069;&#x0074;&#x0061;&#x006c;&#x0020;&#x0063;&#x006f;&#x006d;&#x0070;&#x0075;&#x0074;&#x0065;&#x0072;&#x0073;&#x0020;&#x002f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0030;&#x0031;  </h3>
+	                                        <p> <span>馆藏复本：5 <br>
+	                                          可借复本：5</span> &#x0044;&#x0061;&#x0076;&#x0069;&#x0064;&#x0020;&#x0047;&#x0072;&#x0069;&#x0065;&#x0073;&#x002e; <br />
+	            &#x0057;&#x0069;&#x006c;&#x0065;&#x0079;&#x002c;&nbsp;&#x0031;&#x0039;&#x0037;&#x0031;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000108296" class="tooltip" onmouseover="showDetail('0000108296')" onmouseout="hideDetail('0000108296')">馆藏<s></s></a> </p>
+	                                <div id="detail0000108296" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000708317" >12.&#x0050;&#x0072;&#x006f;&#x0063;&#x0065;&#x0065;&#x0064;&#x0069;&#x006e;&#x0067;&#x0073;&#x0020;&#x006f;&#x0066;&#x0020;&#x0074;&#x0068;&#x0065;&#x0020;&#x0053;&#x0049;&#x0047;&#x0050;&#x004c;&#x0041;&#x004e;&#x0020;&#x0027;&#x0038;&#x0032;&#x0020;&#x0053;&#x0079;&#x006d;&#x0070;&#x006f;&#x0073;&#x0069;&#x0075;&#x006d;&#x0020;&#x006f;&#x006e;&#x0020;&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0020;&#x0043;&#x006f;&#x006e;&#x0073;&#x0074;&#x0072;&#x0075;&#x0063;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x003a;&#x0020;&#x0070;&#x0061;&#x0070;&#x0065;&#x0072;&#x0073;&#x0020;&#x0070;&#x0072;&#x0065;&#x0073;&#x0065;&#x006e;&#x0074;&#x0065;&#x0064;&#x0020;&#x0061;&#x0074;&#x0020;&#x0074;&#x0068;&#x0065;&#x0020;&#x0053;&#x0079;&#x006d;&#x0070;&#x006f;&#x002e;&#x002e;&#x002e;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0032;&#x002d;&#x0035;&#x0033;&#x002f;&#x0045;&#x003a;&#x0031;&#x0037;&#x002f;&#x0031;&#x0039;&#x0038;&#x0032;  </h3>
+	                                        <p> <span>馆藏复本：2 <br>
+	                                          可借复本：2</span> &#x0073;&#x0070;&#x006f;&#x006e;&#x0073;&#x006f;&#x0072;&#x0065;&#x0064;&#x0020;&#x0062;&#x0079;&#x0020;&#x0074;&#x0068;&#x0065;&#x0020;&#x0041;&#x0073;&#x0073;&#x006f;&#x0063;&#x0069;&#x0061;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x0066;&#x006f;&#x0072;&#x0020;&#x0043;&#x006f;&#x006d;&#x0070;&#x0075;&#x0074;&#x0069;&#x006e;&#x0067;&#x0020;&#x004d;&#x0061;&#x0063;&#x0068;&#x0069;&#x006e;&#x0065;&#x0072;&#x0079;&#x002c;&#x0020;&#x0053;&#x0070;&#x0065;&#x0063;&#x0069;&#x0061;&#x006c;&#x0020;&#x0049;&#x006e;&#x0074;&#x0065;&#x0072;&#x0065;&#x0073;&#x0074;&#x0020;&#x0047;&#x0072;&#x006f;&#x0075;&#x0070;&#x0020;&#x006f;&#x006e;&#x0020;&#x0050;&#x0072;&#x006f;&#x0067;&#x0072;&#x0061;&#x006d;&#x006d;&#x0069;&#x006e;&#x0067;&#x0020;&#x004c;&#x0061;&#x006e;&#x0067;&#x0075;&#x002e;&#x002e;&#x002e; <br />
+	            &#x0041;&#x0073;&#x0073;&#x006f;&#x0063;&#x0069;&#x0061;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x0066;&#x006f;&#x0072;&#x0020;&#x0043;&#x006f;&#x006d;&#x0070;&#x0075;&#x0074;&#x0069;&#x006e;&#x0067;&#x0020;&#x004d;&#x0061;&#x0063;&#x0068;&#x0069;&#x006e;&#x0065;&#x0072;&#x0079;&#x002c;&nbsp;&#x0031;&#x0039;&#x0038;&#x0032;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000708317" class="tooltip" onmouseover="showDetail('0000708317')" onmouseout="hideDetail('0000708317')">馆藏<s></s></a> </p>
+	                                <div id="detail0000708317" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0000947313" >13.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0073;&#x0020;&#x003a;&#x0020;&#x0070;&#x0072;&#x0069;&#x006e;&#x0063;&#x0069;&#x0070;&#x006c;&#x0065;&#x0073;&#x002c;&#x0020;&#x0074;&#x0065;&#x0063;&#x0068;&#x006e;&#x0069;&#x0071;&#x0075;&#x0065;&#x0073;&#x002c;&#x0020;&#x0026;&#x0020;&#x0074;&#x006f;&#x006f;&#x006c;&#x0073;&#x0020;&#x003d;&#x0020;&#x7f16;&#x8bd1;&#x539f;&#x7406;&#x0020;&#x003a;&#x0020;&#x6280;&#x672f;&#x4e0e;&#x5de5;&#x5177;&#x0020;&#x002f;&#x0020;&#x0032;&#x006e;&#x0064;&#x0020;&#x0065;&#x0064;&#x002e;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0036;&#x002d;&#x0032;  </h3>
+	                                        <p> <span>馆藏复本：4 <br>
+	                                          可借复本：4</span> &#x0041;&#x006c;&#x0066;&#x0072;&#x0065;&#x0064;&#x0020;&#x0056;&#x002e;&#x0020;&#x0041;&#x0068;&#x006f;&#x0020;&#x002e;&#x002e;&#x002e;&#x0020;&#x005b;&#x0065;&#x0074;&#x0020;&#x0061;&#x006c;&#x002e;&#x005d;&#x002e; <br />
+	            &#x4eba;&#x6c11;&#x90ae;&#x7535;&#x51fa;&#x7248;&#x793e;&#x002c;&nbsp;&#x0032;&#x0030;&#x0030;&#x0038;&#x002e; <br />
+				<img src="../tpl/images/star5.gif" title="总体评分及评价人数"/>(1) <a href="item.php?marc_no=0000947313" class="tooltip" onmouseover="showDetail('0000947313')" onmouseout="hideDetail('0000947313')">馆藏<s></s></a> </p>
+	                                <div id="detail0000947313" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>西文图书</span><a href="item.php?marc_no=0001265227" >14.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x0073;&#x0020;&#x003a;&#x0020;&#x0070;&#x0072;&#x0069;&#x006e;&#x0063;&#x0069;&#x0070;&#x006c;&#x0065;&#x0073;&#x002c;&#x0020;&#x0074;&#x0065;&#x0063;&#x0068;&#x006e;&#x0069;&#x0071;&#x0075;&#x0065;&#x0073;&#x002c;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x0074;&#x006f;&#x006f;&#x006c;&#x0073;&#x0020;&#x003d;&#x0020;&#x7f16;&#x8bd1;&#x539f;&#x7406;&#x0020;&#x002f;&#x0020;&#x0032;&#x006e;&#x0064;&#x0020;&#x0065;&#x0064;&#x002e;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0045;&#x003a;&#x0031;&#x0036;&#x002d;&#x0032;&#x002f;&#x0032;&#x0030;&#x0031;&#x0031;  </h3>
+	                                        <p> <span>馆藏复本：3 <br>
+	                                          可借复本：3</span> &#x0041;&#x006c;&#x0066;&#x0072;&#x0065;&#x0064;&#x0020;&#x0056;&#x002e;&#x0020;&#x0041;&#x0068;&#x006f;&#x0020;&#x002e;&#x002e;&#x002e;&#x0020;&#x005b;&#x0065;&#x0074;&#x0020;&#x0061;&#x006c;&#x002e;&#x005d;&#x002e; <br />
+	            &#x0043;&#x0068;&#x0069;&#x006e;&#x0061;&#x0020;&#x004d;&#x0061;&#x0063;&#x0068;&#x0069;&#x006e;&#x0065;&#x0020;&#x0050;&#x0072;&#x0065;&#x0073;&#x0073;&#x002c;&nbsp;&#x0032;&#x0030;&#x0031;&#x0031;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001265227" class="tooltip" onmouseover="showDetail('0001265227')" onmouseout="hideDetail('0001265227')">馆藏<s></s></a> </p>
+	                                <div id="detail0001265227" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001236888" >15.&#x7f16;&#x8bd1;&#x539f;&#x7406;&#x4e0e;&#x6280;&#x672f;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0038;&#x0037;  </h3>
+	                                        <p> <span>馆藏复本：4 <br>
+	                                          可借复本：4</span> &#x5f20;&#x6631;&#x002c;&#x0020;&#x9648;&#x610f;&#x4e91; <br />
+	            &#x9ad8;&#x7b49;&#x6559;&#x80b2;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0031;&#x0030; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001236888" class="tooltip" onmouseover="showDetail('0001236888')" onmouseout="hideDetail('0001236888')">馆藏<s></s></a> </p>
+	                                <div id="detail0001236888" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001221056" >16.&#x7f16;&#x8bd1;&#x539f;&#x7406;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002d;&#x0034;&#x0033;&#x002f;&#x0032;&#x0035;  </h3>
+	                                        <p> <span>馆藏复本：4 <br>
+	                                          可借复本：4</span> &#x4f55;&#x708e;&#x7965;&#x002c;&#x0020;&#x4f0d;&#x6625;&#x9999;&#x002c;&#x0020;&#x738b;&#x6c49;&#x98de;&#x7f16;&#x8457; <br />
+	            &#x673a;&#x68b0;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0031;&#x0030; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001221056" class="tooltip" onmouseover="showDetail('0001221056')" onmouseout="hideDetail('0001221056')">馆藏<s></s></a> </p>
+	                                <div id="detail0001221056" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001213709" >17.&#x7f16;&#x8bd1;&#x539f;&#x7406;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002d;&#x0034;&#x0033;&#x002f;&#x0032;&#x0034;  </h3>
+	                                        <p> <span>馆藏复本：4 <br>
+	                                          可借复本：4</span> &#x848b;&#x5b97;&#x793c;&#x002c;&#x0020;&#x59dc;&#x5b88;&#x65ed;&#x7f16;&#x8457; <br />
+	            &#x9ad8;&#x7b49;&#x6559;&#x80b2;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0031;&#x0030; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001213709" class="tooltip" onmouseover="showDetail('0001213709')" onmouseout="hideDetail('0001213709')">馆藏<s></s></a> </p>
+	                                <div id="detail0001213709" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001188639" >18.&#x7f16;&#x8bd1;&#x539f;&#x7406;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0035;&#x0036;&#x002d;&#x0032;&#x002f;&#x0032;&#x0030;&#x0030;&#x0039;  </h3>
+	                                        <p> <span>馆藏复本：3 <br>
+	                                          可借复本：2</span> &#x0028;&#x7f8e;&#x0029;&#x0020;&#x0041;&#x006c;&#x0066;&#x0072;&#x0065;&#x0064;&#x0020;&#x0056;&#x002e;&#x0020;&#x0041;&#x0068;&#x006f;&#x0020;&#x002e;&#x002e;&#x002e;&#x0020;&#x005b;&#x7b49;&#x005d;&#x0020;&#x8457; <br />
+	            &#x673a;&#x68b0;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0030;&#x0039; <br />
+				<img src="../tpl/images/star4.gif" title="总体评分及评价人数"/>(1) <a href="item.php?marc_no=0001188639" class="tooltip" onmouseover="showDetail('0001188639')" onmouseout="hideDetail('0001188639')">馆藏<s></s></a> </p>
+	                                <div id="detail0001188639" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>缩微制品</span><a href="item.php?marc_no=0000986200" >19.&#x0043;&#x006f;&#x006d;&#x0070;&#x0069;&#x006c;&#x0065;&#x0072;&#x002d;&#x0061;&#x0073;&#x0073;&#x0069;&#x0073;&#x0074;&#x0065;&#x0064;&#x0020;&#x006d;&#x0075;&#x006c;&#x0074;&#x0069;&#x0070;&#x006c;&#x0065;&#x0020;&#x0069;&#x006e;&#x0073;&#x0074;&#x0072;&#x0075;&#x0063;&#x0074;&#x0069;&#x006f;&#x006e;&#x0020;&#x0072;&#x006f;&#x006c;&#x006c;&#x0062;&#x0061;&#x0063;&#x006b;&#x0020;&#x0072;&#x0065;&#x0063;&#x006f;&#x0076;&#x0065;&#x0072;&#x0079;&#x0020;&#x0075;&#x0073;&#x0069;&#x006e;&#x0067;&#x0020;&#x0061;&#x0020;&#x0072;&#x0065;&#x0061;&#x0064;&#x0020;&#x0062;&#x0075;&#x0066;&#x0066;&#x0065;&#x0072;&#x0020;&#x002f;</a>     &#x004e;&#x0039;&#x0036;&#x002d;&#x0031;&#x0034;&#x0033;&#x0030;&#x0030;  </h3>
+	                                        <p> <span>馆藏复本：1 <br>
+	                                          可借复本：0</span> &#x004e;&#x0065;&#x0061;&#x006c;&#x006a;&#x0020;&#x0041;&#x006c;&#x0065;&#x0077;&#x0069;&#x006e;&#x0065;&#x0020;&#x2026;&#x0020;&#x005b;&#x0065;&#x0074;&#x0020;&#x0061;&#x006c;&#x002e;&#x005d;&#x002e; <br />
+	            &nbsp;&#x0031;&#x0039;&#x0039;&#x0035;&#x002e; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0000986200" class="tooltip" onmouseover="showDetail('0000986200')" onmouseout="hideDetail('0000986200')">馆藏<s></s></a> </p>
+	                                <div id="detail0000986200" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                                <li class="book_list_info">
+	                                        <h3><span>中文图书</span><a href="item.php?marc_no=0001163827" >20.&#x7f16;&#x8bd1;&#x539f;&#x7406;&#x003a;&#x0070;&#x0072;&#x0069;&#x006e;&#x0063;&#x0069;&#x0070;&#x006c;&#x0065;&#x0073;&#x002c;&#x0020;&#x0074;&#x0065;&#x0063;&#x0068;&#x006e;&#x0069;&#x0071;&#x0075;&#x0065;&#x0073;&#x0020;&#x0061;&#x006e;&#x0064;&#x0020;&#x0074;&#x006f;&#x006f;&#x006c;&#x0073;</a>     &#x0054;&#x0050;&#x0033;&#x0031;&#x0034;&#x002f;&#x0035;&#x0036;&#x002d;&#x0032;  </h3>
+	                                        <p> <span>馆藏复本：3 <br>
+	                                          可借复本：3</span> &#x0028;&#x7f8e;&#x0029;&#x0020;&#x0041;&#x006c;&#x0066;&#x0072;&#x0065;&#x0064;&#x0020;&#x0056;&#x002e;&#x0020;&#x0041;&#x0068;&#x006f;&#x0020;&#x002e;&#x002e;&#x002e;&#x0020;&#x005b;&#x7b49;&#x005d;&#x0020;&#x8457; <br />
+	            &#x673a;&#x68b0;&#x5de5;&#x4e1a;&#x51fa;&#x7248;&#x793e;&nbsp;&#x0032;&#x0030;&#x0030;&#x0039; <br />
+				<img src="../tpl/images/star0.gif" title="总体评分及评价人数"/>(0) <a href="item.php?marc_no=0001163827" class="tooltip" onmouseover="showDetail('0001163827')" onmouseout="hideDetail('0001163827')">馆藏<s></s></a> </p>
+	                                <div id="detail0001163827" style="display:none;" >加载中...</div>
+								   </li>
+	                               	                  </ol>
+					 
+	                  <div class="clear"></div>
+	            </div>
+				<div class="book_article numstyle">
+          <span class="num_prev"> 上一页 <b><font color=red>1</font> / <font color=black>2</font></b> &nbsp;<a class=blue href='?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&count=39&with_ebook=on&page=2'>下一页</a> 到第 <select name='topage' size='1' onchange='window.location="?dept=ALL&title=compiler&doctype=ALL&lang_code=ALL&match_flag=forward&displaypg=20&showmode=list&orderby=DESC&sort=CATA_DATE&onlylendable=no&count=39&with_ebook=on&page="+this.value'>
+<option value='1' selected>1</option>
+<option value='2'>2</option>
+</select>页</span></div>
+          <hr style=" background-color:green;size:2px;"/>
+                                <div class="clear"></div>
+                </div> 
+       </div>
+	   <div class="go_top_r"><a href="javascript:;" onclick="javascript:scroll(0,0);"><img alt="返回顶部" title="返回顶部" src="../tpl/images/top.png"></a></div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+	$("#dict").load("ajax_dict.php?type=title&q=compiler");
+	MarkHighLight(document.getElementById("content"),'compiler');
+	
+	function showDetail(marcNo){
+		$("#detail" + marcNo).load("ajax_item.php?marc_no=" + marcNo);	
+		$("#detail" + marcNo).addClass("prompt");
+		$("#detail" + marcNo).show();
+	}
+	
+	function hideDetail(marcNo){
+		$("#detail" + marcNo).hide();
+	}
+	
+	function my_submit(search_type){
+	    var s_text = document.getElementById('s2_text').value;
+	    if(s_text.replace(/(\s*$)/g, "")==""){
+	        alert('请输入检索词');
+	        return;
+	    }
+	    document.getElementById('search_bar').value = search_type;
+	    document.forms.f.submit();
+    }
+
+	$("#ebook").load("ajax_ebook.php?total=0&match=forward&type=title&q=compiler&start=1",
+			function(html){
+			   	MarkHighLight(document.getElementById("ebook"),'compiler');
+			}
+		);
+		
+	var ebookpage = 1;	
+	function showEbook(page){
+		ebookpage = ebookpage + page;
+		$("#ebook").load("ajax_ebook.php?total=0&match=forward&type=title&q=compiler&start=" + ebookpage,
+		   function(){
+		   	MarkHighLight(document.getElementById("ebook"),'compiler');
+		   });
+	}
+	
+	if (document.documentElement.clientHeight < document.documentElement.offsetHeight - 6) {
+		$(".go_top_r").show();
+	}else{
+		$(".go_top_r").hide();
+	}
+	
+-->
+</script><div id="footer"><div id="copy"><p> 北京航空航天大学图书馆&nbsp;&nbsp; OPAC v5.0.15.12.03  &nbsp;&nbsp;</p><p>京ICP备05004617 文保网安备案号 1101080018 &copy;北京航空航天大学图书馆</p></div></div></body></html>

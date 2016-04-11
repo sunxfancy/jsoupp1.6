@@ -43,8 +43,8 @@ public class ParallelParser {
         Document doc = postprocess(docs);
         long end = System.nanoTime();
 
-        System.out.println("thread parsing time: " + (mid - sta));
-        System.out.println("postprocessing time: " + (end - mid));
+        System.out.println("thread parsing time: " + (mid - sta)/ 1000000 + "ms");
+        System.out.println("postprocessing time: " + (end - mid)/ 1000000 + "ms");
 
         return doc;
     }

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>C和C++的面向对象专题（1）——何为面向对象 | 西风广场</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="面向对象是一种思想，而不是一门语言我们上哪去找对象，都面向对象去了
+本专栏文章列表
+一、何为面向对象
+二、C语言也能实现面向对象
+三、C++中的不优雅特性
+四、解决封装，避免接口
+五、合理使用模板，避免代码冗余
+六、C++也能反射
+七、单例模式解决静态成员对象和全局对象的构造顺序难题
+八、更为高级的预处理器PHP
+九、Gtkmm的最佳实践
+本系列文章由 西风逍遥游 原创，转载请注明出处：西风广场">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C和C++的面向对象专题（1）——何为面向对象">
+<meta property="og:url" content="http://sunxfancy.github.io/2015/12/06/C和C++的面向对象专题/C和C++的面向对象专题（1）——何为面向对象/index.html">
+<meta property="og:site_name" content="西风广场">
+<meta property="og:description" content="面向对象是一种思想，而不是一门语言我们上哪去找对象，都面向对象去了
+本专栏文章列表
+一、何为面向对象
+二、C语言也能实现面向对象
+三、C++中的不优雅特性
+四、解决封装，避免接口
+五、合理使用模板，避免代码冗余
+六、C++也能反射
+七、单例模式解决静态成员对象和全局对象的构造顺序难题
+八、更为高级的预处理器PHP
+九、Gtkmm的最佳实践
+本系列文章由 西风逍遥游 原创，转载请注明出处：西风广场">
+<meta property="og:updated_time" content="2015-11-13T07:23:30.885Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C和C++的面向对象专题（1）——何为面向对象">
+<meta name="twitter:description" content="面向对象是一种思想，而不是一门语言我们上哪去找对象，都面向对象去了
+本专栏文章列表
+一、何为面向对象
+二、C语言也能实现面向对象
+三、C++中的不优雅特性
+四、解决封装，避免接口
+五、合理使用模板，避免代码冗余
+六、C++也能反射
+七、单例模式解决静态成员对象和全局对象的构造顺序难题
+八、更为高级的预处理器PHP
+九、Gtkmm的最佳实践
+本系列文章由 西风逍遥游 原创，转载请注明出处：西风广场">
+  
+    <link rel="alternative" href="/atom.xml" title="西风广场" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/sxf.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">西风逍遥游</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sunxfancy" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto:sunxfancy@gmail.com" title="mail">mail</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/sun-xiao-fan-3" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.vvliebe.com/">vvliebe的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">西风逍遥游，一只热爱生活的技术粉</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">西风逍遥游</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/sxf.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">西风逍遥游</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sunxfancy" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto:sunxfancy@gmail.com" title="mail">mail</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/sun-xiao-fan-3" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-C和C++的面向对象专题/C和C++的面向对象专题（1）——何为面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/06/C和C++的面向对象专题/C和C++的面向对象专题（1）——何为面向对象/" class="article-date">
+  	<time datetime="2015-12-06T10:47:30.883Z" itemprop="datePublished">2015-12-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C和C++的面向对象专题（1）——何为面向对象
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>面向对象是一种思想，而不是一门语言<br>我们上哪去找对象，都面向对象去了</p>
+<p><strong>本专栏文章列表</strong></p>
+<p>一、何为面向对象</p>
+<p>二、C语言也能实现面向对象</p>
+<p>三、C++中的不优雅特性</p>
+<p>四、解决封装，避免接口</p>
+<p>五、合理使用模板，避免代码冗余</p>
+<p>六、C++也能反射</p>
+<p>七、单例模式解决静态成员对象和全局对象的构造顺序难题</p>
+<p>八、更为高级的预处理器PHP</p>
+<p>九、Gtkmm的最佳实践</p>
+<p>本系列文章由 西风逍遥游 原创，转载请注明出处：西风广场 <a href="http://sunxfancy.github.io/">http://sunxfancy.github.io/</a></p>
+<h2 id="一、何为面向对象">一、何为面向对象</h2><p>现在学软件开发，都讲面向对象的编程模型，其实也很简单。用一句话来总结，面向对象就是将方法和方法的属性整合在一起，让每个方法引用的属性值尽可能在对象内部，对外保持简洁的接口。</p>
+<p>实现面向对象的设计，目标不是写类，而是设计结构，对每一个对象设计良好的接口和封装模式，将优雅的接口提供给使用者，最大程度的降低代码耦合。</p>
+<p>面向对象的设计，可以用一本书来讲解，但我们这里将演示面向对象的基本思想和如何实现</p>
+<h3 id="从一个简单的例子看对象">从一个简单的例子看对象</h3><p>恩，那好，我们现在构建一个对象</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> window &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	window(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> width, <span class="keyword">int</span> height) &#123;</span><br><span class="line">		<span class="keyword">this</span>.x = x; <span class="keyword">this</span>.y = y;</span><br><span class="line">		<span class="keyword">this</span>.width = width;</span><br><span class="line">		<span class="keyword">this</span>.height = height;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> x, y, width, height;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 也许你还可以添加更多属性，例如透明度、子元素列表、菜单、状态栏等待</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这是一个基本的窗口对象，也许它并不能给你直观的印象，但我希望能通过其说明一些问题。<br>对象有公开方法，有私有属性，我们在构造这个对象的时候，将一些参数传入，那么我们发现，这个过程简化了我们对于某些方法的使用。</p>
+<p>例如在C函数中，如何你希望绘制一些内容，那么你可能需要做的是写这样一个函数：</p>
+<pre><code><span class="function"><span class="keyword">int</span> <span class="title">Draw</span><span class="params">(<span class="keyword">struct</span> window*, <span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;
+</code></pre><p>将全部的参数传入进去，但如果使用次数多后，我们发现参数大多一样，那么不如把他们都打包进入window结构体中，于是函数变成了这样：</p>
+<pre><code><span class="function"><span class="keyword">int</span> <span class="title">Draw</span><span class="params">(<span class="keyword">struct</span> window*)</span></span>;
+</code></pre><p>这样我们只需要改变结构体中的值就可以了，这个思想，就是面向对象的基础，而C++正是让这要传入的结构体自动传入，进而演变为了this指针。</p>
+<h3 id="面向对象的设计原则">面向对象的设计原则</h3><p>几乎软件的设计原则都是高内聚，低耦合。</p>
+<p>C++的设计也是一样，类的公共方法应该尽可能清晰明确，简单好用，而不必要外部了解的信息，和细节过程，都放入到私有成员中，避免被误用。</p>
+<p>避免过度继承和重载，虽然继承和重载很大程度上能够降低两个模块间的耦合，但其实现复杂，结构混乱，容易使得代码不够清晰。同样，也要避免设计模式的滥用。</p>
+<p>C++的开发应该本着面向对象的思想，利用类的封装特性，将模块内部的部分高效的组织在一起，而接口，可以采用多态调用的方式，保证灵活性。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/06/C和C++的面向对象专题/C和C++的面向对象专题（2）——C语言也能实现面向对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          C和C++的面向对象专题（2）——C语言也能实现面向对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/06/编译器架构的王者——LLVM/LLVM函数的调用时声明插入/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="C和C++的面向对象专题/C和C++的面向对象专题（1）——何为面向对象" data-title="C和C++的面向对象专题（1）——何为面向对象" data-url="http://sunxfancy.github.io/2015/12/06/C和C++的面向对象专题/C和C++的面向对象专题（1）——何为面向对象/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"sunxfancy"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 西风逍遥游
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

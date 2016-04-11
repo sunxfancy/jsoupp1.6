@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>读取一个文件夹下所有文件及子文件夹下的所有文件 -  - ITeye技术网站</title>
+    <meta name="description" content="读取一个文件夹下所有文件及子文件夹下的所有文件public void ReadAllFile(String filePath) {  		File f = null;  		f = new File(filePath);  		File[] files = f.listFiles(); // 得到f文件夹下面的所有文件。  		List&lt;File&gt; list = new ArrayLis ..." />
+    <meta name="keywords" content="读取一个文件下所有文件, 读取文件 读取一个文件夹下所有文件及子文件夹下的所有文件" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/open_search.xml" title="ITeye" />
+    <link href="/rss" rel="alternate" title="" type="application/rss+xml" />
+    <link href="http://www.iteye.com/stylesheets/blog.css?1459332234" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://www.iteye.com/stylesheets/themes/blog/blue.css?1448702469" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://www.iteye.com/javascripts/application.js?1448702469" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="http://www.iteye.com/javascripts/syntaxhighlighter/SyntaxHighlighter.css?1448702469" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://www.iteye.com/javascripts/syntaxhighlighter/shCoreCommon.js?1448702469" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/hotkey.js?1448702469" type="text/javascript"></script>
+  <script src="http://www.iteye.com/javascripts/code_favorites.js?1448702469" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/weiboshare.js?1448702469" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display:none;">
+    <a target="_blank" href="http://job.iteye.com/iteye">知识库</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+
+      <div id="user_nav">
+      <a href="/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="/login">登录</a>
+    <a href="/signup" class="nobg">注册</a>
+  </div>
+
+    </div>
+
+    <div id="page">
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="/">zhangbaoming815</a></h1>
+        </div>
+        <div id='fd'></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class='blog_navbar_for'><a href="http://zhangbaoming815.iteye.com"><strong>博客</strong></a></li>
+            <li ><a href="/weibo">微博</a></li>
+            <li ><a href="/album">相册</a></li>
+            <li ><a href="/link">收藏</a></li>
+            <li ><a href="/blog/guest_book">留言</a></li>
+            <li ><a href="/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="/blog/search" method="get">
+              <input class="search_text" id="query" name="query" style="margin-left: 10px;width: 110px;" type="text" value="" />
+              <input class="submit_search" type="submit" value="" />
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style='display:none'>
+  <a href="http://zhangbaoming815.iteye.com" class="p-author" target="_blank">zhangbaoming815</a>
+</div>
+
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3>
+      <a href="/blog/1578439">读取一个文件夹下所有文件及子文件夹下的所有文件</a>
+      <em class="actions">      </em>
+    </h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/231590">File</a></li> </ul>
+        <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6">读取一个文件下所有文件</a><a href="http://www.iteye.com/blogs/tag/%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">读取文件</a>&nbsp;</div>
+    	  
+    	
+    	
+  		
+      </div>
+
+  <div id="blog_content" class="blog_content">
+    <p>读取一个文件夹下所有文件及子文件夹下的所有文件public void ReadAllFile(String filePath) {</p>
+<pre name="code" class="java">		File f = null;
+		f = new File(filePath);
+		File[] files = f.listFiles(); // 得到f文件夹下面的所有文件。
+		List&lt;File&gt; list = new ArrayList&lt;File&gt;();
+		for (File file : files) {
+			if(file.isDirectory()) {
+				//如何当前路劲是文件夹，则循环读取这个文件夹下的所有文件
+				ReadAllFile(file.getAbsolutePath());
+			} else {
+				list.add(file);
+			}
+		}
+		for(File file : files) {
+			System.out.println(file.getAbsolutePath());
+		}
+	}</pre>
+<p> 读取一个文件夹下的所有文件夹和文件</p>
+<pre name="code" class="java">public void ReadFile(String filePath) {
+		File f = null;
+		f = new File(filePath);
+		File[] files = f.listFiles(); // 得到f文件夹下面的所有文件。
+		List&lt;File&gt; list = new ArrayList&lt;File&gt;();
+		for (File file : files) {
+			list.add(file);
+		}
+		for(File file : files) {
+			System.out.println(file.getAbsolutePath());
+		}
+	}</pre>
+ 
+<p>完整代码：</p>
+<p>
+</p>
+<pre name="code" class="java">import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ReadAllFileFromParentCatalog {
+	
+	//读取一个文件夹下所有文件及子文件夹下的所有文件
+	public void ReadAllFile(String filePath) {
+		File f = null;
+		f = new File(filePath);
+		File[] files = f.listFiles(); // 得到f文件夹下面的所有文件。
+		List&lt;File&gt; list = new ArrayList&lt;File&gt;();
+		for (File file : files) {
+			if(file.isDirectory()) {
+				//如何当前路劲是文件夹，则循环读取这个文件夹下的所有文件
+				ReadAllFile(file.getAbsolutePath());
+			} else {
+				list.add(file);
+			}
+		}
+		for(File file : files) {
+			System.out.println(file.getAbsolutePath());
+		}
+	}
+	
+	//读取一个文件夹下的所有文件夹和文件
+	public void ReadFile(String filePath) {
+		File f = null;
+		f = new File(filePath);
+		File[] files = f.listFiles(); // 得到f文件夹下面的所有文件。
+		List&lt;File&gt; list = new ArrayList&lt;File&gt;();
+		for (File file : files) {
+			list.add(file);
+		}
+		for(File file : files) {
+			System.out.println(file.getAbsolutePath());
+		}
+	}
+	
+	public static void main(String[] args) {
+		String filePath = "E:/OK";
+		new ReadAllFileFromParentCatalog().ReadAllFile(filePath);
+	}
+}</pre>
+ 
+  </div>
+
+  
+
+  
+  
+  <IFRAME SRC="/iframe_ggbd/794" SCROLLING=no WIDTH=680 HEIGHT=90 FRAMEBORDER=0></IFRAME>
+  
+  <div id="bottoms" class="clearfix">
+    
+    <div id="share_weibo">分享到：
+      <a data-type='sina' href="javascript:;" title="分享到新浪微博"><img src="/images/sina.jpg"></a>
+      <a data-type='qq' href="javascript:;" title="分享到腾讯微博"><img src="/images/tec.jpg"></a>
+    </div>
+  </div>
+
+  <div class="blog_nav">
+    <div class="pre_next">
+      <a href="/blog/1578440" class="next" title="删除一个目录下的所有文件及文件夹">删除一个目录下的所有文件及文件夹</a>
+      |
+      <a href="/blog/1578438" class="pre" title="java将字符串写入到txt文件中">java将字符串写入到txt文件中</a>
+    </div>
+  </div>
+  <div class="blog_bottom">
+    <ul>
+      <li>2012-07-05 20:39</li>
+      <li>浏览 5467</li>
+      <li><a href="#comments">评论(0)</a></li>
+      
+      
+      <li>分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>      
+      <li class='last'><a href="http://www.iteye.com/wiki/blog/1578439" target="_blank" class="more">相关推荐</a></li>
+    </ul>    
+  </div>
+  
+		  
+    	
+    	
+  		
+        
+  <div class="blog_comment">
+    <h5>评论</h5>
+    <a id="comments" name="comments"></a>
+    
+    
+    
+  </div>
+
+  <div class="blog_comment">
+    <h5>发表评论</h5>
+            <p style="text-align:center; margin-top:30px;margin-bottom:0px;"><a href="/login" style="background-color:white;"> <img src="/images/login_icon.png" style="vertical-align:middle; margin-right: 10px;" /></a><a href="/login">  您还没有登录,请您登录后再发表评论 </a></p>
+      </div>
+</div>
+
+
+<script type="text/javascript">
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+
+  $$('#main .blog_content pre[name=code]').each(function(pre, index){ // blog content
+    var post_id = 1578439;
+    var location = window.location;
+    source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+    pre.writeAttribute('codeable_id', post_id);
+    pre.writeAttribute('codeable_type', "Blog");
+    pre.writeAttribute('source_url', source_url);
+    pre.writeAttribute('pre_index', index);
+    pre.writeAttribute('title', '读取一个文件夹下所有文件及子文件夹下的所有文件');
+  });
+
+  fix_image_size($$('div.blog_content img'), 700);
+
+  function processComment() {
+    $$('#main .blog_comment > div').each(function(comment){// comment
+      var post_id = comment.id.substr(2);
+      $$("#"+comment.id+" pre[name=code]").each(function(pre, index){
+        var location = window.location;
+        source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+        source_url += "#" + comment.id;
+        pre.writeAttribute('codeable_id', post_id);
+        pre.writeAttribute('codeable_type', "BlogComment");
+        pre.writeAttribute('source_url', source_url);
+        pre.writeAttribute('pre_index', index);
+        pre.writeAttribute('title', '读取一个文件夹下所有文件及子文件夹下的所有文件');
+      });
+    });
+  }
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'BlogComment'},
+      onSuccess:function(response){editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+
+  code_favorites_init();
+  processComment();
+  new WeiboShare({share_buttons: $('share_weibo'), img_scope: $('blog_content')});
+</script>
+
+
+
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href='http://zhangbaoming815.iteye.com'><img alt="zhangbaoming815的博客" class="logo" src="http://www.iteye.com/upload/logo/user/703908/904a8a0e-4ac5-34e9-909c-8566cf31c89e.jpg?1341496792" title="zhangbaoming815的博客: " width="" /></a></div>
+  <div id="blog_owner_name">zhangbaoming815</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 53952 次</li>
+              <li>性别: <img alt="Icon_minigender_1" src="http://www.iteye.com/images/icon_minigender_1.gif?1448702469" title="男" /></li>
+              <li>来自: 北京</li>
+              <li><img src='/images/status/offline.gif'/></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style='font-weight:normal;font-size:12px;padding-left:30px;'><a href="/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://ncztc.iteye.com' target='_blank'><img alt="ncztc的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="ncztc的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://ncztc.iteye.com' target='_blank' title='ncztc'>ncztc</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://tangchensr.iteye.com' target='_blank'><img alt="tangchensr的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="tangchensr的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://tangchensr.iteye.com' target='_blank' title='tangchensr'>tangchensr</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://15086952.iteye.com' target='_blank'><img alt="今晚不睡觉的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="今晚不睡觉的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://15086952.iteye.com' target='_blank' title='今晚不睡觉'>今晚不睡觉</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://kfqkfy.iteye.com' target='_blank'><img alt="kfqkfy的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="kfqkfy的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://kfqkfy.iteye.com' target='_blank' title='kfqkfy'>kfqkfy</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="/">全部博客 (55)</a></li>
+                
+                  <li><a href="/category/230132">alogrithms (1)</a></li>
+                
+                  <li><a href="/category/231485">db4o (5)</a></li>
+                
+                  <li><a href="/category/231590">File (7)</a></li>
+                
+                  <li><a href="/category/231829">DB (1)</a></li>
+                
+                  <li><a href="/category/232851">hadoop (14)</a></li>
+                
+                  <li><a href="/category/233404">JavaCard (1)</a></li>
+                
+                  <li><a href="/category/234321">java (9)</a></li>
+                
+                  <li><a href="/category/239375">android (1)</a></li>
+                
+                  <li><a href="/category/239679">J2EE (1)</a></li>
+                
+                  <li><a href="/category/241758">html5 (3)</a></li>
+                
+                  <li><a href="/category/242545">script (2)</a></li>
+                
+                  <li><a href="/category/246329">ibatis (2)</a></li>
+                
+                  <li><a href="/category/247969">php (5)</a></li>
+                
+                  <li><a href="/category/287339">scala (3)</a></li>
+                
+              </ul>
+            </div>
+            <div id='month_blogs'>
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="/blog/post">我的论坛</a> (2)
+                </li>
+                <li><a href="/blog/answered_problems">我的问答</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="/blog/monthblog/2013-08">2013-08</a> (3)</li>
+                
+                  <li><a href="/blog/monthblog/2013-07">2013-07</a> (3)</li>
+                
+                  <li><a href="/blog/monthblog/2013-04">2013-04</a> (2)</li>
+                
+                <li><a href="/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href='http://happyDear.iteye.com' target='_blank' title='happyDear'>happyDear</a>： 
+                  [flash=200,200][url][img][list] ...<br />
+                  <a href="/blog/1578436#bc2348619">java读取txt文件</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr/>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br />
+          &copy; 2003-2016 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script>
+
+<script src="http://csdnimg.cn/pubfooter/js/tracking.js?version=20130923164150" type="text/javascript"></script>
+
+    
+    
+  </body>
+</html>

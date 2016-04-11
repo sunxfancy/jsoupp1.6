@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+<title>《风暴大陆》清明雨纷活动，惊喜大赠送！ - 风暴大陆 - 微游社区 | 微游戏 - 新浪微博</title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="generator" content="微游社区 v" />
+<meta name="description" content="微游社区-与千万微博玩家分享游戏中的快乐与感动!微游戏,新浪微博官方游戏平台-中国最大的微博游戏平台,汇聚高端白领玩家，随时随地与微博好友、微博名人一起玩游戏,体验最精彩的社交游戏,网页游戏,小游戏就在微游戏!" />
+<meta name="keywords" content="风暴大陆攻略,风暴大陆玩法,风暴大陆游戏社区,风暴大陆游戏论坛,微游戏,微博,社交游戏,webgame,微博游戏,sns游戏,网页游戏,小游戏,免费游戏,在线小游戏,热门游戏,最新游戏,经典游戏,棋牌游戏网页游戏论坛,网页游戏心得,游戏交流,玩家交流" />
+
+<link rel="stylesheet" href="http://img.app.wcdn.cn/ops/game/style/css/dev/core.css?v=201304180944" />
+<link rel="stylesheet" href="http://img.app.wcdn.cn/ops/game/style/css/dev/common.css?v=201304180944" />
+        <link rel="stylesheet" href="http://img.app.wcdn.cn/ops/game/style/css/dev/style.css?v=201304180944" />
+
+<link rel="stylesheet" href="http://img.app.wcdn.cn/ops/game/style/css/dev/gamecter/poptip.css?v=201304180944"/>
+<link rel="stylesheet" href="http://img.app.wcdn.cn/ops/game/style/css/dev/gamecter/card.css?v=201304180944"/>
+<link href="http://img1.app.wcdn.cn/ops/game/style/css/gameprofile/tinyfamily.minlist.css?v=201302171433" rel="stylesheet"  type="text/css"/>
+
+
+
+<link rel="stylesheet"  type="text/css"  href="http://img.app.wcdn.cn/ops/game/style/css/center/common/rightdownpop.minlist.css?v=201304180944"/>
+
+<!-- <base id="headbase" href="http://game.weibo.com/club/" /> -->
+
+<script>
+//全局变量 Global Variables
+var GV = {
+	JS_ROOT : 'http://js.app.wcdn.cn/ops/game/js/dev/',										//js目录
+	JS_VERSION : '201304180944',											//js版本号
+	TOKEN : '7580d022a4becd15',	//token $.ajaxSetup data	//登录后
+	U_NAME : '-西风逍遥游-',										//登录用户名
+	U_CENTER : 'http://game.weibo.com/club/space-index-run?uid=5105667360',				//用户空间(参数 : uid)
+	U_AVATAR : 'http://wyxgame-club.stor.appsina.com/attachment/avatar/510/56/67/5105667360_middle.jpg',							//登录用户头像	U_AVATAR_DEF : 'http://img1.app.wcdn.cn/ops/game/style/images/face/face_small.jpg',					//默认小头像
+	U_ID : '5105667360',									//uid
+	CREDIT_REWARD_JUDGE : '',			//是否积分奖励，空值:false, 1:true
+	URL : {
+		BASE : 'http://game.weibo.com/club/',
+		CHECK_IMG : 'http://game.weibo.com/club/u-login-showverify',							//验证码图片url，global.js引用
+		VARIFY : 'http://game.weibo.com/club/verify-index-get',									//验证码html
+		VARIFY_CHECK : 'http://game.weibo.com/club/verify-index-check',							//验证码html
+		USER_CARD : 'http://game.weibo.com/club/u-card-run',								//小名片(参数 : uid)
+		LIKE_FORWARDING : 'http://game.weibo.com/club/default-post-doreply',							//喜欢转发(参数 : fid)
+		EMOTIONS : "http://game.weibo.com/club/emotion-index-run?type=bbs",					//表情数据
+		CRON_AJAX : '',											//计划任务 后端输出执行
+		FORUM_LIST : 'http://game.weibo.com/club/bbs-forum-list',								//版块列表数据
+		CREDIT_REWARD_DATA : 'http://game.weibo.com/club/u-index-showcredit',					//积分奖励 数据
+		TOPIC_TYPIC: 'http://game.weibo.com/club/bbs-forum-topictype'							//主题分类
+	}
+};
+</script>
+<script src="http://js.app.wcdn.cn/ops/game/js/dev/wind.js?v=201304180944"></script>
+	<link href="http://img.app.wcdn.cn/ops/game/style/css/dev/forum.css?v=201304180944" rel="stylesheet" />
+	<link href="http://img.app.wcdn.cn/ops/game/style/css/dev/editor_content.css?v=201304180944" rel="stylesheet" />
+    <link href="http://img.app.wcdn.cn/ops/game/style/css/dev/page/forum_content.css?v=201304180944" rel="stylesheet" />    
+
+</head> 
+<body><!--通用顶导  -->
+<div class="top_navy"></div>
+<style type="text/css">
+</style><div class="wrap">
+	<div class="main_wrap">
+        <div class="club_top">
+    <div class="logos">
+        <a href="http://game.weibo.com/?origin=2039&oid=1000105210002" title="微游戏" class="wyx_logo"></a>
+        <em class="em1"></em>
+        <a href="http://game.weibo.com/club/" title="微游社区" class="club_logo"></a>
+    </div>
+
+    <!--
+    <div class="search_gamebox" style="display:none">
+        <div class="search_game">            <!--
+            <form method="get" action="http://game.weibo.com/home/recommend/gameSearch" id="search_game_form">
+                <input type="text" name="keyword" class="search_game_text" id="search_game_text"
+                       value="新仙剑OL" autocomplete="off">
+                <a class="search_game_btn" id="search_game_btn">&nbsp;</a>
+                <input type="hidden" value="2157" name="origin">
+            <input type='hidden' name='csrf_token' value='7580d022a4becd15'/></form>
+        </div>
+
+    </div>
+    -->
+</div>
+
+<!--<div class="coupletwrap" id="coupletBox"></div>-->        <div class="club_page content_page">
+            <div class="page_top">				<img src="http://image.game.weibo.com/club_d8144005b6cac030b254b63983ce0b99.jpg" class="banner"/>
+                <div class="club_info_wrap">
+
+                    <div class="club_info_mask"></div>
+                    <div class="club_info">
+                        <h2>风暴大陆                        <a href="http://game.weibo.com/fengbaodalu/details?origin=2050&oid=1000103210032" title="查看详情" class="sea_detail" target="_blank">查看详情</a>                        </h2>
+                        <ul>
+                            <!--<li class="first_li"><div><span class="number">1301111</span><span class="t_name">玩家</span></div><em></em></li>-->
+                            <li class="first_li">
+                                <div><span class="number">89</span><span
+                                        class="t_name">主题</span></div>
+                                <em></em></li>
+                            <li class="last_li"><span class="number">14</span><span
+                                    class="t_name">回复</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="game_icon">					<img src="http://image.game.weibo.com/club_88405d7042df254071e4a0cad27a1bf2.jpg" width="170" height="190"/>                </div>
+                <div class="club_current_navy">
+                    <a class="club_home" href="http://game.weibo.com/club/?oid=1005100110001" title="微游社区">微游社区</a><em>&nbsp;&gt;&nbsp;</em><a href="http://game.weibo.com/club/forum-468-1?oid=1005100110002" class="club_name">风暴大陆</a><em>&nbsp;&gt;&nbsp;</em><a href="http://game.weibo.com/club/read-1148311-1" class="club_name">《风暴大陆》清明雨纷活动，惊喜大赠送！</a>                </div>
+            </div>
+            <div class="page_bottom">
+                <div class="top_row">
+                    <div class="col1"></div>
+                    <div class="col2"></div>
+                </div>                <table width="100%" style="table-layout:fixed;" class="floor_table admin_option_wrap" id="J_posts_list">
+                    <tbody>                    <tr>
+                        <td class="floor_left cl_head">
+                            <span></span>
+                        </td>
+                        <td class="floor_right cr_head">
+                            <div class="topic_navy_relative">
+                                <ul class="topic_navy">
+                                    <li class="first_li "><a
+                                            href="http://game.weibo.com/club/forum-468-1"><strong>全部</strong></a><em></em>
+                                    </li>                                    <li class=""><a
+                                            href="http://game.weibo.com/club/forum-468-1?type=2190"><strong>公告</strong><em></em></a>
+                                    </li>                                    <li class="current"><a
+                                            href="http://game.weibo.com/club/forum-468-1?type=2191"><strong>活动</strong><em></em></a>
+                                    </li>                                    <li class=""><a
+                                            href="http://game.weibo.com/club/forum-468-1?type=2192"><strong>攻略</strong><em></em></a>
+                                    </li>                                    <li class=""><a
+                                            href="http://game.weibo.com/club/forum-468-1?type=2193"><strong>交流</strong><em></em></a>
+                                    </li>                                    <li class=""><a
+                                            href="http://game.weibo.com/club/forum-468-1?type=2194"><strong>建议</strong><em></em></a>
+                                    </li>                                    <li class=""><a
+                                            href="http://game.weibo.com/club/forum-468-1?type=2195"><strong>提问</strong><em></em></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="b_part">
+                                <div class="l_part">
+                                    <a rel="nofollow" href="http://game.weibo.com/club/bbs-post-run?fid=468&oid=1005100210001" class="post_btn"></a>                                </div>
+                                <div class="r_part">                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    
+
+                    
+                    <tr>
+                        <td  rowspan="2" class="floor_left">
+                        <a name="floor_0"></a><a name="0"></a><a name="a"></a>                           <div class="author_info">
+                               <dl>
+                                   <dt><a href="http://game.weibo.com/club/my-article-run?uid=1936362482&oid=1005100210009" class="J_user_card_show" data-uid="1936362482" data-username="微游戏客服"><img src="http://tp3.sinaimg.cn/1936362482/180/5605056784/1" width="60px" height="60px"/></a></dt>
+                                   
+                                   <dd>
+                                       <a class="author_name J_user_card_show" data-uid="1936362482" href="http://game.weibo.com/club/my-article-run?uid=1936362482&oid=1005100210009">微游戏客服                                    		<img class="vip-org" title="新浪机构认证" src="http://img1.app.wcdn.cn/ops/game/style/images/forum/core/transparent.png?v=2012092701" alt="新浪机构认证">                                    	</a>                                       	<span><img src="http://img1.app.wcdn.cn/ops/game/style/images/dev/level/26.png" alt="管理员"></span>                                       <div class="level_wrap">
+                                            <a class="level_icon level_icon_29" target="_blank" href="http://game.weibo.com/home/level?oid=1005100210011" title="用户等级"></a>                                       </div>
+                                   </dd>
+                                   
+	                               </dl>	                               <div class="num_info">
+	                                   <div>
+	                                       <span class="n_left"><label>帖子数：</label><em>17091</em></span>
+	                                       
+	                                       <span><label>微能量：</label><em>34786</em></span>
+	                                   </div>
+	                                   <div class="top5">
+	                                       <span class="n_left"><label>精华帖：</label><em>334</em></span>
+	                                   </div>
+	                               </div>	                               
+                               		<div class="avatar_wrap avatar_wrap_0">
+                                        <object width="180" height="180" id="AvatarMini_swf"
+                                                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0"
+                                                classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+                                            <param name="movie" value="http://img1.app.wcdn.cn/ops/game/style/images/dev/AvatarClubLoader.swf?v=201304180944">
+                                            <param name="flashvars"
+                                                   value="uid=1936362482&aid=0&v=201304180944">
+                                            <param name="wmode" value="Opaque">
+                                            <param name="allowScriptAccess" value="always">
+                                            <param name="allowFullScreen" value="true">
+                                            <embed width="180" height="180"
+                                                   flashvars="uid=1936362482&aid=0&v=201304180944"
+                                                   name="AvatarMini_swf"
+                                                   src="http://img1.app.wcdn.cn/ops/game/style/images/dev/AvatarClubLoader.swf?v=201304180944"
+                                                   wmode="Opaque" allowfullscreen="true" allowscriptaccess="always"
+                                                   pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"
+                                                   type="application/x-shockwave-flash">
+                                        </object>
+                                    </div>
+                                    <div class="manager_option">                                    </div>
+                               
+                           </div>
+                            <div class="read_num_info">
+                                <span class="rpl_num">回复：<em>0</em></span>
+                                <span>查看：<em>794</em></span>
+                            </div>
+                        </td>
+                        <td class="floor_right">
+                            <div class="f_head">
+                                <h2><a href="http://game.weibo.com/club/forum-468-1?type=2191">[活动]</a><a href="http://game.weibo.com/club/read-1148311-1">《风暴大陆》清明雨纷活动，惊喜大赠送！</a></h2>
+                                <div class="btn_wrap">
+                                    <a rel="nofollow" href="http://game.weibo.com/club/bbs-read-pre?tid=1148311&oid=1005100210004" title="上一主题" class="sbj_btn pre_sbj">上一主题</a>
+                                    <a rel="nofollow" href="http://game.weibo.com/club/bbs-read-next?tid=1148311&oid=1005100210004" title="下一主题" class="sbj_btn next_sbj">下一主题</a>
+                                    <a href="javascript:void(0)" class="show_all_content">展开查看全部</a>
+                                </div>
+                            </div>
+                            <div class="f_top_tips">
+                                <span class="sp0"></span>
+                                <span class="sp1"><label>发表于</label><em>2016-03-29 19:46</em></span>
+                                <span class="sp2"><label>回复：</label><em class="num">0</em><em class="line">|</em></span>
+                                <span class="sp3"><label>查看：</label><em class="num">794</em></span>
+                                <span class="sp4">电梯直达<input class="floor" type="text" title="查看指定楼层" onkeypress="if(event.keyCode == 13){getFloorUrl(this);return false;};" name="floor"><img src="http://wyxgroup-img.stor.appsina.com/c11f7a5b56500c3d1658ad0d2f2fc956.png" class="go_layer" /><span>楼主</span></span>
+                            </div>
+                            <div class="trade_info">
+			                    <p class="tip">官方微币充值时，不存在折扣、论坛交易、打款某帐号。不存在QQ交易！请您警惕，以防被骗。<a href="http://game.weibo.com/club/read-1196-1" target="_blank">举报</a><a href="javascript:void(0)" class="close_tips"></a></p>
+		                    </div>
+                            <div class="editor_content">
+                            	<div align="center"><b><span style="background-color:white ">《风暴大陆》清明雨纷活动，惊喜大赠送！</span></b></div><br /><b><span style="background-color:white "><span style="color:red ">    </span></span></b><span style="background-color:white ">清明雨纷纷，豪礼送不停！！</span><br /><b><span style="background-color:white "><span style="color:red ">活动一：清明雨纷·在线送礼</span></span></b><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：每日在线领豪礼！</span></div><div align="center"><font size="2"><font face="微软雅黑, sans-serif "><span style="background-color:#ededed "><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_a785837a5fcef33ac17b87313b4bae6a.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /><br /></span></font></font></div><div align="left"><b><span style="background-color:white "><span style="color:red ">活动二：清明雨纷·累计消费</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：活动期间累计消费达到一定额度即可全面返还豪礼！<span style="color:#ED7D31 ">大量神格净化石、超稀有牧师武器“胡萝卜”、5级女仆原石、999朵蓝玫瑰、高级、顶级技能书</span>，极品道具不可错过！</span></div><div align="left"><font size="2"><span style="background-color:white "><span style="color:red ">注：1~69级获得的礼包奖励内容、70~79级和≥80级获得的礼包略有不同；</span></span></font></div><div align="left"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_6f7bc6f5f56426c6b17cfd5adf6f0ae0.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><div align="left"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_1a9e7f3e9b3870533ca02cc6dd5c31b3.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><div align="left"> </div><div align="left"><b><span style="background-color:white "><span style="color:red ">活动三：清明雨纷·超级返利</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年3月31日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：活动期间，绝无仅有的月末超级充值返利活动到来！你充值，我白送，疯狂返利！</span></div><div align="left">1.<span style="background-color:white ">单笔充值1000~1999钻即可获赠</span><b><font size="3"><span style="background-color:white "><span style="color:#FFC000 ">12+10%</span></span></font></b><b><font size="3"><span style="background-color:white "><span style="color:#FFC000 ">钻石高额返利！</span></span></font></b><span style="background-color:white "></span></div><div align="left">2.<span style="background-color:white ">单笔充值2000钻（含）以上即可获赠</span><b><font size="3"><span style="background-color:white "><span style="color:#FFC000 ">18+10%</span></span></font></b><b><font size="3"><span style="background-color:white "><span style="color:#FFC000 ">钻石高额返利！</span></span></font></b><span style="background-color:white "></span></div><div align="left">3.<span style="background-color:white ">单笔充值5000钻（含）以上即可立刻或则</span><b><font size="3"><span style="background-color:white "><span style="color:#FFC000 ">25+10%</span></span></font></b><b><font size="3"><span style="background-color:white "><span style="color:#FFC000 ">钻石高额返利！</span></span></font></b></div><div align="center"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_7d542d802e91547d2f0d0a6a6683967d.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /> <div align="left"><b><span style="background-color:white "><span style="color:red ">活动四：清明雨纷·每日任务</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：每日小任务，快乐拿豪礼！每日完成指定任务即可得到奖励！</span></div><div align="left"><font size="2"><span style="background-color:white "><span style="color:red ">注：每日任务不管完成与否，任务每天都会重置一次</span></span></font></div><div align="center"><font size="2"><font face="微软雅黑, sans-serif "><span style="background-color:#8ea9db "><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_f6820084da1143e173f7731b2a72ddf5.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /><br /></span></font></font></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /> <div align="left"><b><span style="background-color:white "><span style="color:red ">活动四：清明雨纷·每日充值</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：活动期间，小充一把玩玩，奖励大把爽爆！累计1天、2天、3天、5天，7天，每天仅需充值888钻石以上，即可领取<b><span style="color:#ED7D31 ">价值28888钻石大礼包！战力飙升6500+！</span></b></span></div><div align="left"><span style="background-color:white "><b><span style="color:#ED7D31 "><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_9571df0e2ff2cc7fb6d5c9bd029dc7b3.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /><br /></span></b></span></div><div align="left"><span style="background-color:white "> </span><font size="2"><span style="background-color:white "><span style="color:red "><font face="微软雅黑, sans-serif ">Ps:</font></span></span></font><font size="2"><span style="background-color:white "><span style="color:red "><font face="微软雅黑, sans-serif ">图片仅供参考，具体以游戏内显示为准。</font></span></span></font></div><div align="left"><b><span style="background-color:white "><span style="color:red "> </span></span></b></div><div align="left"><b><span style="background-color:white "><span style="color:red ">活动五：清明雨纷·女仆排行</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：性感女仆来临，成长提升，战力提升！</span></div><div align="left"><span style="background-color:white "><span style="color:red ">本期女仆排行榜仅计算“波斯小猫咪”女仆的成长，其他女仆成长不计入排行榜内。</span></span></div><div align="left"><span style="background-color:white "><span style="color:red ">激活“波斯小猫咪”还能获得特殊称号奖励“沙滩风情”，战力大幅提升1888！</span></span></div><div align="left"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_a8d7c6c24c435dd3e5fefc9da65f2aba.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><div align="left"><b><span style="background-color:white "><span style="color:red ">活动五：清明雨纷·每日登录</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：每日登录送豪礼！</span></div><div align="center"><font size="2"><font face="微软雅黑, sans-serif "><span style="background-color:#ededed "><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_2bc7194a7ff9264cb5cf725f844f14e6.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /><br /></span></font></font></div><div align="left"><b><span style="background-color:white "><span style="color:red ">活动六：清明雨纷·消费排行</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：活动期间，每天消费最多的前50名玩家，都可以获得巨额奖励！</span></div><div align="center"><font size="2"><font face="微软雅黑, sans-serif "><span style="background-color:#2f75b5 "><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_54ce615e2020790b85a871e59ff5fe48.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /><br /></span></font></font></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><div align="left"><b><span style="background-color:white "><span style="color:red ">活动八：清明雨纷·欢乐金蛋</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：欢乐砸金蛋，幸运赢大奖！</span></div><div align="left"><span style="background-color:white ">活动期间，可使用“金锤子”或钻石进行砸金蛋，金蛋内匿藏着<span style="color:#ED7D31 ">“女仆发卡”、“暗金武器卷轴包”、“神格净化石”，“神石”等，更有机会获得“白金锤子”，白金锤子可用来砸高级的白金蛋，白金蛋内更是藏有大量珍稀道具！</span></span></div><div align="left"><span style="background-color:white "><span style="color:#ED7D31 ">注：砸金蛋活动新服第六天后开启</span></span></div><div align="center"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_1dac56c6efc3fd388e07e6321f0bde71.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><div align="left"><b><span style="background-color:white "><span style="color:red ">活动八：清明雨纷·多彩兑换</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：清明雨纷活动期间，可通过<span style="color:#7030A0 ">“砸金蛋”</span>活动或其他活动等途径获得<span style="color:#7030A0 ">“</span></span><font size="2"><span style="color:#ED7D31 ">清明柳</span></font><span style="background-color:white "><span style="color:#7030A0 ">”</span></span><span style="background-color:white ">道具，道具可以在活动商店中兑换各种奇珍异宝。</span></div><div align="left"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_96360347412f3879e4e1d15bdf8206c7.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><div align="left"> </div><div align="left"><b><span style="background-color:white "><span style="color:red ">活动八：清明雨纷·宝石目标</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：慧眼识宝石，宝石中凝聚着强大的力量，等待冒险者们使用！活动期间，宝石数量和等级达到指定目标，即可获取宝石专家誉称号！</span></div><div align="left"><span style="background-color:white ">52</span><span style="background-color:white ">颗宝石达到7级，<span style="color:#FFC000 ">即可获得“宝石爱好者”称号，全部宝石属性提高5%</span></span></div><div align="left"><span style="background-color:white ">52</span><span style="background-color:white ">颗宝石达到8级，<span style="color:#FFC000 ">即可获得“宝石鉴赏者”称号，全部宝石属性提高10%</span></span></div><div align="left"><span style="background-color:white ">52</span><span style="background-color:white ">颗宝石达到9级，<span style="color:#FFC000 ">即可获得“宝石狂热者”称号，全部宝石属性提高15%</span></span></div><div align="left"><span style="background-color:white ">52</span><span style="background-color:white ">颗宝石达到10级，<span style="color:#FFC000 ">即可获得“宝石收藏家”称号，全部宝石属性提高20%</span></span></div><div align="left"><span style="background-color:white ">60</span><span style="background-color:white ">颗宝石达到11级，<span style="color:#FFC000 ">即可获得“宝石典藏家”称号，全部宝石属性提高25%</span></span></div><div align="left"><span style="background-color:white ">65</span><span style="background-color:white ">颗宝石达到12级，<span style="color:#FFC000 ">即可获得“宝石巨头”称号，全部宝石属性提高30%</span></span></div><div align="left"><span style="background-color:white ">65</span><span style="background-color:white ">颗宝石达到13级，<span style="color:#FFC000 ">即可获得“宝石大亨”称号，全部宝石属性提高35%</span></span></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">注：高等级称号效果会替换低等级称号效果</span></span></font><div align="center"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_8bda8960038bde564bf3a86d6d9f9584.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><div align="left"> </div><div align="left"><b><span style="background-color:white "><span style="color:red ">活动十二：清明雨纷·泰坦神格</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：神格净化更强大，每个神格都蕴含着神秘专属力量，需要经过净化才能绽放！活动期间，泰坦神格净化等级的数量达到指定目标，即可获取神格净化荣誉称号！</span></div><div align="left"><span style="background-color:white ">泰坦神格净化达LV20，即可获得<span style="color:#ED7D31 ">“泰坦·新手”</span>称号，<span style="color:#ED7D31 ">永久提升2000战力</span></span></div><div align="left"><span style="background-color:white ">泰坦神格净化达LV40，即可获得<span style="color:#ED7D31 ">“泰坦·精英”</span>称号，<span style="color:#ED7D31 ">永久提升4500战力</span></span></div><div align="left"><span style="background-color:white ">泰坦神格净化达LV60，即可获得<span style="color:#ED7D31 ">“泰坦·强者”</span>称号，<span style="color:#ED7D31 ">永久提升7500战力</span></span></div><div align="left"><span style="background-color:white ">泰坦神格净化达LV80，即可获得<span style="color:#ED7D31 ">“泰坦·大师”</span>称号，<span style="color:#ED7D31 ">永久提升11000战力</span></span></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">注：高等级称号效果会替换低等级称号效果</span></span></font><div align="left"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_e3535e6de4c9ba59222cf9001ab1d1ff.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><div align="left"><b><span style="background-color:white "><span style="color:red ">活动十二：清明雨纷·时空神格</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：神格净化更强大，每个神格都蕴含着神秘专属力量，需要经过净化才能绽放！活动期间，时空神格净化等级的数量达到指定目标，即可获取神格净化荣誉称号！</span></div><div align="left"><span style="background-color:white ">时空神格净化达LV20，即可获得<span style="color:#ED7D31 ">“时空·新手”</span>称号，<span style="color:#ED7D31 ">永久提升2000战力</span></span></div><div align="left"><span style="background-color:white ">时空神格净化达LV40，即可获得<span style="color:#ED7D31 ">“时空·精英”</span>称号，<span style="color:#ED7D31 ">永久提升4500战力</span></span></div><div align="left"><span style="background-color:white ">时空神格净化达LV60，即可获得<span style="color:#ED7D31 ">“时空·强者”</span>称号，<span style="color:#ED7D31 ">永久提升7500战力</span></span></div><div align="left"><span style="background-color:white ">时空神格净化达LV80，即可获得<span style="color:#ED7D31 ">“时空·大师”</span>称号，<span style="color:#ED7D31 ">永久提升11000战力</span></span></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">注：高等级称号效果会替换低等级称号效果</span></span></font><div align="left"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_4a293dcf8ba19a871d3af414eddf3e4f.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><div align="left"><b><span style="background-color:white "><span style="color:red ">活动十三：清明雨纷·神秘商店</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><div align="left"><span style="background-color:white ">【活动内容】：神秘商店，精彩不断！</span></div><div align="left"><span style="background-color:white ">活动期间将开放神秘商店，各类进阶石，各类洗炼，神印进阶石等，<span style="color:red ">都有可能出现超低价，各种超低折扣不容错过！</span>同时，可以根据个人需要，刷新神秘商店内***的物品，每次刷新，都有可能会出现不同的物品！</span></div><div align="left"><span style="background-color:white "><span style="color:#ED7D31 ">注：神秘商店活动新服第六天后开启</span></span><span style="background-color:white "></span></div><div align="center"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_f8b27daa56dc6f36c3f8be7d6f34bc63.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /><font size="2"><span style="background-color:white "><span style="color:red "> </span></span></font><br /> <div align="left"><b><span style="background-color:white "><span style="color:red ">活动十六：清明雨纷·活动掉落</span></span></b></div><div align="left"><span style="background-color:white ">【活动时间】：2016年3月30日-2016年4月5日23:59</span></div><br /><span style="background-color:white ">【活动内容】：打BOSS，击杀怪物有隐藏掉落！大量金锤子、精灵进阶石、神印进阶石、洗练石、洗炼锁等道具！</span><br /><span style="background-color:white ">挂机将有概率掉落神石、中级属性晶石。</span><div align="center"><img class="J_post_img J_lazy" data-original="http://image.game.weibo.com/club_2c4f9450c23d7375af57ae8d2c363dc6.png" src="http://img1.app.wcdn.cn/ops/game/style/images/dev/blank.gif" border="0" onload="if(this.offsetWidth>700)this.width=700;" style="max-width:700px;" onclick="if(this.parentNode.tagName!='A') window.open(this.src);" /></div><br /><font size="2"><span style="background-color:white "><span style="color:red ">Ps:</span></span></font><font size="2"><span style="background-color:white "><span style="color:red ">图片仅供参考，具体以游戏内显示为准。</span></span></font><br /> <div align="right"> 新浪游戏《风暴大陆》运营团队</div><div align="right">2016年3月29日</div>
+                            </div>
+                            <div class="vote_wrap">
+                                                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="floor_right floor_bottom" valign="bottom">                            <div class="admin_hightlight"><i></i><span>本帖被 微游戏客服 执行锁定操作 ( 2016-03-29 )</span></div>                            <div class="fb_admin_operate">                            </div>
+                            <div class="fb_wrap">                                <div class="fb_right">
+                                    <a href="javascript:void(0)" class="share_btn share_weibo_btn" data-pid="0" data-username="微游戏客服">分享到微博</a>									<a role="button" rel="nofollow" href="http://game.weibo.com/club/like-mylike-doLike?typeid=1&fromid=1148311&csrf_token=7580d022a4becd15&oid=1005100210007" data-tid="1148311" data-pid="0" data-fid="468" class="like_btn J_like_btn" data-role="main">喜欢<span class="J_like_count" style="display:none">(0)</span></a>                                    <a href="" class="reply_btn J_read_reply J_read_reply_0">回复</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>                  </tbody>
+                </table>
+                <div class="table_bottom">
+                    <div class="l_part">
+                        <a href="http://game.weibo.com/club/bbs-post-run?fid=468&oid=1005100210001" title="发帖" class="post_btn"></a>
+                    </div>
+                    <div class="page_wrap">
+                                            </div>
+                </div>                <form method="post" id="mainForm" name="FORM"
+                      action="http://game.weibo.com/club/bbs-post-doreply?_json=1&fid=468"
+                      enctype="multipart/form-data">
+                <div class="reply_edit_box clearfix">
+                    <div class="avatar_wrap avatar_wrap_-1">
+                        <object width="180" height="180" id="AvatarMini_swf"
+                                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0"
+                                classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+                            <param name="movie" value="http://img1.app.wcdn.cn/ops/game/style/images/dev/AvatarClubLoader.swf?v=201304180944">
+                            <param name="flashvars" value="uid=5105667360&aid=-1&v=201304180944">
+                            <param name="wmode" value="Opaque">
+                            <param name="allowScriptAccess" value="always">
+                            <param name="allowFullScreen" value="true">
+                            <embed width="180" height="180"
+                                   flashvars="uid=5105667360&aid=-1&v=201304180944"
+                                   name="AvatarMini_swf"
+                                   src="http://img1.app.wcdn.cn/ops/game/style/images/dev/AvatarClubLoader.swf?v=201304180944"
+                                   wmode="Opaque" allowfullscreen="true" allowscriptaccess="always"
+                                   pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"
+                                   type="application/x-shockwave-flash">
+                        </object>
+                    </div>
+                    <div class="edit_box_wrap">
+                        <textarea name="atc_content" id="J_wind_editor" style="height:200px;width:778px;padding:0;margin:0;"></textarea>
+						<script>
+							/*
+							* 编辑器中与NextWind相关的业务配置的全局变量（注意必须是全局），这些配置变量在编辑器的插件中会调用到
+							*/
+							var Post_Type_Enum = {
+								NEW_POST:1, 	//发新帖操作
+								MODIFY:2,		//修改帖子内容
+								REPLY:3 		//回复
+							};
+						
+							
+							//发帖类型
+							var POST_TYPE = Post_Type_Enum.REPLY;
+							var EDIT_CONFIG = {
+						        sell : {'ifopen' : '0','price' : '0','income' : '0','credit' : {'2' : '微能量'}},
+						        enhide : {'ifopen' : '0','credit' : {'2' : '微能量'}},
+						        ifhide : '1'
+							};
+							var IMAGE_CONFIG = {
+								tabs : ['local','album','network'],
+								filetype : {'jpg' : '2048','png' : '2048','gif' : '2048','bmp' : '2048'},
+								uploadUrl: "http://game.weibo.com/club/bbs-upload-dorun?_json=1",//上传地址
+								postData : {fid : '468', uid : '5105667360'}
+							};
+							var ATTACH_CONFIG = {
+								ifopen : '1',
+								uploadUrl : "http://game.weibo.com/club/bbs-upload-dorun?_json=1",//上传地址
+								modifyUrl : "http://game.weibo.com/club/bbs-upload-replace?_json=1",//修改地址
+								deleteUrl : 'http://game.weibo.com/club/bbs-attach-delete?_json=1',
+						        attachnum : parseInt('10'),
+						        list :{},
+						        postData : {fid : '468', csrf_token : GV.TOKEN},
+						        remoteAttUrl:'',
+						        filetype : {'jpg' : '2048','gif' : '2048','png' : '2048','bmp' : '2048','xls' : '2048','txt' : '2048','doc' : '2048','docx' : '2048','rar' : '2048','zip' : '2048','pdf' : '2048'},
+						        atUserList:[]
+						    }
+						    //表情数据的地址
+						    var EMOTION_URL = 'http://game.weibo.com/club/emotion-index-run?type=bbs';
+						    //at好友数据地址
+						    var AT_URL = 'http://game.weibo.com/club/bbs-remind-run';
+						    //at弹窗的地址
+						    //var AT_DIALOG_URL = 'http://game.weibo.com/club/bbs-remind-friend';
+						    var AT_USER_SPACE = 'http://game.weibo.com/club/my-article-run?uid=';
+						   //应用插件配置
+							var editorApp = {
+								root: 'http://game.weibo.com/club/themes/extres/',
+								items: []							};
+						    /*
+							* 引用编辑器js并初始化编辑器
+							*/
+							Wind.use('jquery','ajaxForm', 'global','windeditor',function() {
+								var plugins = [];
+								//!TODO 假设现在没有html权限，后续需要后端输出
+								if(1/*如果没有html权限,则使用bbcode，此时需加载bbcode插件*/) {
+									plugins.push('bbcode');
+								}else {
+									if( !$.browser.msie ) {
+										plugins.push('codemirror');//否则是html权限，非IE则加载codemirror代码高亮
+									}
+								}
+								var mini = 'fontName fontSize bold italic underline foreColor justifyLeft justifyCenter justifyRight insertLink insertPhoto'.split(' ');
+								// @提醒权限
+								var REMIND_OPEN = '0',
+									VIDEO_OPNE = '0',
+									MUSIC_OPEN = '0';
+								//根据服务器端配置判断是否加载编辑器功能插件
+								var customPlugins = [];
+								//if (ATTACH_CONFIG.ifopen == 1) { customPlugins.push('insertFile'); }
+								if (VIDEO_OPNE == 1) { customPlugins.push('insertVideo'); }
+								if (MUSIC_OPEN == 1) { customPlugins.push('insertMusic'); }
+								if (EDIT_CONFIG.enhide.ifopen == 1) { customPlugins.push('insertHide'); }
+								if (EDIT_CONFIG.sell.ifopen == 1) { customPlugins.push('insertSell'); }
+								if (REMIND_OPEN == 1) { customPlugins.push('atremind'); }
+								//插入代码和openApp的插件放最后
+								plugins = plugins.concat(['insertEmoticons', 'insertPhoto'],customPlugins,['openApp']);
+								//简单模式时的插件
+								mini = mini.concat( customPlugins );
+								$('#J_wind_editor').windeditor({
+									editor_path	: window.GV.JS_ROOT + 'windeditor/',//windoweditor的路径
+									plugins		: plugins,
+									defaultToolbarMode:'mini',//编辑器的默认模式，有default和mini模式
+									toolbarSwitchable:false,
+									mini		: mini.join(' '),
+									theme		: 'buyiui',
+									localSave	: POST_TYPE === Post_Type_Enum.NEW_POST ? true : false,// 发新帖才保存本地，IE本地存储还有问题
+									iframeCss	: ['http://img.app.wcdn.cn/ops/game/style/css/dev/editor_content.css?v=201304180944'],//为了更好的可见即所得，加载阅读页的css文件
+									onInit		: function () {
+										$(this.editorDoc.body).addClass('editor_content');
+										var editor = this,
+											title_ele = $('#J_atc_title'),
+											content_ele = $('#J_wind_editor');
+//										window.onbeforeunload = function() {
+//											editor.saveContent();
+//										    var atc_title = $.trim(title_ele.val());
+//										    var title_holder = title_ele.attr('placeholder');
+//										    var atc_content = $.trim(content_ele.val());
+//										    if ((atc_title != "" && atc_title != title_holder) || (atc_content != "" && atc_content != "<br>")) {
+//												return "您正在编辑的帖子没有保存，离开会导致内容丢失，是否确定离开？";
+//											}
+//										}
+										if(POST_TYPE === Post_Type_Enum.REPLY) {
+											var quickReply = editor.localStorage.get('quickReply');
+											if(quickReply) {
+												editor.textarea.val(quickReply);
+												editor.setContent(quickReply);
+											}
+										}
+									}
+								});
+							});
+						</script>
+                    </div>
+                        <input type="hidden" value="0" name="pid"/>
+                        <input type="hidden" value="1148311" name="tid"/>
+                </div>
+                <div class="b_footer">
+                    <span><input name="reply_notice" type="checkbox" value="0" />有回复提醒我</span><button type="submit" name="Submit" class="post_sub_btn" id="J_post_sub"></button>
+                </div>
+                <input type='hidden' name='csrf_token' value='7580d022a4becd15'/></form>            </div>
+        </div>	</div> 
+	<div class="message_wrap">
+    <div class="msg_relative">
+            <div class="msg_absolute">
+                       
+            </div>        <h2 class="no_msg "><a href="javascript:void(0)" class="a_content"><em class="msg_tag"></em><span class="msg_tag_name">社区通知</span><em
+                class="msg_num"></em></a><a href="http://game.weibo.com/club/my-article-run?oid=1005100310008" title="我的主题" class="more_msg">我的主题</a></h2></a>    </div>
+</div>	<!--.main-wrap,#main End-->
+<div class="tac">
+</div>
+<footer class="footer_wrap">
+    <!--主站通底-->
+<div class="wyx-common-footer">
+	<div class="footer-main">
+    	<div class="footer-details">
+        	<div class="sort find">
+            	<h3></h3>
+                <ul>
+                	<li><a href="http://game.weibo.com" target="_blank">微游戏首页</a></li>
+                    <li><a href="http://game.weibo.com/webgame" target="_blank" title="网页游戏">网页游戏大全</a></li>
+                    <li><a href="http://game.weibo.com/mobile" target="_blank">手机游戏</a></li>
+                </ul>
+            </div>
+            <div class="sort play">
+           		<h3></h3>
+                <ul>
+                	<li><a href="http://game.weibo.com/club" target="_blank">微游社区</a></li>
+                    <li><a href="http://game.weibo.com/avatar?oid=1000105210006" target="_blank">微Me</a></li>
+                    <li><a href="http://game.weibo.com/promo?oid=1000101910000" target="_blank">游戏推广员</a></li>
+                </ul>
+            </div>
+            <div class="sort help">
+            	<h3></h3>
+                <ul>
+                	<li><a href="http://game.weibo.com/help" target="_blank">帮助中心</a></li>
+                    <li><a href="http://game.weibo.com/vip" target="_blank">VIP服务</a></li>
+                    <li><a href="http://e.weibo.com/gamekefu" target="_blank">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="sort family">
+            	<h3>
+                	<a href="http://food.weibo.com?origin=2047&oid=1000105610004" target="_blank">微美食</a> |
+                    <a href="http://vgirl.weibo.com?origin=2049&oid=1000105610006" target="_blank">微女郎</a> |
+                    <a href="http://caipiao.weibo.com?origin=2048&oid=1000105610005" target="_blank">微彩票</a>
+                </h3>
+                <div class="members">
+                	<dl>
+                    	<dt><a class="pic" target="_blank" href="http://manhua.weibo.com?origin=2044&oid=1000105610001" title="微漫画"></a></dt>
+                        <dd><a href="http://manhua.weibo.com?origin=2044&oid=1000105610001" target="_blank">微漫画</a></dd>
+                    </dl>
+                    <dl>
+                    	<dt><a class="pic" target="_blank" href="http://book.weibo.com?origin=2045&oid=1000105610002" title="微读书"></a></dt>
+                        <dd><a href="http://book.weibo.com?origin=2045&oid=1000105610002" target="_blank">微读书</a></dd>
+                    </dl>
+                    <dl>
+                    	 <dt><a class="pic" target="_blank" href="http://game.weibo.com/newqipai?oid=1000105610007" title="棋牌中心"></a></dt>
+                         <dd><a href="http://game.weibo.com/newqipai?oid=1000105610007" target="_blank">棋牌中心</a></dd>
+                    </dl>
+                </div>
+          </div>
+            <div class="sort horn">
+            	<dl class="horn-info">
+                	<dt><a href="http://e.weibo.com/weiyouxixiaolaba" target="_blank" title="微游戏小喇叭"><img src="http://img2.app.wcdn.cn/ops/game/style/images/center/footer/wyx-horn-logo.jpg?v=201212281900"/></a></dt>
+                    <dd>
+                    	<div class="horn-name"><a href="http://e.weibo.com/weiyouxixiaolaba" target="_blank">微游戏小喇叭</a></div>
+                        <p>新浪微博官方游戏平台</p>
+                        <div class="horn-flow" id="footerAddwyxHornFlow"></div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    	<!--<div class="footer-bg-box"></div>-->
+    </div>
+</div>
+<!--主站通底-->
+	<div class="footer">
+        <div class="bottom"><a href="http://game.weibo.com/help/" target="_blank">帮助</a>|<a href="http://weibo.com/weiyouxixiaolaba" target="_blank">官方微博</a>|<a href="http://open.weibo.com/game" target="_blank">微游戏开放平台</a>|<a href="http://weibo.com/pub/verified" target="_blank">微博认证及合作</a>|<a href="http://news.sina.com.cn/guide/" target="_blank">新浪网导航</a>|<a href="http://game.weibo.com/home/user/authInfo" target="_blank">未成年人家长监护</a>|<a href="http://game.weibo.com/home/user/authResultOk" target="_blank">游戏防沉迷</a>|      </div>
+        <p>
+            <span>北京微游互动网络科技有限公司 京ICP证100780号</span>
+            Copyright © 1996-2014 SINA
+        </p>
+
+        <p></p>
+    </div>
+
+
+    <script type="text/javascript">
+       var islogin = 0;            islogin = 1;          Wind.js('http://js.app.wcdn.cn/ops/game/js/center/friday/wyx.navLoad.minlist.js?v=201411281638', function(){
+              if (typeof isIndexPage == 'undefined' || !isIndexPage) {
+//                  WYX.userinfo.init({'club': 1});
+                  WYX.innerNavGlobal.init({
+                      isLogin: islogin,
+                      loginOutUrl: 'http://game.weibo.com/club',
+                      myUid: '5105667360'
+                  });
+              } else { //首页需加载avatar
+//                  WYX.userinfo.init({'avatar': 1, 'club': 1});
+                   WYX.innerNavGlobal.init({
+                      isLogin: islogin,
+                      loginOutUrl: 'http://game.weibo.com/club',
+                      myUid: '5105667360',
+                      avatar: 1
+                  });
+              }
+             
+          });
+       $WYX = {};
+       Wind.use('jquery',function() {
+  		   Wind.use('http://js.app.wcdn.cn/ops/game/js/signup/upgrade/toUserUpgrade.minlist.js?v=20131024',function(){
+  		   	upgradeIdentity.init();
+  		   });
+         Wind.use(GV.JS_ROOT+ 'gamecenter/wyx.tinyfamily.js?v='+ GV.JS_VERSION);
+       });
+       // 右下角弹窗
+       Wind.use('wyx.core',function(){
+          Wind.use('http://js.app.wcdn.cn/ops/game/js/center/common/wyx.rightdownpop.minlist.js');
+       })
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];//google 统计
+        _gaq.push(['_setAccount', 'UA-24090044-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</footer>
+
+<!--返回顶部-->
+<a href="#" rel="nofollow" role="button" id="back_top" tabindex="-1"></a>
+<div id="cloudwind_common_bottom"></div>
+
+
+</div>
+
+<textarea id="J_like_user_ta" class="dn">
+	<div id="" class="core_pop_wrap" style="position:absolute;">
+		<div class="core_pop">
+			<div class="floot_like_pop">
+				<div class="pop_top"><a href="#" class="pop_close J_like_user_close">关闭</a>最新喜欢</div>
+				<div class="pop_cont">
+					<ul class="cc J_like_user_list"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</textarea>
+<script>
+var TID = '1148311';
+var verify = false;
+Wind.use(GV.JS_ROOT+ 'pages/bbs/clubContent.js?v='+ GV.JS_VERSION);// 图片懒加载
+Wind.js(GV.JS_ROOT + 'util_libs/lazyload.js?v=' + GV.JS_VERSION, function(){
+	$("img.J_lazy").lazyload({
+        effect: 'fadeIn'
+    });
+});</script>
+ 
+</body>
+</html>

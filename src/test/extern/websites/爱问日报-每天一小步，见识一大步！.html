@@ -1,0 +1,326 @@
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script type="text/javascript">
+	var _href = window.location.href;var _h = _href.replace("http://","http://m.");
+	document.write("<meta http-equiv=\"mobile-agent\" content=\"format=html5;url="+_h+"\" />");
+	document.write("<meta http-equiv=\"mobile-agent\" content=\"format=xhtml;url="+_h+"\" />");
+	</script>
+	<meta name="applicable-device"content="pc">
+	<meta http-equiv="Cache-Control" content="no-transform " />
+	<title>爱问日报-每天一小步，见识一大步！</title>
+	<link rel="stylesheet" type="text/css" href="http://static.iaskgo.com/v20160330/css/new.base.min.css">
+	<link rel="stylesheet" type="text/css" href="http://static.iaskgo.com/v20160330/css/new.daily.min.css" />
+	<script type='text/javascript' src='http://static.iaskgo.com/v20160330/js/common/jquery-1.8.2.min.js'></script>
+	<script type="text/javascript" src="http://static.iaskgo.com/v20160330/js/common/new.common.min.js"></script>
+	<script>
+	window.onload = function () {
+		index = 15;
+		if(index==0){
+			$("#show").html("没有更多内容了!");
+		}
+		num = 16
+		page = 1;//初始化分页,默认第一页
+		b = true;
+		 var scrollFunc = function (e) {
+		        e = e || window.event;
+		        if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件             
+		            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {//判断滚动条是否在最底部
+		            		 window.event.cancelBubble = true;
+		    		    	page++;
+		    		        high = $("#dailyList").height()//div高度
+		    		        $.ajax({  
+		    		        	     url:'/d/j-'+page+'.html?type=ajax',// 跳转到 action  
+		    		        	     type:'post',  
+		    		        	     cache:false,  
+		    		        	     success:function(data) {
+		    		        	    	 if(data=="empty"){
+		    		        	    		 $(" .tip_more").html("没有更多内容了!")
+		    		        	    	 }else{
+		    		        	    	 str = "";
+		    		        	    	 var i = eval("("+data+")");
+		    		        	    	 for(var l=0;l<i.length;l++){
+		    			        	    		if(num%3==0){
+		    				        	    		h=num/3;//所在行数
+		    				        	    	}else{
+		    				        	    		h=((num-(num%3))/3)+1
+		    				        	    	}
+		    				        	    	if(num%3==1){
+		    				        	    		left='0';
+		    				        	    	}if(num%3==2){
+		    				        	    		left='342';
+		    				        	    	}if(num%3==0){
+		    				        	    		left='684';
+		    				        	    	}
+		    				        	    	if(i[l].title.length>32){
+		    				        	    		i[l].title=i[l].title.substring(0,28)+"..."
+		    				        	    	}
+		    				        	    	f = h-1
+		    				        	    	t=Number(f)*Number(366)
+		    				        	    	num++;
+		    				        	    	if(i[l].choicenessPicURL !=null && i[l].choicenessPicURL != ''){
+		    				        	    		i[l].choicenessPicURL = i[l].choicenessPicURL
+		    				        	    	}else{
+		    				        	    		i[l].choicenessPicURL = i[l].programaPicUrl
+		    				        	    	}
+		    				        	    	str = str + '<a href="/d-b/'+i[l].id+'.html" target="_blank" style="left: '+left+'px; top: '+t+'px;"><div><img src='+i[l].choicenessPicURL+' height="260" width="260"></div><p class="">'+i[l].title+'</p></a>';
+		    		        	    	 }
+		    		        	    	 $("#dailyList").append(str);
+		    		        	    	 $("#dailyList").height(h*366)
+		    		        	    	 } 
+		    		        	      },  
+		    		        	      error : function() {  
+		    		        	           alert("异常！");  
+		    		             }  
+		    		      });
+		            }
+		        }else if(e.detail){//火狐
+		        	 if ($(document).scrollTop() + $(window).height() >= $(document).height()) {//判断滚动条是否在最底部
+		        				e.cancelBubble = true;
+			    		    	page++;
+			    		        high = $("#dailyList").height()//div高度
+			    		        $.ajax({  
+			    		        	     url:'/d/j-'+page+'.html?type=ajax',// 跳转到 action  
+			    		        	     type:'post',  
+			    		        	     cache:false,  
+			    		        	     success:function(data) {
+			    		        	    	 if(data=="empty"){
+			    		        	    		 $(" .tip_more").html("没有更多内容了!")
+			    		        	    	 }else{
+			    		        	    	 str = "";
+			    		        	    	 var i = eval("("+data+")");
+			    		        	    	 for(var l=0;l<i.length;l++){
+			    			        	    		if(num%3==0){
+			    				        	    		h=num/3;//所在行数
+			    				        	    	}else{
+			    				        	    		h=((num-(num%3))/3)+1
+			    				        	    	}
+			    				        	    	if(num%3==1){
+			    				        	    		left='0';
+			    				        	    	}if(num%3==2){
+			    				        	    		left='342';
+			    				        	    	}if(num%3==0){
+			    				        	    		left='684';
+			    				        	    	}
+			    				        	    	if(i[l].title.length>32){
+			    				        	    		i[l].title=i[l].title.substring(0,28)+"..."
+			    				        	    	}
+			    				        	    	f = h-1
+			    				        	    	t=Number(f)*Number(366)
+			    				        	    	num++;
+			    				        	    	if(i[l].choicenessPicURL !=null && i[l].choicenessPicURL != ''){
+			    				        	    		i[l].choicenessPicURL = i[l].choicenessPicURL
+			    				        	    	}else{
+			    				        	    		i[l].choicenessPicURL = i[l].programaPicUrl
+			    				        	    	}
+			    				        	    	str = str + '<a href="/d-b/'+i[l].id+'.html" target="_blank" style="left: '+left+'px; top: '+t+'px;"><div><img src='+i[l].choicenessPicURL+' height="260" width="260"></div><p class="">'+i[l].title+'</p></a>';
+			    		        	    	 }
+			    		        	    	 $("#dailyList").append(str);
+			    		        	    	 $("#dailyList").height(h*366)
+			    		        	    	 } 
+			    		        	      },  
+			    		        	      error : function() {  
+			    		        	           alert("异常！");  
+			    		             }  
+			    		      });
+			            }
+		        }
+		    }
+		    if (document.addEventListener) {
+		        document.addEventListener('DOMMouseScroll', scrollFunc, false);
+		    }
+		    window.onmousewheel = document.onmousewheel = scrollFunc;  
+     }
+    function addEvent(obj,xEvent,fn) {
+        if(obj.attachEvent){
+            obj.attachEvent('on'+xEvent,fn);
+        }else{
+            obj.addEventListener(xEvent,fn,false);
+        }
+     }
+	</script>
+</head>
+<body class="bgf3">
+    <div class="header-con">
+        <div class="header pw cf">
+            <h1 class="logo fl"><a href="http://iask.sina.com.cn/d/index.html" target="_blank"><img src="http://static.iaskgo.com/v20160330/images/newDaily/logo_daily.png"></a></h1><h2 class="fl">日报</h2>
+        </div>
+    </div>
+    <div id="test">
+        <div class="nav pw cf">
+            <h3 class="fl">全部内容</h3><div class="fr"><a href="/d/j-1.html" class="cur">精选</a><a href="/dt/j-1.html">全部内容</a><a href="/dt/tg.html">我要投稿</a></div>
+        </div>  
+        <div class="main">
+             <div id="dailyList" class="list-con" >
+             
+                    <a href="/d-b/56f8c7930cf24697f3b65bc7.html" target="_blank" id="0"><div><img src="http://pic.wenwo.com/fimg/2401517790_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	为什么说“最毒妇人心”？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f8e7dd0cf2b885491f71bc.html" target="_blank" id="1"><div><img src="http://pic.wenwo.com/fimg/2019718860_270.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	海水会越来越咸还是越来越淡？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f4ec0c0cf24697f3b627f9.html" target="_blank" id="2"><div><img src="http://pic.wenwo.com/fimg/5544518856_270.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	一天之中什么时候最适合拉粑粑？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f3b5790cf24697f3b60cb2.html" target="_blank" id="3"><div><img src="http://pic.wenwo.com/fimg/2876318852_270.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	电水壶真的会致记忆力衰退吗？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56ea5ff70cf230ced40bfda4.html" target="_blank" id="4"><div><img src="http://pic.wenwo.com/fimg/3595418267_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	晒步数，真的是步数越多越好吗？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56d53bb00cf2f06ba241d6ad.html" target="_blank" id="5"><div><img src="http://pic.wenwo.com/fimg/932717803_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	为什么自己胳肢自己不笑？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56e114030cf2c23878514e94.html" target="_blank" id="6"><div><img src="http://pic.wenwo.com/fimg/8324118177_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	猫为什么会埋大便？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56e26d990cf2c2387852d571.html" target="_blank" id="7"><div><img src="http://pic.wenwo.com/fimg/1558218174_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	为什么英国的法官和律师要戴假发？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f265c20cf24697f3b5c5de.html" target="_blank" id="8"><div><img src="http://pic.wenwo.com/fimg/8362918162_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	白酒真的会"越陈越香"吗？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f4b5260cf24697f3b627f3.html" target="_blank" id="9"><div><img src="http://pic.wenwo.com/fimg/164818157_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	井盖，你为什么是圆的？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56e7bbdc0cf277904a07f671.html" target="_blank" id="10"><div><img src="http://pic.wenwo.com/fimg/3192017796_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	蜻蜓为什么喜欢点水？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f8ea6e0cf2b885491f71bf.html" target="_blank" id="11"><div><img src="http://pic.wenwo.com/fimg/5663617777_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	为什么有些人一喝牛奶就拉肚子？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56d7d23d0cf292e8ebad7287.html" target="_blank" id="12"><div><img src="http://pic.wenwo.com/fimg/25117878_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	凉茶应该凉着喝，还是热着喝？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f212d30cf24341642753c8.html" target="_blank" id="13"><div><img src="http://pic.wenwo.com/fimg/4166017863_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	鱼也会被水淹死吗？
+                    
+                    </p></a>
+              
+                    <a href="/d-b/56f388530cf24697f3b5f9ae.html" target="_blank" id="14"><div><img src="http://pic.wenwo.com/fimg/6920017793_260.jpg" height="260" width="260"></div><p class="">
+                    
+                    	
+                    	关公为什么是大红脸？
+                    
+                    </p></a>
+                               
+            </div>
+            <div id="show" class="tip_more">正在加载更多内容<i class="ico-more"></i></div>           
+        </div>
+    </div>
+    <div class="footer-con">
+    	<div class="footer pw">
+        	<h2 class="title-h2">
+            	友情链接
+            	<div class="qq-con">
+                	<div class="qq-item">
+                    	<span>友链QQ</span>
+                        <span>1757623074</span>
+                    </div>
+                    <div class="qq-item">
+                    	<span>合作QQ</span>
+                        <span>903213109</span>
+                    </div>
+                </div>
+            </h2>
+            <div class="firent-link">
+                <a href="http://m.iask.sina.com.cn/" target="_blank">爱问知识人</a>
+				<a href="http://soft.hao123.com/" target="_blank">hao123软件下载</a>
+				<a href="http://www.docin.com/" target="_blank">豆丁网</a>
+				<a href="http://mydown.yesky.com/" target="_blank">天极下载</a>
+				<a href="http://dl.pconline.com.cn/" target="_blank">太平洋软件下载</a>
+				<a href="http://xiazai.zol.com.cn/" target="_blank">中关村下载</a>
+				<a href=" http://www.yibaoxian.com/" target="_blank">车险报价</a>
+				<a href="http://ask.39.net/" target="_blank">39问医生</a>
+				<a href="http://www.haowj.com.cn/" target="_blank">好万家养生网</a>
+				<a href="http://www.kuwo.cn/" target="_blank">酷我音乐</a>
+				<a href="http://www.120ask.com/" target="_blank">有问必答网 </a>
+				<a href="http://www.gamersky.com/" target="_blank">游民星空</a>
+				<a href="http://www.xiazaiba.com/" target="_blank">软件下载</a>
+				<a href="http://www.hc360.com/" target="_blank">慧聪网</a>
+				<a href="http://myqzd.com/" target="_blank">全智动 </a>
+				<a href="http://www.baike.com/" target="_blank">互动百科</a>
+				<a href="http://www.chazidian.com/" target="_blank">查字典</a>
+				<a href="http://www.cr173.com" target="_blank">西西软件园</a>
+				<a href="http://m.yz2.sm.cn/s?from=wa277580" target="_blank">神马搜索</a>
+            </div>
+            <div class="copy-con">
+            	<p class="footer-nav"><a href="http://iask.sina.com.cn/toa/" target="_blank">关于我们</a><a href="http://iask.sina.com.cn/toe/" target="_blank">免责条款</a><a href="http://iask.sina.com.cn/tos/" target="_blank">意见反馈</a></p>
+                <p class="copy-txt">Copyright &copy; 1996-2016 SINA Corporation, All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+    <div class="topbar-wrap">
+    	<div id="backToTop">
+        	<a href="javascript:void(0)"><span>返回<br>顶部</span></a>
+        </div>
+    	<ul class="cf">
+            <li><a class="bg-topbar-2" href="#"><span>帮助</span></a></li>
+            <li><a class="bg-topbar-3" href="#"><span>意见<br>反馈</span></a></li>
+            <li><a class="bg-topbar-4" href="#"><span>手机版</span></a></li>
+        </ul>
+    </div>
+
+<div style="display: none;">
+	<script src="http://s11.cnzz.com/stat.php?id=1255722243&web_id=1255722243" type="hidden" language="JavaScript"></script>
+</div>
+
+</body>
+</html>

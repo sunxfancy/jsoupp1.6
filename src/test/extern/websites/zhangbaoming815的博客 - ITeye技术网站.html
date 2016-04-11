@@ -1,0 +1,692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>zhangbaoming815的博客 - ITeye技术网站</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="zhangbaoming815 " />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/open_search.xml" title="ITeye" />
+    <link href="/rss" rel="alternate" title="" type="application/rss+xml" />
+    <link href="http://www.iteye.com/stylesheets/blog.css?1459332234" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://www.iteye.com/stylesheets/themes/blog/blue.css?1448702469" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://www.iteye.com/javascripts/application.js?1448702469" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      </head>
+  <body>
+    <div id="header">
+      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display:none;">
+    <a target="_blank" href="http://job.iteye.com/iteye">知识库</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+
+      <div id="user_nav">
+      <a href="/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="/login">登录</a>
+    <a href="/signup" class="nobg">注册</a>
+  </div>
+
+    </div>
+
+    <div id="page">
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="/">zhangbaoming815</a></h1>
+        </div>
+        <div id='fd'></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class='blog_navbar_for'><a href="http://zhangbaoming815.iteye.com"><strong>博客</strong></a></li>
+            <li ><a href="/weibo">微博</a></li>
+            <li ><a href="/album">相册</a></li>
+            <li ><a href="/link">收藏</a></li>
+            <li ><a href="/blog/guest_book">留言</a></li>
+            <li ><a href="/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="/blog/search" method="get">
+              <input class="search_text" id="query" name="query" style="margin-left: 10px;width: 110px;" type="text" value="" />
+              <input class="submit_search" type="submit" value="" />
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+<div class="blog_main_title">
+  <a href="/rss" target="_blank" style="float:right; margin-left:10px;"><img alt="Rss" src="http://www.iteye.com/images/rss.png?1448702469" /></a>
+  
+  <span>文章列表</span> 
+  <div id="fd"></div>  
+</div>
+
+
+  <div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1921665'>hadoop源码解析copyFromLocal</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/232851">hadoop</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/hadoop">hadoop</a><a href="http://www.iteye.com/blogs/tag/copyFromLocal">copyFromLocal</a><a href="http://www.iteye.com/blogs/tag/%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90">源码解析</a>&nbsp;</div>
+  </div>
+  <div class="blog_content">
+    
+好奇分布式存储是怎么实现的，如何能将一个文件存储到HDFS上，HDFS的文件目录只是一个空壳，真正存储数据的是DataNode，那么当我们把一个文件放到HDFS上的时候，集群都做了哪些工作呢 ?也就是执行命令copyFromLocal这个命令都做了哪些操作
+首先命令肯定对应着源码里面的某一个方法，这个方法是FsShell类的copyFromLocal，代码：
+    void copyFromLocal(Path[] srcs, String dstf) throws IOException
+    {
+        // 创建目标路径
+        Path dstPath  ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-08-07 17:51</li>
+      <li>浏览 881</li>
+      <li><a href='/blog/1921665#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1921229'>InetSocketAddress的使用</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/234321">java</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/nio">nio</a><a href="http://www.iteye.com/blogs/tag/InetSocketAddress">InetSocketAddress</a><a href="http://www.iteye.com/blogs/tag/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1">网络通信</a></div>
+  </div>
+  <div class="blog_content">
+    
+使用NIO的InetSocketAddress建立网络通信非常方便，包括服务端和客户端：
+服务端创建一个ServerSocketChannel，等待客户端发起链接请求，下面的例子比较简单，开启服务端等待客户端请求，接收到客户端的连接后，给客户端发送数据。
+ 
+Server段代码：
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.nio.channels.ServerSocketChannel;
+import java.n ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-08-07 09:36</li>
+      <li>浏览 1913</li>
+      <li><a href='/blog/1921229#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1917168'>scala的map类型</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/287339">scala</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/scala">scala</a><a href="http://www.iteye.com/blogs/tag/map">map</a></div>
+  </div>
+  <div class="blog_content">
+    
+scala的map数据类型类似自己在草稿上随手画出，很形象地表达了人的思想，容易理解，使用起来也非常简单，先看如何创建一个map对象：
+val products = Map(&quot;hjunetcn&quot; -&gt; 20500015, 
+  		&quot;hkbicicom&quot; -&gt; 20400010,
+  		&quot;hkceducn&quot; -&gt; 20500005,
+  		&quot;hl1314com&quot; -&gt;	20800004)
+由map的键指向值，keyValue键值对，非常形象地表达了人为的思想
+获取map的值 ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-08-01 13:11</li>
+      <li>浏览 518</li>
+      <li><a href='/blog/1917168#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1916277'>hadoop中LineReader的readLine方法解析</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/232851">hadoop</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/hadoop">hadoop</a><a href="http://www.iteye.com/blogs/tag/LineReader">LineReader</a><a href="http://www.iteye.com/blogs/tag/readLine">readLine</a>&nbsp;</div>
+  </div>
+  <div class="blog_content">
+    
+Hadoop默认的读取一条数据，使用的就是LineReader的readLine方法，这个方法具体怎么工作，可以直接看源码，因为比较复杂，所以加上一些注释：
+    /**
+     * Read one line from the InputStream into the given Text. A line can be
+     * terminated by one of the following: '\n' (LF) , '\r' (CR), or '\r\n'
+     * (CR+LF). EOF also terminates an otherwise untermi ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-07-31 18:34</li>
+      <li>浏览 767</li>
+      <li><a href='/blog/1916277#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1916218'>scala读取文件</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/287339">scala</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/scala">scala</a><a href="http://www.iteye.com/blogs/tag/scala%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">scala读取文件</a></div>
+  </div>
+  <div class="blog_content">
+    
+scala读取文件非常的简单，使用的都是scala模板提供的静态函数，打开一个文件的 IO 流就一句话，比Java的数据流包装简单：
+val src = scala.io.Source.fromFile(&quot;E:/JavaObject/Url_Product_Classification.txt&quot;)
+ 得到数据IO流以后可以使用src.getLines()函数得到Iterator，后面就与Java的一样，循环获取：
+val iter = src.getLines()
+while(iter.hasNext)
+{
+    println(iter.next())
+ ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-07-31 16:41</li>
+      <li>浏览 1351</li>
+      <li><a href='/blog/1916218#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1915782'>scala初识</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/287339">scala</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/scala%E3%80%81scala%20eclipse%E3%80%81scala%E5%AE%89%E8%A3%85">scala、scala eclipse、scala安装</a></div>
+  </div>
+  <div class="blog_content">
+    
+scala是一门混合了函数和面向对象的语言，关于scala的详细介绍在scala的官网上有详细的介绍。
+参考文档：http://www.scala-lang.org/old/node/25
+ 
+scala程序运行在JVM上，相信熟悉Java的人，这个很容易就能配置，scala的配置包可以从上面的网站上下载，在机器的环境变量里配置就可以使用，为了能够更好地进行scala的开发，scala提供了相应的SDK，安装了scala SDK插件的eclipse在官网上也可以下载，下载页面为：
+http://scala-ide.org/download/sdk.html
+ 
+下面使用eclips ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-07-30 21:35</li>
+      <li>浏览 501</li>
+      <li><a href='/blog/1915782#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1850235'>hadoop新版本多文件输出</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/232851">hadoop</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/hadoop">hadoop</a><a href="http://www.iteye.com/blogs/tag/MultipleOutputs">MultipleOutputs</a><a href="http://www.iteye.com/blogs/tag/%E5%A4%9A%E6%96%87%E4%BB%B6%E8%BE%93%E5%87%BA">多文件输出</a></div>
+  </div>
+  <div class="blog_content">
+    
+基于Hadoop 1.0.1版本编写，在hadoop 1.0.1 + 版本应该都可以使用
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hado ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-04-19 15:24</li>
+      <li>浏览 760</li>
+      <li><a href='/blog/1850235#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1843802'>hadoop实现自定义的数据类型</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/232851">hadoop</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/hadoop">hadoop</a><a href="http://www.iteye.com/blogs/tag/mrunit">mrunit</a><a href="http://www.iteye.com/blogs/tag/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">自定义数据类型</a></div>
+  </div>
+  <div class="blog_content">
+    
+关于自定义数据类型，http://book.douban.com/annotation/17067489/ 一文中给出了一个比较清晰的说明和解释。
+以wordCount为例子
+定义自己的数据类型Http类
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.apache.hadoop.io.WritableComparable;
+
+public class Http implements WritableComparable&lt;Http&g ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-04-08 14:59</li>
+      <li>浏览 1326</li>
+      <li><a href='/blog/1843802#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1817821'>Log4j配置信息</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/234321">java</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/log4j%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">log4j输出格式</a><a href="http://www.iteye.com/blogs/tag/log4j%20appender">log4j appender</a></div>
+  </div>
+  <div class="blog_content">
+    
+log4j的日志输出格式：
+　   %m   输出代码中指定的消息
+　　%p   输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL 
+　　%r   输出自应用启动到输出该log信息耗费的毫秒数 
+　　%c   输出所属的类目，通常就是所在类的全名 
+　　%t   输出产生该日志事件的线程名 
+　　%n   输出一个回车换行符，Windows平台为“/r/n”，Unix平台为“/n” 
+　　%d   输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy MMM dd HH:mm:ss , SSS}，输出类似：2002年1 ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2013-02-28 15:19</li>
+      <li>浏览 311</li>
+      <li><a href='/blog/1817821#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/web">Web前端</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1722579'>使用MapReduce往Hbase插入数据</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/232851">hadoop</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/mapreduce">mapreduce</a><a href="http://www.iteye.com/blogs/tag/hbase">hbase</a></div>
+  </div>
+  <div class="blog_content">
+    import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.map ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2012-11-11 21:11</li>
+      <li>浏览 1346</li>
+      <li><a href='/blog/1722579#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1678920'>php 删除mysql表中的数据</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/247969">php</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/mysql">mysql</a><a href="http://www.iteye.com/blogs/tag/php">php</a><a href="http://www.iteye.com/blogs/tag/delete">delete</a><a href="http://www.iteye.com/blogs/tag/%E5%88%A0%E9%99%A4">删除</a></div>
+  </div>
+  <div class="blog_content">
+    php 删除mysql表中的数据
+ 
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Delete a Record from MySQL Database&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+	if(isset($_POST['delete']))
+	{
+	$dbhost = 'localhost:3306';
+	$dbuser = 'root';
+	$dbpass = 'root';
+	$conn = mysql_connect($dbhost, $dbuser, $d ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2012-09-14 20:19</li>
+      <li>浏览 599</li>
+      <li><a href='/blog/1678920#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1678918'>php更新数据库信息</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/247969">php</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/mysql">mysql</a><a href="http://www.iteye.com/blogs/tag/php">php</a><a href="http://www.iteye.com/blogs/tag/update">update</a><a href="http://www.iteye.com/blogs/tag/%E6%9B%B4%E6%96%B0">更新</a>&nbsp;</div>
+  </div>
+  <div class="blog_content">
+    php更新数据库信息
+ 
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Update a Record in MySQL Database&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+	if(isset($_POST['update']))
+	{
+	$dbhost = 'localhost:3306';
+	$dbuser = 'root';
+	$dbpass = 'root';
+	$conn = mysql_connect($dbhost, $dbuser, $dbpass); ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2012-09-14 20:02</li>
+      <li>浏览 419</li>
+      <li><a href='/blog/1678918#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1678902'>php 从mysql中读取数据</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/247969">php</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/mysql">mysql</a><a href="http://www.iteye.com/blogs/tag/php">php</a><a href="http://www.iteye.com/blogs/tag/select">select</a><a href="http://www.iteye.com/blogs/tag/%E6%9F%A5%E8%AF%A2">查询</a>&nbsp;</div>
+  </div>
+  <div class="blog_content">
+    php 从mysql中读取数据
+ 
+&lt;?php
+	$dbhost = 'localhost:3306';
+	$dbuser = 'root';
+	$dbpass = 'root';
+	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+	if(! $conn )
+	{
+	  die('Could not connect to mysql');
+	}
+	
+	echo &quot;connected successfully!&quot;;
+	$sql = 'SELECT emp_id, emp_name, emp_sa ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2012-09-14 19:43</li>
+      <li>浏览 868</li>
+      <li><a href='/blog/1678902#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1678899'>php 往mysql中插入数据</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/247969">php</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/mysql">mysql</a><a href="http://www.iteye.com/blogs/tag/php">php</a><a href="http://www.iteye.com/blogs/tag/insert">insert</a></div>
+  </div>
+  <div class="blog_content">
+    php 往mysql中插入数据
+
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Add New Record in MySQL Database&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+	if(isset($_POST['add']))
+	{
+	$dbhost = 'localhost:3306';
+	$dbuser = 'root';
+	$dbpass = 'root';
+	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+ ...
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2012-09-14 19:36</li>
+      <li>浏览 610</li>
+      <li><a href='/blog/1678899#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3><a href='/blog/1678578'>PHP 连接mysql数据库</a></h3>
+    <ul class='blog_categories'><strong>博客分类：</strong> <li><a href="/category/247969">php</a></li> </ul>
+    <div class='news_tag'><a href="http://www.iteye.com/blogs/tag/php">php</a><a href="http://www.iteye.com/blogs/tag/mysql">mysql</a></div>
+  </div>
+  <div class="blog_content">
+    PHP 连接mysql数据库
+
+
+&lt;?php
+	$dbhost = 'localhost:3306';
+	$dbuser = 'root';
+	$dbpass = 'root';
+	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+	if(! $conn )
+	{
+	  echo 'Connect failure';
+	}
+	echo 'Connected successfully';
+	mysql_close();
+?&gt;
+ 
+  </div>
+  <div class="blog_bottom">
+    <ul>
+            <li class='date'>2012-09-14 15:12</li>
+      <li>浏览 352</li>
+      <li><a href='/blog/1678578#comments'>评论(0)</a></li>
+      
+      
+      <li class="last">分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>    </ul>
+  </div>
+</div>
+
+
+
+
+<div class="pagination"><span class="disabled prev_page">&laquo; 上一页</span> <span class="current">1</span> <a href="/?page=2" rel="next">2</a> <a href="/?page=3">3</a> <a href="/?page=4">4</a> <a href="/?page=2" class="next_page" rel="next">下一页 &raquo;</a></div>
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href='http://zhangbaoming815.iteye.com'><img alt="zhangbaoming815的博客" class="logo" src="http://www.iteye.com/upload/logo/user/703908/904a8a0e-4ac5-34e9-909c-8566cf31c89e.jpg?1341496792" title="zhangbaoming815的博客: " width="" /></a></div>
+  <div id="blog_owner_name">zhangbaoming815</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 53960 次</li>
+              <li>性别: <img alt="Icon_minigender_1" src="http://www.iteye.com/images/icon_minigender_1.gif?1448702469" title="男" /></li>
+              <li>来自: 北京</li>
+              <li><img src='/images/status/offline.gif'/></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style='font-weight:normal;font-size:12px;padding-left:30px;'><a href="/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://ncztc.iteye.com' target='_blank'><img alt="ncztc的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="ncztc的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://ncztc.iteye.com' target='_blank' title='ncztc'>ncztc</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://tangchensr.iteye.com' target='_blank'><img alt="tangchensr的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="tangchensr的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://tangchensr.iteye.com' target='_blank' title='tangchensr'>tangchensr</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://15086952.iteye.com' target='_blank'><img alt="今晚不睡觉的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="今晚不睡觉的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://15086952.iteye.com' target='_blank' title='今晚不睡觉'>今晚不睡觉</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href='http://kfqkfy.iteye.com' target='_blank'><img alt="kfqkfy的博客" class="logo" src="http://www.iteye.com/images/user-logo-thumb.gif?1448702469" title="kfqkfy的博客: " width="48px" /></a></div>
+                <div class="left"><a href='http://kfqkfy.iteye.com' target='_blank' title='kfqkfy'>kfqkfy</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="/">全部博客 (55)</a></li>
+                
+                  <li><a href="/category/230132">alogrithms (1)</a></li>
+                
+                  <li><a href="/category/231485">db4o (5)</a></li>
+                
+                  <li><a href="/category/231590">File (7)</a></li>
+                
+                  <li><a href="/category/231829">DB (1)</a></li>
+                
+                  <li><a href="/category/232851">hadoop (14)</a></li>
+                
+                  <li><a href="/category/233404">JavaCard (1)</a></li>
+                
+                  <li><a href="/category/234321">java (9)</a></li>
+                
+                  <li><a href="/category/239375">android (1)</a></li>
+                
+                  <li><a href="/category/239679">J2EE (1)</a></li>
+                
+                  <li><a href="/category/241758">html5 (3)</a></li>
+                
+                  <li><a href="/category/242545">script (2)</a></li>
+                
+                  <li><a href="/category/246329">ibatis (2)</a></li>
+                
+                  <li><a href="/category/247969">php (5)</a></li>
+                
+                  <li><a href="/category/287339">scala (3)</a></li>
+                
+              </ul>
+            </div>
+            <div id='month_blogs'>
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="/blog/post">我的论坛</a> (2)
+                </li>
+                <li><a href="/blog/answered_problems">我的问答</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="/blog/monthblog/2013-08">2013-08</a> (3)</li>
+                
+                  <li><a href="/blog/monthblog/2013-07">2013-07</a> (3)</li>
+                
+                  <li><a href="/blog/monthblog/2013-04">2013-04</a> (2)</li>
+                
+                <li><a href="/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href='http://happyDear.iteye.com' target='_blank' title='happyDear'>happyDear</a>： 
+                  [flash=200,200][url][img][list] ...<br />
+                  <a href="/blog/1578436#bc2348619">java读取txt文件</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr/>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br />
+          &copy; 2003-2016 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script>
+
+<script src="http://csdnimg.cn/pubfooter/js/tracking.js?version=20130923164150" type="text/javascript"></script>
+
+    
+    
+  </body>
+</html>

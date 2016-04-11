@@ -1,0 +1,1489 @@
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head><script type="text/javascript">var _href = window.location.href;var _h = _href.replace("http://","http://m.");document.write("<meta http-equiv=\"mobile-agent\" content=\"format=html5;url="+_h+"\" />");document.write("<meta http-equiv=\"mobile-agent\" content=\"format=xhtml;url="+_h+"\" />");</script><meta name="applicable-device"content="pc"><meta http-equiv="Cache-Control" content="no-transform " />
+	<meta charset="utf-8" />
+	<title>用java语言怎么读取一个文件夹里的同类文件!比如说我想循环读取 - 爱问知识人</title>
+	<meta name="description" content="用java语言怎么读取一个文件夹里的同类文件!比如说我想循环读取一个文件夹里的所有.txt文件应该怎么办??：import.*;publicclasstesti?  "/>
+	<meta name="keywords" content="JAVA相关 用java语言怎么读取一个文件夹里的同类文件!比如" />
+	<link rel="canonica" href="http://iask.sina.com.cn/b/6656614.html" />
+	<link rel="stylesheet" type="text/css" href="http://static.iaskgo.com/v20160323/css/reset.min.css?v1.1.5" />
+	<script type='text/javascript' src="http://static.iaskgo.com/v20160323/js/common/jquery-1.8.2.min.js"></script>
+	
+		
+		
+		
+		
+		
+		
+			<link rel="stylesheet" type="text/css" href="http://static.iaskgo.com/v20160323/css/detail.min.css" />
+		
+	
+	<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/common/iask.min.js?v.1.1"></script>
+	<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/common/Tslide2.0.min.js"></script>
+	<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/common/tscroll.min.js"></script>
+	<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/common/Kn.min.js"></script>
+	<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/common/wenwo_common_function.min.js"></script>
+	<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+</head>
+<body>
+<input type="hidden" id="moreCid" value=""/>
+<input type="hidden" id="pageTemplate" value=""/>
+
+	
+	
+	
+	
+	
+	
+		
+
+
+<link href="favicon.ico" type="image/x-icon" rel=icon>
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+<script type='text/javascript' src='http://static.iaskgo.com/v20160323/js/common/common_header_stat.min.js'></script>
+<script type="text/javascript">
+function toTopScroll(){}
+var href = encodeURIComponent(window.location.href);
+$(function(){
+	getLoginInfo();
+});
+function getLoginInfo(){
+	$.get("/user/checkLogin",function(data){
+		var json = null;
+		try{json = $.parseJSON(data);}catch (e) {};
+		var $loginbox = $(".login_bar");
+		var html = "";
+		if(json.succ == "Y"){
+			$("#checkuserflag").attr("isLogin",true);
+			$("#checkuserflag").attr("userId",json.jsonData.userId);
+			$("#ask_tab").attr("uid",json.jsonData.userId);
+			html = "<a class='login_on' href='/user/profile/"+json.jsonData.userId+"'>";
+			html+= json.jsonData.nickName+"</a>|<a href='/logout'>退出</a>";
+		}else{
+			$("#checkuserflag").attr("isLogin",false);
+			html ="<a class='login_off' href='/login?source="+href+"'>登录/注册</a>";
+		}
+		$loginbox.html(html);
+	});
+}
+$(document).ready(function(){
+	$(".dialog1 h3 span, .opacity").click(function(){
+		$("#checkuserflag").hide();
+		$(".opacity").hide();
+		$(".dialog1, .dialog2").removeClass("current").hide();
+	});	
+});
+function checkLogin(){
+	if($("#checkuserflag").attr("isLogin") == "true"){
+		return true;
+	}else{
+		$(".opacity").show();
+			$("#checkuserflag").show();
+			$(".dialog1").addClass("current").show();
+			dialog_scroll(".fixed");
+			$(window).scroll();
+		return false;
+	}
+}
+function dialog_scroll(elem){
+	var selector=$(elem);
+	var hcenter=$(selector).children().outerWidth();
+	var vdialog=$(selector).children(".current").outerHeight()/2;
+	var vwindow=$(window).height()/2;
+	var vcenter=vwindow-vdialog;
+	$(selector).parent().css("width",hcenter);
+	$(selector).css({"top":vcenter});
+	$(window).scroll(function(){
+		voffset = vcenter + $(document).scrollTop() + "px";
+		$(selector).animate({top: voffset}, {duration: 500, queue: false});
+	});
+}
+</script>
+<div class="opacity" style="display: none"></div>
+<div class="wrap_fixed" style="display: none" id="checkuserflag" isLogin="" userId="" style="width: ">
+	<div class="fixed">
+		<div class="dialog1">
+		    <h3>
+		        <span></span>
+		    </h3>
+			<p><em></em>您还未登陆，请登录后操作！</p>
+		</div>
+	</div>
+</div>
+
+<div class="nav_wrap">
+	<div class="nav_bar wrap">
+		<ul class="nav_list fl clearfix c0e1-a">
+			<li class="web_logo"><a href="/"><img src="http://static.iaskgo.com/v20160323/images/logo2.png" alt="爱问知识人-iask" /></a></li>
+			<li><a href="/">首页</a></li>
+			<li class="question_nav current">
+				<a href="javascript:;" class="active">问题库</a>
+				<div class="question_fl clearfix">
+					<ul class="fl">
+						<li><a href="/c/77.html">游戏</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/81.html">烦恼</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/80.html">生活</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/79.html">医疗健康</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/1031.html">娱乐休闲</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/95.html">电子数码</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/84.html">社会民生</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/1101.html">资源共享</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/78.html">体育/运动</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/82.html">商业/理财</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/83.html">教育/科学</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/85.html">文化/艺术</a></li>
+					</ul>
+					<ul class="fl">
+						<li><a href="/c/74.html">电脑/网络</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class=""><a href="/task/index">任务中心</a></li>
+			<li class=""><a href="/adviser/index">私人顾问</a></li>
+			<li class=""><a href="/d/index.html">爱问日报</a></li>
+		</ul>
+		<div class="fr nav_r fYaHei">
+		<a class="" href="/pay/openOrder">充值</a> | 
+		<a class="" href="/incentive/moreGifts">商城</a> | 
+		<a class="" href="/user/profile">个人中心</a> | 
+		<a class="" href="/user/profile?tab=msginfo">消息中心
+		
+		</a> |
+		</div>
+		<div class="login_bar"></div>
+	</div>
+</div>
+
+	
+
+
+	
+
+
+<script>
+$(function(){
+	var material = '';
+	if(material == "") return ;
+	try {
+		var json = eval(material);
+		var t1 = 0;
+		var t2 = 0;
+		var t3 = 0;
+		var arr1 = new Array();
+		var arr2 = new Array();
+		var arr3 = new Array();
+		for (var i = 0; i < json.length; i++) {
+			var t = json[i].materialType;
+			if(t == "1"){
+				 var adM1 = new Object;
+				 adM1.picUrl = json[i].picUrl;
+				 adM1.imgDescription = json[i].imgDescription;
+				 adM1.imgUrl = json[i].imgUrl;
+				 arr1[t1] = adM1;
+				 t1++;
+			}else if(t == "4"){
+				 var adM3 = new Object;
+				 adM3.urlLeft = json[i].urlLeft;
+				 adM3.urlRight = json[i].urlRight;
+				 adM3.imgDescription = json[i].imgDescription;
+				 adM3.picLeft = json[i].picLeft;
+				 adM3.picRight = json[i].picRight;
+				 arr3[t3] = adM3;
+				 t3++;
+			}else if(t == "2"){
+				 var adM2 = new Object;
+				 adM2.picUrl = json[i].picUrl;
+				 adM2.imgDescription = json[i].imgDescription;
+				 adM2.imgUrl = json[i].imgUrl;
+				 arr2[t2] = adM2;
+				 t2++;
+			}
+		}
+		if(t1 == 0 || t2 == 0) return ;
+		var t  = fRandomBy(0,t1-1);  // 300*250
+		var b  = fRandomBy(0,t2-1);  // 680*90
+		var c  = fRandomBy(0,t3-1);  // 对联
+		$("#q_detail_right_1").text("");
+		$("#q_detail_A11").text("");
+		var html1 = "<a href=\""+arr1[t].imgUrl+"\" target=\"_blank\"><img alt=\""+arr1[t].imgDescription+"\" src=\""+arr1[t].picUrl+"\"></a>";
+		var html2 = "<a href=\""+arr2[b].imgUrl+"\" target=\"_blank\"><img alt=\""+arr2[b].imgDescription+"\" src=\""+arr2[b].picUrl+"\"></a>";
+		$("#q_detail_right_1").append(html1);
+		$("#q_detail_A11").append(html2);
+		$("#q_detail_A11").removeClass("sj_680x90");
+		if(arr3.length > 0 ){
+			$("body").append('<div class="fix-div-left" id="fix-div-left"><a href="'+arr3[c].urlLeft+'" target="_blank"><img src="'+arr3[c].picLeft+'"/> <a href="javascript:void(0);" onclick="javascript:$(\'#fix-div-left\').hide();"  title="关闭" class="fix_close"></a></div>');
+			$("body").append('<div class="fix-div-right" id="fix-div-right"><a href="'+arr3[c].urlRight+'" target="_blank"><img src="'+arr3[c].picRight+'"><a href="javascript:void(0);" onclick="javascript:$(\'#fix-div-right\').hide();"  title="关闭" class="fix_close"></a></div>');	
+		}
+	} catch (e) {
+		console.log(e);
+	}
+});
+function fRandomBy(under, over){ 
+	switch(arguments.length){ 
+		case 1: return parseInt(Math.random()*under+1); 
+		case 2: return parseInt(Math.random()*(over-under+1) + under); 
+		default: return 0; 
+	} 
+}
+</script>
+
+
+
+	
+	
+	
+	
+	
+	
+		
+
+
+<div class="breadcast wrap fYaHei">
+			<a href="/">首页</a>
+			<span class="jg">></span>
+				
+					
+						
+						
+							<div class='dib pr current breadcast-fl'>
+
+						
+						<span><a href="/c/74.html">电脑/网络</a></span>
+						
+							<ul class="pa">
+							
+								<li><a href="/c/79.html" title="医疗健康">
+									
+										
+										
+											医疗健康
+										
+									
+								</a></li>
+							
+								<li><a href="/c/83.html" title="教育/科学">
+									
+										
+										
+											教育/科学
+										
+									
+								</a></li>
+							
+								<li><a href="/c/1031.html" title="娱乐休闲">
+									
+										
+										
+											娱乐休闲
+										
+									
+								</a></li>
+							
+								<li><a href="/c/77.html" title="游戏">
+									
+										
+										
+											游戏
+										
+									
+								</a></li>
+							
+								<li><a href="/c/78.html" title="体育/运动">
+									
+										
+										
+											体育/运动
+										
+									
+								</a></li>
+							
+								<li><a href="/c/95.html" title="电子数码">
+									
+										
+										
+											电子数码
+										
+									
+								</a></li>
+							
+								<li><a href="/c/80.html" title="生活">
+									
+										
+										
+											生活
+										
+									
+								</a></li>
+							
+								<li><a href="/c/82.html" title="商业/理财">
+									
+										
+										
+											商业/理财
+										
+									
+								</a></li>
+							
+								<li><a href="/c/84.html" title="社会民生">
+									
+										
+										
+											社会民生
+										
+									
+								</a></li>
+							
+								<li><a href="/c/1101.html" title="资源共享">
+									
+										
+										
+											资源共享
+										
+									
+								</a></li>
+							
+								<li><a href="/c/85.html" title="文化/艺术">
+									
+										
+										
+											文化/艺术
+										
+									
+								</a></li>
+							
+								<li><a href="/c/81.html" title="烦恼">
+									
+										
+										
+											烦恼
+										
+									
+								</a></li>
+							
+							</ul>
+						
+						
+							</div>
+
+						
+						<span class="jg">></span> 
+					
+						
+						
+							<div class='dib pr current breadcast-fl'>
+
+						
+						<span><a href="/c/1073.html">程序设计</a></span>
+						
+							<ul class="pa">
+							
+								<li><a href="/c/88.html" title="互联网">
+									
+										
+										
+											互联网
+										
+									
+								</a></li>
+							
+								<li><a href="/c/89.html" title="操作系统/系统故障">
+									
+										
+											操作系统/...
+										
+										
+									
+								</a></li>
+							
+								<li><a href="/c/1069.html" title="软件">
+									
+										
+										
+											软件
+										
+									
+								</a></li>
+							
+								<li><a href="/c/86.html" title="硬件">
+									
+										
+										
+											硬件
+										
+									
+								</a></li>
+							
+								<li><a href="/c/872.html" title="笔记本电脑">
+									
+										
+										
+											笔记本电脑
+										
+									
+								</a></li>
+							
+								<li><a href="/c/92.html" title="反病毒">
+									
+										
+										
+											反病毒
+										
+									
+								</a></li>
+							
+								<li><a href="/c/1063.html" title="电脑装机">
+									
+										
+										
+											电脑装机
+										
+									
+								</a></li>
+							
+								<li><a href="/c/1075.html" title="百度">
+									
+										
+										
+											百度
+										
+									
+								</a></li>
+							
+							</ul>
+						
+						
+							</div>
+
+						
+						<span class="jg">></span> 
+					
+						
+						
+							<div class='dib pr current breadcast-fl'>
+
+						
+						<span><a href="/c/870.html">JAVA相关</a></span>
+						
+							<ul class="pa">
+							
+								<li><a href="/c/871.html" title="数据库">
+									
+										
+										
+											数据库
+										
+									
+								</a></li>
+							
+								<li><a href="/c/866.html" title="C/C++">
+									
+										
+										
+											C/C++
+										
+									
+								</a></li>
+							
+								<li><a href="/c/93.html" title="其他编程语言">
+									
+										
+											其他编程语...
+										
+										
+									
+								</a></li>
+							
+								<li><a href="/c/867.html" title="VB">
+									
+										
+										
+											VB
+										
+									
+								</a></li>
+							
+								<li><a href="/c/865.html" title="汇编语言">
+									
+										
+										
+											汇编语言
+										
+									
+								</a></li>
+							
+								<li><a href="/c/869.html" title="C#/.NET">
+									
+										
+											C#/.N...
+										
+										
+									
+								</a></li>
+							
+								<li><a href="/c/868.html" title="VC++">
+									
+										
+										
+											VC++
+										
+									
+								</a></li>
+							
+							</ul>
+						
+						
+							</div>
+
+						
+						
+					
+				
+			<div class="dt_title fr" id="speTopicTextLink"></div>
+			<div class="oh" id="q_detail_right_top" style="float: right;margin-top: 8px;"></div>
+		</div> 
+
+	
+
+
+	
+	
+	
+	
+	
+	
+		
+
+
+<div class="wrap clearfix main_right">
+	<div class="w680 fl" >
+		<div class="wrap_box">
+		<div class="question_wrapper">
+			<div class="fb question_t"><h3 class="title-f22 c1f2">用java语言怎么读取一个文件夹里的同类文件!</h3></div>
+			<div class="question_info fYaHei answer_i">
+				<div class="question_text">
+					<pre style="font-family:'微软雅黑';">比如说我想循环读取一个文件夹里的所有.txt文件应该怎么办??</pre>
+					
+				</div>
+				<div class="ask_autho clearfix">
+					
+						
+						
+							<span class="gary gray-a user_wrap">
+							
+								
+								
+									<a href="/user/see/53d0ded511e0ee5afd029f5c-IA-1.html" target="_blank" >1449054545</a>
+								
+							
+							
+							
+							<div class="link_layer face_layer pa" style="display:none;">
+								<div class="face_info clearfix">
+									<div class="face_img fl">
+										
+											
+											
+												<a href="/user/see/53d0ded511e0ee5afd029f5c-IA-1.html" target="_blank"><img src="http://img.t.sinajs.cn/t5/style/images/face/male_180.png" width="50" height="50" alt="" /></a>
+											
+										
+									</div>
+									<div class="author_intro">
+										<p>
+											
+												
+												
+													<a href="/user/see/53d0ded511e0ee5afd029f5c-IA-1.html" target="_blank" class="author_name">1449054545</a>
+												
+											
+											
+												
+												
+											
+											
+										</p>
+										
+									</div>
+								</div>
+								<div class="linklayer_bd">
+								<h3 class="l_hd">他的提问</h3>
+									<ul>
+										
+											<li><a href="/b/6120203.html" title="现在买个60的魔兽号要好多钱？最便宜的！" target="_blank">现在买个60的魔兽号要好多钱？最便宜的！</a></li>
+										
+											<li><a href="/b/7268743.html" title="怎样删除不可移动的文件我对系统C盘进行格式" target="_blank">怎样删除不可移动的文件我对系统C盘进行格...</a></li>
+										
+											<li><a href="/b/15478891.html" title="DW8中插入的中文文字下拉式菜单不能正常显" target="_blank">DW8中插入的中文文字下拉式菜单不能正常...</a></li>
+										
+									</ul>
+								</div>
+							</div>
+							
+							</span>
+							
+								
+								
+							
+							
+						
+						
+					<span class="jg">|</span>
+					<span class="ask-time mr10">06-10-11</span>
+					
+						
+						
+							<span class="pj_btn" style="display:none">
+			                    <span class="jb_btn_q blue408-a fr" style="display:none;"><a href="javascript:void(0);" onclick="javascript:window.open('/login?source='+encodeURIComponent(window.location.href),'_self');">报告，这不是个问题</a></span>
+								<span class="jb_btn_d_q blue408-a fr mr15" style="display:none;"><a href="javascript:void(0);" onclick="javascript:window.open('/login?source='+encodeURIComponent(window.location.href),'_self');">举报</a></span>
+							</span>
+						
+					
+				</div>
+			</div>
+		</div>
+		
+
+
+
+<script>
+$(function(){
+	$(".wait-u-submit").click(function(){
+		window.location.href="/login?source="+href;	
+	});
+});
+</script>
+
+		
+			
+
+
+
+<div class="good_point">
+	<div class="good_hd clearfix">
+		<h3 class="good_hd_title title-f20">好评回答</h3>
+		<div class="sj_175x15 fr oh" id="q_detail_A6">
+			<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("1038945");</scr'+'ipt>');</script>
+		</div>
+	</div>
+	<div class="good_content">
+		
+		
+			
+			
+		
+		<div class="good_item good_item_no clearfix">
+			<div class="clearfix">
+			<div class="good-face pr">
+			
+				
+				
+					
+						
+							<a href="/user/pcsee/53b4e7e611e0ee18d3055daa-IA-1.html" target="_blank"><img src="http://tp4.sinaimg.cn/3814878983/50/5675009272/1" userid="53b4e7e611e0ee18d3055daa"  width="50" height="50" alt=""/></a>		
+						
+						
+					
+					
+				
+			
+			</div>
+			<div class="good_answer fYaHei c1f2 answer_i">
+				
+				<div class="answer_tip clearfix">
+					
+						
+						
+							
+								
+									<a href="/user/pcsee/53b4e7e611e0ee18d3055daa-IA-1.html" target="_blank" class="author_name">毛毛琨</a>
+								
+								
+							
+							
+							
+								
+								
+							
+								
+						
+					
+					<span class="time mr10"> | 06-10-11</span>
+					
+	                 <span class="pj_btn" style="display:none">
+			 	        <span class="praise mr15" id="praise" qId="53a8502311e0ee163955653f"><em></em><span>0</span></span>
+	                    <span class="praise1 mr15 step" id="step" qId="53a8502311e0ee163955653f" ><em></em><span>0</span></span>
+	                    
+							
+							
+								<span class="jubao"><a  href="javascript:void(0);" onclick="javascript:window.open('/login?source='+encodeURIComponent(window.location.href),'_self');" class="jb_btn_c">举报</a></span>
+							
+						
+					 </span>
+				 
+				
+				</div>
+				<div class="answer_text">
+					
+						
+						
+							<span><pre style="font-family:'微软雅黑';">import  .*;public class test implements Runnable{	private File file = null;		public test(File file){		 le = file;		}		public void run(){		//此里面执行对txt文件的操作	}		public static void main(String[] a){				File f = new File("你的文件夹路径");				//返回该文件夹下所有文件的名称列表		String[] name =  st();				for(int i=0;i<name.length;i++){						//比较名称后四位是否是.txt如果是则开启新的线程来处理文件			if(name[i].substring(name[i].length()-4,name[i].length()-1).equals(".txt")){				File fl = new File(name[i]);				test tst = new </pre>
+							...
+							</span>
+							
+								<span style="display: none"><pre style="font-family:'微软雅黑';">import  .*;public class test implements Runnable{	private File file = null;		public test(File file){		 le = file;		}		public void run(){		//此里面执行对txt文件的操作	}		public static void main(String[] a){				File f = new File("你的文件夹路径");				//返回该文件夹下所有文件的名称列表		String[] name =  st();				for(int i=0;i<name.length;i++){						//比较名称后四位是否是.txt如果是则开启新的线程来处理文件			if(name[i].substring(name[i].length()-4,name[i].length()-1).equals(".txt")){				File fl = new File(name[i]);				test tst = new test(fl);				Thread t = new Thread(tst);				 art();				}			}	}	}</pre></span>
+								<a href="javascript:void(0)" class="spread blue408">展开</a>
+							
+						
+					
+				</div>
+				
+				
+				
+				
+
+
+
+
+			</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+		
+		</div>
+		
+
+
+
+
+<div class="sj_680x90 oh mt10" id="q_detail_A11">
+	<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("1038959");</scr'+'ipt>');</script>
+</div>
+<script type="text/javascript">
+$(function(){
+	Kn.submitMaliciousEvaluation();
+});
+</script>
+
+		
+
+
+
+
+
+		
+			<div class="leisi_box mt10">
+				
+
+
+<div class="similar_box similar_tab">
+	<div class="c_hd clearfix">
+		<span class="hyih"><a href="javascript:void(0);" id="next_ls_q">换一换</a></span>
+		<h3 class="title-f18 c0e1">
+		
+			
+			类似问题
+		
+		</h3>
+	</div>
+	<div class="c_bd similar_tab_cont">
+		<div class="ls_question_div">
+			<ul class="similar_list">
+				<li class="clearfix">
+					<em class="num num_red">1</em>
+					<dl>
+						<dt><span class="darkyellow">问: </span>
+							<a href="/b/8959899.html" title="文件夹1有文件夹a与b,文件夹a中有10文件，文件夹b中有300个文件,如何 读取文件夹1下的所有文件名,最好是.txt或.xls格式" target="_blank">
+							文件夹1有文件夹a与b,文件夹a中有10文件，文件夹b中有300个文件,如何 读...
+							</a>
+						</dt>
+						<dd><span class="darkyellow">答: </span>
+							可进入MS DOS方式，
+进入这个文件夹a与b，
+然后：dir &gt; c:\kkk.txt
+然后打开： c:\kkk.txt
+
+------------...
+							<a href="/b/8959899.html" class="more" target="_blank">详情&gt;&gt;</a>
+						</dd>
+					</dl>
+				</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">2</em>
+					<span class="q_title">
+						<a href="/b/1mIo8DQReFO7.html" title="如何实现读取文件夹里的所有Excel名，然后通过模糊查找更改文件名？比如包含山东的文件改为山东。" target="_blank">
+							如何实现读取文件夹里的所有Excel名，...
+						</a>
+					</span>
+					<span class="q_number">回答<em>1</em></span>
+					<span class="q_time">2014-06-11</span>
+					</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">3</em>
+					<span class="q_title">
+						<a href="/b/13730025.html" title="一个文件夹里有多个文件,文件名依次为NEW0001.ROH、NEW0002.ROH、NEW0003.ROH.....想依次打开这些文件,并读取数据,然后将这些数据一起分析,请问如何用vb实现文件的循环打开,谢谢!" target="_blank">
+							一个文件夹里有多个文件,文件名依次为NE...
+						</a>
+					</span>
+					<span class="q_number">回答<em>2</em></span>
+					<span class="q_time">2008-09-13</span>
+					</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">4</em>
+					<span class="q_title">
+						<a href="/b/18128730.html" title="下了个TXT文件,该放在什么文件夹里看?" target="_blank">
+							下了个TXT文件,该放在什么文件夹里看?
+						</a>
+					</span>
+					<span class="q_number">回答<em>1</em></span>
+					<span class="q_time">2010-11-28</span>
+					</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">5</em>
+					<span class="q_title">
+						<a href="/b/BmALy2odH.html" title="txt文件可以放在小米手机的那个文件夹里？" target="_blank">
+							txt文件可以放在小米手机的那个文件夹里...
+						</a>
+					</span>
+					<span class="q_number">回答<em>2</em></span>
+					<span class="q_time">2013-11-10</span>
+					</li>
+				
+			</ul>
+		</div>
+		<div class="ls_question_div" style="display: none;">
+			<ul class="similar_list">
+				<li class="clearfix">
+					<em class="num num_red">1</em>
+					<dl>
+						<dt><span class="darkyellow">问: </span>
+							<a href="/b/3970361.html" title="我使用的是XP系统，“图片收藏”的文件夹里存了三个文件夹，现在我想把这三个文件夹删除，但是一删除就回出现“文件或目录损坏且无法读取”的对话框，要把“图片收藏”文件夹删除也不行，应该怎么删除？" target="_blank">
+							我使用的是XP系统，“图片收藏”的文件夹里存了三个文件夹，现在我想把这三个文件夹...
+							</a>
+						</dt>
+						<dd><span class="darkyellow">答: </span>
+							请先运行磁盘检查，看看
+可能是磁盘存在逻辑坏道
+							<a href="/b/3970361.html" class="more" target="_blank">详情&gt;&gt;</a>
+						</dd>
+					</dl>
+				</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">2</em>
+					<span class="q_title">
+						<a href="/b/14223002.html" title="我想把某一个文件夹内的若干个文件拷贝至其他位置，（注意：不是所有文件），例如1.txt,4.txt,9.txt等等，如何一句话就能把他们拷贝到同一位置？而不是一遍一遍的输入copy" target="_blank">
+							我想把某一个文件夹内的若干个文件拷贝至其...
+						</a>
+					</span>
+					<span class="q_number">回答<em>2</em></span>
+					<span class="q_time">2008-11-19</span>
+					</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">3</em>
+					<span class="q_title">
+						<a href="/b/5305693.html" title="我买的mp4里面只能读取txt文件，我想把电脑里的word文件转换为txt的文件，不知道用什么软件可以做到，有没有那位大师可以告诉我呀" target="_blank">
+							我买的mp4里面只能读取txt文件，我想...
+						</a>
+					</span>
+					<span class="q_number">回答<em>1</em></span>
+					<span class="q_time">2006-06-27</span>
+					</li>
+				
+					<li  class="clearfix">
+					<em class="num num_deepgray">4</em>
+					<span class="q_title">
+						<a href="/b/S5Z29ZCusZ.html" title="如何用matlab读取一个文件夹里的所有图像并保存为矩阵" target="_blank">
+							如何用matlab读取一个文件夹里的所有...
+						</a>
+					</span>
+					<span class="q_number">回答<em>1</em></span>
+					<span class="q_time">2013-09-13</span>
+					</li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+var ls_q_i  = 1;
+var lent = parseInt("9");
+$("#next_ls_q").click(function(){
+	if(ls_q_i > 3 ) ls_q_i = 0;
+	if(lent > 5 && ls_q_i == 1){
+		ls_q_i = 1;
+	}else if(lent > 10 && ls_q_i == 2){
+		ls_q_i = 2;
+	}else{
+		ls_q_i = 0;
+	}
+	$(".ls_question_div").hide();
+	$(".ls_question_div").eq(ls_q_i).show();
+	ls_q_i++;
+});	
+</script>
+<script src="http://s11.cnzz.com/stat.php?id=1257642703&web_id=1257642703" language="JavaScript"></script>
+
+			</div>
+			
+				<div class="sj680x90 oh mt10" id="q_detail_A13">
+					<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("1038980");</scr'+'ipt>');</script>
+				</div>
+			
+		
+		
+			 
+
+
+
+
+
+
+
+<div id="daily_topic_flnr"  pageTemplate=""></div>
+<div id="sj_baidu_detail" style="margin-top: 5px;">
+	<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("1107908");</scr'+'ipt>');</script>
+</div>
+
+
+
+
+		
+		<div id="wtu_answer"><script type="text/javascript">$("#wtu_answer").load("/t/wt?mainCategory=870",function(){});</script></div>
+	</div>
+	
+
+
+<div class="w300 fr">
+	<div class="sj_300x250 oh" id="q_detail_right_1">
+		<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("961938");</scr'+'ipt>');</script>
+	</div>
+	<div class="sj_300x250 oh mt10" id="q_detail_right_2">
+		<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("1008108");</scr'+'ipt>');</script>
+	</div>
+	<div id="addfix">
+		<div class="zt_box mt10 oh" id="todayFix">
+			<script type="text/javascript"> 
+				$("#todayFix").load("/t/dfh",function(response,status,xhr){
+					if(status == "success"){
+						tab(".zt_hd span");//右侧今日焦点切卡
+					}
+				});
+			</script>
+		</div>
+		<div class="sj_300x250 oh" id="q_detail_right_3">
+			<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("961942");</scr'+'ipt>');</script>
+		</div>
+		<!-- <div class="zt_box oh" id="topic_tjyd"></div> 
+			<div class="ad_300x80 oh mt10" id="q_detail_A7"></div>-->
+	</div>
+</div>
+
+</div>
+<script>
+	$('.question_wrapper').hover(function(){
+		$('.jb_btn_q,.jb_btn_d_q').show();
+	},function(){
+		$('.jb_btn_q,.jb_btn_d_q').hide();
+	});
+	$('.jb_btn').bind('click',function(){
+		$("#bg_confirm").attr("qId",$(this).attr("qId"));
+		$('.jb_bg').show();
+	});
+	$('.jb_btn_c').bind('click',function(){
+		$('.jb_jb').show();
+	});
+	$('.jb_btn_d').bind('click',function(){
+		$('.jb_qs').show();
+	});	
+	$('.jb_btn_q').bind('click',function(){
+		$("#bg_confirm").attr("qId",$(this).attr("qId"));
+		$('.jb_bg').show();
+	});
+	$('.jb_btn_c').bind('click',function(){
+		$('.jb_jb').show();
+	});
+	$('.jb_btn_d_q').bind('click',function(){
+		$('.jb_qs').show();
+	});	
+	$('.add_ask_btn').bind('click',function(){
+		$('.ask_add_layer').show();
+	});
+	$('.answer_item li').hover(function(){
+		$(this).find('.pj_btn').show();
+	},function(){
+		$(this).find('.pj_btn').hide();
+	});
+	$('.good_btn').bind('click',function(){
+		$(this).parent().hide();
+		$(this).parent().siblings('.good').show();
+		$(this).parent().parent().parent().parent().unbind('hover');
+	});
+	$('.m_btn').bind('click',function(){
+		$(this).parent().hide();
+		$(this).parent().siblings('.middle').show();
+		$(this).parent().parent().parent().parent().unbind('hover');
+	});
+	$('.bad_btn').bind('click',function(){
+		$(this).parent().hide();
+		$(this).parent().siblings('.bad').show();
+		$(this).parent().parent().parent().parent().unbind('hover');
+	});
+	$('.answer_i').hover(function(){
+		$(this).find('.pj_btn').show();
+	},function(){
+		$(this).find('.pj_btn').hide();
+	});
+	$('.good_btn').bind('click',function(){
+		$(this).parent().hide();
+		$(this).parent().siblings('.good').show();
+		$(this).parent().parent().parent().parent().unbind('hover');
+	});
+	$('.m_btn').bind('click',function(){
+		$(this).parent().hide();
+		$(this).parent().siblings('.middle').show();
+		$(this).parent().parent().parent().parent().unbind('hover');
+	});
+	$('.bad_btn').bind('click',function(){
+		$(this).parent().hide();
+		$(this).parent().siblings('.bad').show();
+		$(this).parent().parent().parent().parent().unbind('hover');
+	})
+	$('.close_btn,.close').bind('click',function(){
+		$(this).parent().parent().hide();
+	});
+	$('.answer_tip_box1').hover(function(){
+		$('.answer_tip_box1 .close_tip').addClass('close_show');
+	},function(){
+		$('.answer_tip_box1 .close_tip').removeClass('close_show');
+	});
+	$('.answer_tip_box1 .close_tip').bind('click',function(){
+		$(this).parent().hide();
+	});
+	$('.tab_bar a').bind('click',function(){
+		var nb = $(this).index();
+		var $ct = $(this).parent(".tab_bar").next('.tab_ct').find(".tab_div");
+		$(this).addClass("active").siblings().removeClass("active");
+		$ct.eq(nb).siblings().hide();
+		$ct.eq(nb).show();
+		return false;
+	});
+	$('.search-tab span').on('click',function(){
+		var nb = $(this).index();
+		var $ct = $(this).parent(".search-tab").next('.search-ct').find(".search-item");
+		$(this).addClass("current").siblings().removeClass("current");
+		$ct.eq(nb).siblings().hide();
+		$ct.eq(nb).show();
+	});	
+	$(".sidebar").hover(function(){
+		var that = $(this);
+		timer = setTimeout(function(){
+			$(".categories").show();
+			that.find("h3").addClass("active");			
+		},600);
+	},function(){
+		clearTimeout(timer);
+		$(".categories").slideUp();
+		that.find("h3").removeClass("active");
+	});
+	$('.categories .category-item').hover(function(){
+		that = $(this);
+		timer = setTimeout(function(){
+			that.addClass('current');			
+		},200);
+	},function(){
+		clearTimeout(timer,400);		
+		that.removeClass('current');
+	});	
+</script>
+
+	
+
+
+	
+	
+	
+	
+	
+	
+		
+
+
+<div class="sj_1000x90 bc oh mt10 sjStop" id="q_detail_bottom">
+	<script type="text/javascript">document.writeln('<script type="text/javascript">BAIDU_CLB_fillSlot("961937");</scr'+'ipt>');</script>
+</div>
+
+
+<div class="hot_search">
+	<div class="search-tab">
+		<span class="current">热点检索</span>	
+	</div>
+	<div class="search-ct">
+		<div class="search-item">
+			<div class="hot_eg clearfix tab_bar">
+				<a class="active" href="javascript:void(0)">J<em></em></a>
+				
+				<a href="javascript:void(0)">W<em></em></a>	
+			</div>	
+			<div class="tab_ct hot_ct">
+				<div class="tab_div clearfix"  >
+							<a href="/key/55af80f9e4b00c2b8b7c18a2.html">java下载</a>
+							<a href="/key/55af80a1e4b00c2b8b7c1457.html">java培训</a>
+							<a href="/key/55af7e0de4b00c2b8b7bf63f.html">java的反射机制</a>
+							<a href="/key/55af79e4e4b00c2b8b7bca6d.html">java反射视频</a>
+							<a href="/key/55910610e4b0c60ca48b43ae.html">java反射应用</a>
+							<a href="/key/551cda0c5f1d0ecfb94267bf.html">java</a>
+							<a href="/key/551cd9f75f1d0ecfb9424c13.html">java环境变量设置</a>
+							<a href="/key/551cd9655f1dd8c4a3fc79df.html">java泛型详解</a>
+				</div><div class="tab_div clearfix" style="display: none;" >
+							<a href="/key/55af8302e4b00c2b8b7c2de1.html">我的世界java下载</a>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>	
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.tab_bar a').bind('click',function(){
+		var nb = $(this).index();
+		var $ct = $(this).parent(".tab_bar").next('.tab_ct').find(".tab_div");
+		$(this).addClass("active").siblings().removeClass("active");
+		$ct.eq(nb).siblings().hide();
+		$ct.eq(nb).show();
+		return false;
+	});
+	$('.search-tab span').on('click',function(){
+		var nb = $(this).index();
+		var $ct = $(this).parent(".search-tab").next('.search-ct').find(".search-item");
+		$(this).addClass("current").siblings().removeClass("current");
+		$ct.eq(nb).siblings().hide();
+		$ct.eq(nb).show();
+	});
+});
+</script>
+
+<div id="baidu_sj_search" style="text-align: center;">
+	<script>
+	(function() {
+	    var s = "_" + Math.random().toString(36).slice(2);
+	    document.write('<div id="' + s + '"></div>');
+	    (window.slotbydup=window.slotbydup || []).push({
+	        id: '2081942',
+	        container: s,
+	        size: '1000,60',
+	        display: 'inlay-fix'
+	    });
+	})();
+	</script>
+	<script src="http://dup.baidustatic.com/js/ds.js" type="text/javascript"></script>
+</div>
+<div id="daily_cnxh_new">
+	<script type="text/javascript"> 
+		$("#daily_cnxh_new").load("/t/cnxh?moreCid="+$("#moreCid").val(),function(response,status,xhr){
+			if(status == "success"){
+				new Tscroll("scroll");
+			}
+		});
+	</script>
+</div>
+
+	
+
+
+
+
+
+
+	<div class="line_wrap mt40">
+		<div class="line wrap"></div>
+	</div>
+
+<div class="footer wrap">
+			<a href="/toa/" target="_blank" >关于我们</a>
+			<a href="/toe/" target="_blank" >免责条款</a> 
+			<a href="/tos/" target="_blank">意见反馈</a><br />
+Copyright © 1996-2014 SINA  Corporation, All Rights Reserved
+</div>
+<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/page/question_detail.min.js"></script>
+<script type='text/javascript' src='http://static.iaskgo.com/v20160323/js/common/wenwo_common_function.min.js'></script>
+<script type='text/javascript' src='http://static.iaskgo.com/v20160323/js/common/page.min.js'></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/piczoom.min.js" type="text/javascript"></script>
+<script type='text/javascript' src='http://static.iaskgo.com/v20160323/js/common/common.min.js'></script>
+<script type='text/javascript' src='http://static.iaskgo.com/v20160323/js/common/Kn.min.js'></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/jquery.center.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/jy.base.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/jy.widget.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/jquery.paginate.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/jquery.marquee.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/snsShare.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/adAudit.min.js" type="text/javascript"></script>
+<script src="http://static.iaskgo.com/v20160323/js/common/common_footer_stat.min.js" type="text/javascript"></script>
+<div style="display: none">
+	
+<script type="text/javascript">
+	$.getScript("http://s95.cnzz.com/stat.php?id=1254164143&web_id=1254164143");
+	$(window).load(function(){
+		$.getScript("http://v1.cnzz.com/stat.php?id=5890382&web_id=5890382");
+	});
+</script>
+<script>var _hmt = _hmt || [];
+(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ad29670c49e093f8aa6cbb0f672c1a81";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+</div>
+
+
+<script type="text/javascript">
+$(window).scroll(function(){
+	 if($(document).scrollTop() ==0 ){
+		 $("#adv_top_new").slideUp();
+	 }else{
+		 $("#adv_top_new").slideDown();		
+	 }
+});
+function imgDelByClass(delClass){
+	$("."+delClass).remove();
+}
+$('a.db').snsShare({
+	isBlank : false,
+	isHasAt : true
+});
+$('.news_tab').loopSlide({
+	time:10000,
+	type:'click',
+	opacity:true,
+	auto: true
+	});
+	$('.slide').loopSlide({
+	time:3000,
+	type:'mouseover',
+	opacity:true,
+	auto: true
+});
+$(function(){
+	navSl(".nav_list");
+	navSl(".top_nav_list");
+	$('.breadcast-fl').hover(function(){
+		$(this).children('ul').show();
+	},function(){
+		$(this).children('ul').hide();
+	});
+	var timer=null;
+	$('.good-face,.user_wrap').hover(function(){
+		clearTimeout(timer);
+		$('.face_layer').hide();
+		$(this).find('.face_layer').show();
+	},function(){
+		var that=$(this);
+		timer=setTimeout(function(){
+			that.find('.face_layer').hide();
+		},300);
+	});
+	var timer=null;
+	$('.hot-words').hover(function(){
+		clearTimeout(timer);
+		$(this).find('.link_layer').show();
+	},function(){
+		var that=$(this);
+		timer=setTimeout(function(){
+			that.find('.link_layer').hide();
+		},300);
+	});
+	$('.check_box input').toggle(function(){
+		$(this).parent().addClass('aaico-on');
+	},function(){
+		$(this).parent().removeClass('aaico-on');
+	});
+	$('.close_btn,.close').bind('click',function(){
+		$(this).parent().parent().hide();
+	});
+	$('.answer_tip_box1').hover(function(){
+		$('.answer_tip_box1 .close_tip').addClass('close_show');
+	},function(){
+		$('.answer_tip_box1 .close_tip').removeClass('close_show');
+	});
+	$('.answer_tip_box1 .close_tip').bind('click',function(){
+		$(this).parent().hide();
+	});
+	$(".page").each(function(index,element){
+		var me = $(element);
+		var total = me.attr("data");
+		me.paginate({
+			total 		: total,
+			index 		: 1,
+			display     : 20,
+			items       : $(me).prev().children("li")
+		});
+	});
+	var temp ="";
+	if(temp != 'lianchuang'){
+		copyAnswerBefore();	
+	}
+});
+function copyAnswerBefore(){
+	var tt  = "0";
+	var len = "1";
+	if(tt != "0" && len == 0){
+		$(".answer_item li").each(function(){
+			var soure = $(this).attr("answersourcetype");
+			if(soure == 'COOPERATE_LIANCHUANG'){
+				$("#sourceId_0").before($(this).clone());
+				$(this).remove();
+			}
+		});	
+	}
+}
+rigthFixElm("#addfix",100);
+$(function(){
+	$("a[title='站长统计']").hide();
+});
+</script>
+
+
+
+<div style="display: none">
+	
+		
+		
+			<script  type="text/javascript" >
+					$.getScript("http://s6.cnzz.com/stat.php?id=5262510&web_id=5262510");
+			</script>
+			<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?4a6f318ce337dd0d624bc1258f28517a";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+			</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+
+
+
+	
+	
+	
+	
+	
+		<script  type="text/javascript" >
+					$.getScript("http://s22.cnzz.com/stat.php?id=1253378385&web_id=1253378385");
+		</script>
+		<!-- <script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?fc7f36dda9a1b947c2535bcd35cce32d";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script> -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</div>
+	
+<script type="text/javascript">
+		function createAd(adId,divId){
+			 var ad = document.getElementById(adId);
+			var div = document.getElementById(divId);
+			if(ad){
+				ad.parentNode.removeChild(ad);
+				if(div){
+					div.appendChild(ad);
+				}
+			} 
+		}
+</script>
+
+<div id="adv_dl" style="display: none"></div>
+
+
+	<div id="sj_top_new_is_123124" style="z-index:9999; display: none;">
+		
+		
+		
+		<script type="text/javascript">
+	    var cpro_id = "u2120770";
+		</script>
+		<script src="http://su.bdimg.com/static/dspui/js/uf.js" type="text/javascript"></script>
+		
+	</div>
+
+<div style="display:none;">
+	
+	
+</div>
+
+
+<script type="text/javascript" src="http://static.iaskgo.com/v20160323/js/common/pv.stat.min.js"></script>
+<!-- <script type="text/javascript">
+  document.write('<img src="http://iask.sina.com.cn/pvstat/service.action?url='+escape(window.location.href)+'&ref='+escape(document.referrer)+'&t='+Math.random()+'" width="0" height="0" border="0" />');
+</script> -->
+</body>
+</html>
+<script src="http://static.iaskgo.com/v20160323/js/page/googlebaidu.min.js"></script>

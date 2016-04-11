@@ -1,0 +1,647 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>北京航空航天大学图书馆 | 北航图书馆 | Library Of Beihang University | BUAALIB</title>
+    <link rel="SHORTCUT ICON" href="/templates/bh/images/icoWeb.ico" /> 
+    <link rel="BOOKMARK" href="/templates/bh/images/icoWeb.ico">
+    <link href="/templates/bh/css/style.css" type="text/css" rel="stylesheet" />
+    <link href="/templates/bh/css/pro_drop_1.css" type="text/css" rel="stylesheet" />
+    <!--menu css-->
+    <script src="/templates/bh/js/jquery-1.7.2.min.js"></script>
+    <script src="/templates/bh/js/tab.js" type="text/javascript"></script>
+    <script src="/templates/bh/js/stuHover.js" type="text/javascript"></script>
+    <!--menu js-->
+    <script src="/templates/bh/js/dropdown.js" type="text/javascript"></script>
+    <script src="/templates/bh/js/indexJS.js" type="text/javascript"></script>
+    <script src="/templates/bh/js/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="/templates/bh/libs/jquery.tooltip/jquery.tooltip.css" type="text/css" />
+    <script type="text/javascript" src="/templates/bh/libs/jquery.tooltip/jquery.tooltip.js"></script>
+    <script src="/templates/bh/js/TopLogin.js"></script>
+    <!--dropdownlist js-->
+
+    <style>
+        .searchBox_blyun {
+            margin: 0px;
+            padding: 0px;
+            font: 12px/1.5 宋体, Arial, Helvetica, sans-serif;
+            color: #000;
+            width: 534px;
+            background: url(/templates/bh/images/bg_searchBox_blyun.gif) repeat-x 0px -115px;
+        }
+
+            .searchBox_blyun * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .searchBox_blyun ul {
+                list-style-type: none;
+            }
+
+            .searchBox_blyun input {
+                vertical-align: middle;
+                font: 12px 宋体, Arial, Helvetica, sans-serif;
+                color: #000;
+            }
+
+            .searchBox_blyun a {
+                color: #003399;
+                text-decoration: none;
+            }
+
+                .searchBox_blyun a:hover {
+                    text-decoration: underline;
+                }
+
+            .searchBox_blyun .clearfix {
+                overflow: hidden;
+                zoom: 1;
+            }
+
+            .searchBox_blyun .clear {
+                clear: both;
+                height: 0px;
+                font-size: 0px;
+                line-height: 0px;
+                overflow: hidden;
+            }
+
+            .searchBox_blyun .inner1_searchBox {
+                background: url(/templates/bh/images/bg_searchBox_blyun.gif) no-repeat;
+            }
+
+            .searchBox_blyun .inner2_searchBox {
+                background: url(/templates/bh/images/bg_searchBox_blyun.gif) no-repeat right -230px;
+                padding: 22px 0px 0px 16px;
+                height: 88px;
+                overflow: hidden;
+            }
+
+            .searchBox_blyun .sTab {
+                padding-left: 8px;
+            }
+
+                .searchBox_blyun .sTab li {
+                    float: left;
+                    margin-right: 7px;
+                    display: inline;
+                }
+
+                    .searchBox_blyun .sTab li.on a {
+                        font-weight: bold;
+                        color: #000;
+                    }
+
+                        .searchBox_blyun .sTab li.on a:hover {
+                            text-decoration: none;
+                        }
+
+            .searchBox_blyun .sInput {
+                height: 27px;
+                margin-top: 6px;
+            }
+
+                .searchBox_blyun .sInput input {
+                    float: left;
+                    border: 0px;
+                    background-image: url(/templates/bh/images/icons_searchBox_blyun.gif);
+                    background-color: transparent;
+                }
+         .searchBox_blyun .stxt {
+            width: 324px;
+            height: 27px;
+            line-height: 27px;
+            padding: 0px 2px;
+            background-position: 0px 0px;
+        }
+
+            .searchBox_blyun .sbtn {
+                width: 53px;
+                height: 27px;
+                overflow: hidden;
+                text-indent: -9999px;
+                cursor: pointer;
+            }
+
+            .searchBox_blyun .cn {
+                margin-right: 6px;
+                display: inline;
+                background-position: -420px 0px;
+            }
+
+            .searchBox_blyun .en {
+                background-position: -479px 0px;
+            }
+
+            .searchBox_blyun .sTip {
+                float: left;
+                height: 28px;
+                position: relative;
+                margin: -1px 0px 0px 4px;
+                line-height: 14px;
+                display: inline;
+            }
+
+                .searchBox_blyun .sTip td {
+                    height: 28px;
+                }
+
+                .searchBox_blyun .sTip a {
+                    text-decoration: underline;
+                }
+
+            .searchBox_blyun .sLabel {
+                margin-top: 5px;
+                padding-left: 7px;
+                *margin-top: 2px;
+                *padding-left: 2px;
+            }
+
+                .searchBox_blyun .sLabel label {
+                    margin-right: 10px;
+                    *margin-right: 5px;
+                }
+
+                .searchBox_blyun .sLabel input {
+                    margin: 0px 6px 3px 0px;
+                    *margin: 0px 1px 3px 0px;
+                }
+    </style>
+</head>
+
+<body>
+
+    
+<script>
+    var datajson = "";
+    $(function () {
+        var result = '';
+        datajson = (jQuery.parseJSON(result));
+    })
+</script>
+<!--topSus fixed begin-->
+<div class="topSus">
+    <div class="wrap topHei2">
+	    <div class="ico1a"><img src="/templates/bh/images/loginIco1a.png" /></div>
+		<div class="ico1b"><img src="/templates/bh/images/loginIco1b.png" /></div>
+        <input name="emailhd" type="hidden" id="emailhd" />
+        <div class="topLink">
+            <div class="topLink1">
+                <div class="">
+                    <a href="#"><img id="zxwm" style="display:block;width:135px;height:38px;" src="/templates/bh/images/top_zxwm2a.png" ></a>
+</div>
+                <ul style="display:none;width:200px;">
+                    <li><img width="32" src="/templates/bh/images/phone.png" />：010-82317074</li>
+                    <li><img width="32" src="/templates/bh/images/qq.png" />&nbsp;<img width="32" src="/templates/bh/images/weibo.png" />：@buaalib</li>
+                    <li><img width="32" src="/templates/bh/images/email.png" />：lib@buaa.edu.cn</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="personal" style="display: none;" id="personalDIV">
+            <div class="perCon">
+                <div class="perTitle" ><a href="#" style="font-size:14px;" >个人中心</a></div>
+                <ul id="pertitleul" style="display:none" >
+                    <li class="people" id="userinfoSpan"></li>
+                    <li class="per2"><a target="_parent" href="javaScript:openPonse('http://opac.lib.buaa.edu.cn/reader/lib_auth.php?userid='+datajson.zjh+'&password='+datajson.password+'&rediurl=http://opac.lib.buaa.edu.cn/reader/redr_info.php','个人信息')">个人信息</a></li>
+                    <li class="per5"><a target="_parent" href="javaScript:openPonse('http://opac.lib.buaa.edu.cn/reader/lib_auth.php?userid='+datajson.zjh+'&password='+datajson.password+'&rediurl=http://opac.lib.buaa.edu.cn/reader/change_email.php','我的邮箱')">我的邮箱</a></li>
+                    <li class="per8"><a target="_parent" href="javaScript:openPonse('http://opac.lib.buaa.edu.cn/reader/lib_auth.php?userid='+datajson.zjh+'&password='+datajson.password+'&rediurl=http://opac.lib.buaa.edu.cn/reader/book_lst.php','当前借阅')">当前借阅</a></li>
+                    <li class="per9"><a target="_parent" href="javaScript:openPonse('http://opac.lib.buaa.edu.cn/reader/lib_auth.php?userid='+datajson.zjh+'&password='+datajson.password+'&rediurl=http://opac.lib.buaa.edu.cn/reader/book_hist.php','借阅历史')">借阅历史</a></li>
+                    <li class="per12"><a target="_parent" href="javaScript:openPonse('http://opac.lib.buaa.edu.cn/reader/lib_auth.php?userid='+datajson.zjh+'&password='+datajson.password+'&rediurl=http://opac.lib.buaa.edu.cn/reader/search_hist.php','检索历史')">检索历史</a></li>
+
+                   
+                    <li class="quit"><a href="javaScript:logout()">退出</a></li>
+                </ul>
+
+            </div>
+            <span id="userNameSpan"></span><span></span>
+        </div>
+
+        <form action="http://opac.lib.buaa.edu.cn/reader/lib_auth.php" target="logiIframe" id="formlg" name="formlg" onsubmit="return viladateLogin()" method="post">
+            <div class="topLogin" id="topLogin">
+			  
+            </div>
+        </form>
+        <input name="userIDHID" type="hidden" id="userIDHID" />
+        <input name="userID" type="hidden" id="userID" />
+        <input name="logresultUrlhid" type="hidden" value="http://lib.buaa.edu.cn/" id="logresultUrlhid" />
+    </div>
+</div>
+<iframe name="logiIframe" id="logiIframe" style="display:none;"></iframe>
+<form id="loginForm" name="loginForm" method="post" style="display:none"></form>
+
+<iframe name="logiOutIframe" id="logiOutIframe" style="display:none;"></iframe>
+<form id="logoutForm" name="logoutForm" method="post" style="display:none"></form>
+
+<!--topSus fixed end-->
+
+    <div class="main wrap">
+
+        <!--header begin-->
+        
+
+<div class="header">
+    <div class="logo" style="background:none">
+        <a href="/">
+            <img src="/templates/bh/images/logo2.jpg" style="width:265px;" />
+</a>
+    </div>
+    <div class="menu">
+    
+     <ul id="nav">
+	<li class="top"><a href="/" class="top_link"><span>首页</span></a></li>
+	<li class="top"><a  id="products" class="top_link"><span class="down">关于本馆</span></a>
+		<ul class="sub">
+        
+                        <li class="w120"><a href="pageinfo?cid=76&pid=4" class="fly">本馆概况</a></li>
+                        <li class="w120"><a href="zzjgpageinfo?cid=5&pid=4" class="fly">组织机构</a></li>
+                        <li class="w120"><a href="pageinfo?cid=11&pid=4" class="fly">馆藏分布</a></li>
+                        <li class="w120"><a href="public_list?cid=77&pid=4" class="fly">阅览室简介</a></li>
+                        <li class="w120"><a href="public_list?cid=10&pid=4" class="fly">读者须知</a></li>
+                        <li class="w120"><a href="pageinfo?cid=8&pid=4" class="fly">图情学硕士点</a></li>
+
+		</ul>
+	</li>
+
+         <li class="top">
+             <a  id="contacts" class="top_link"><span class="down">文献资源</span></a>
+             <ul class="sub">
+                            <li class="w90"><a href="resources?cid=26&pid=19" target="_blank" class="fly">数据库列表</a></li>
+                            <li class="w90"><a href="http://opac.lib.buaa.edu.cn" target="_blank" class="fly">馆藏目录</a></li>
+                            <li class="w90"><a href="NewsList?cid=20&pid=19" target="_blank" class="fly">分馆资源</a></li>
+                            <li class="w90"><a href="NewsList?cid=32&amp;pid=27" target="_blank" class="fly">馆际互借</a></li>
+
+
+
+             </ul>
+         </li>
+
+	<li class="top"><a  id="services" class="top_link"><span class="down">服务指南</span></a>
+		<ul class="sub">
+                	<li class="w80"><a href="pageinfo?cid=92&pid=42" class="fly">你问我答</a></li>
+                	<li class="w80"><a href="NewsList?cid=91&pid=42" class="fly">自助服务</a></li>
+                	<li class="w80"><a href="pageinfo?cid=85&pid=42" class="fly">WIFI服务</a></li>
+                	<li class="w80"><a href="NewsList?cid=44&pid=42" class="fly">更多服务</a></li>
+
+		</ul>
+	</li>
+
+	<li class="top"><a href="onlineMessage?cid=57&pid=0" id="shop" class="top_link"><span class="down" style="background:none">读者留言</span></a>
+
+	</li>
+
+
+</ul>
+
+    </div>
+  </div>
+        <!--header end-->
+        <!--left begin-->
+        <div class="left">
+            <div class="search">
+                <ul class="sea_nav">
+                    <li class="sea_current" id="sea_nav1" onmouseover="javascript:doClick1(this)"><a href="#">馆藏检索</a></li>
+                    <li class="sea_link" id="sea_nav2" onmouseover="javascript:doClick1(this)"><a href="#">中文发现</a></li>
+                    <li class="sea_link" id="sea_nav3" onmouseover="javascript:doClick1(this)"><a href="#">外文发现</a></li>
+                    <li class="sea_link" id="sea_nav4" onmouseover="javascript:doClick1(this)"><a href="#">百链云服务</a></li>
+                    <li class="sea_link" id="sea_nav5" onmouseover="javascript:doClick1(this)"><a href="#">机构库</a></li>
+                </ul>
+                <div class="sea_down">
+                    <div class="dis" id="sea_sub1">
+                        <div class="sea_title">
+                            <h2>馆藏检索</h2>
+                        </div>
+                        <div class="explain">使用说明：图书馆书目检索系统，可查找图书馆馆藏的印刷版文献资源</div>
+                        <div class="ss">
+                            <div class="sea_dropdown">
+                                <div id="tm2008style" style="font-size: 14px;">
+                                    <select name="language_tm2008" id="language_tm2008">
+                                        <option value="1">题名</option>
+                                        <option value="2">作者</option>
+                                        <option value="3">关键字</option>
+                                        <option value="4">ISBN</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input name="opacTxt" id="opacTxt" type="text" class="sea_text" value="在此输入关键词" onkeydown="keyDown(event);" />
+                            <input type="button" class="sea_but" value="" onclick="searchLibBook()" onkeydown="keyDown(event);" />
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+                    <div class="undis" id="sea_sub2">
+                        <div class="sea_title">
+                            <h2>中文发现</h2>
+                        </div>
+                        <div class="explain">使用说明：查找中文电子资源，包括电子图书、电子期刊</div>
+                        <form method="get" action="http://ss.zhizhen.com/s" accept-charset="utf-8" onsubmit="searchFormSubmit()" target="_blank">
+                            <div class="ss">
+                                <input name="sw" type="text" class="sea_text2" value="在此输入关键词" /><input name="" type="submit" class="sea_but" value="" />
+                            </div>
+                        </form>
+                        <div class="clear"></div>
+
+                    </div>
+                    <div class="undis" id="sea_sub3">
+                        <div class="sea_title">
+                            <h2>外文发现</h2>
+                        </div>
+                        <div class="explain">使用说明：查找外文电子资源，包括电子图书、电子期刊</div>
+
+                        <form method="get" action="http://en.buaa.findplus.cn/search_list.html" accept-charset="utf-8" onsubmit="searchFormSubmit()" target="_blank">
+                            <div class="ss">
+                                <input name="query" type="text" class="sea_text2" value="在此输入关键词" /><input name="" type="submit" class="sea_but" value="" />
+                            </div>
+                        </form>
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <!--xg 7/2 begin-->
+                    <div class="undis" id="sea_sub4">
+                        <div class="sea_title"><h2>百链云服务</h2></div>
+                        <iframe src="/templates/bh/search.html" width="492" height="160" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true"></iframe>
+                    </div>
+                    <!--xg 7/2 end-->
+
+                    <div class="undis" id="sea_sub5">
+                        <div class="sea_title">
+                            <h2>机构库</h2>
+                        </div>
+                        <div class="explain">使用说明：查找书刊目录，包括纸质图书、期刊</div>
+                        <form method="get" action="http://buaa.ir.libsou.com/3/search.aspx" accept-charset="utf-8" target="_blank">
+                            <div class="ss">
+                                <input name="sw" type="text" class="sea_text2" value="在此输入关键词" /><input name="" type="submit" class="sea_but" value="" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="oppt">
+                                <input name="field" type="radio" value="" checked="checked" /><label>全部字段</label>
+                                <input name="field" type="radio" value="author" /><label>作者</label>
+                                <input name="field" type="radio" value="title" /><label>题名</label>
+                                <input name="field" type="radio" value="tags" /><label>主题</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--search-->
+
+            <div class="news">
+                <ul class="news_nav">
+                    <li class="news_current" id="news_nav1" onmouseover="javascript:doClick2(this)"><a href="NewsList?cid=1&pid=46">新闻动态</a></li>
+                    <li class="news_link" id="news_nav2" onmouseover="javascript:doClick2(this)"><a href="NewsList?cid=2&pid=46">资源动态</a></li>
+                </ul>
+                <div class="news_down">
+                    <div class="dis" id="news_sub1">
+                        <div class="more"><a href="NewsList?cid=1&pid=46">更多>></a></div>
+
+                        <ul class="news_scroll" id="picSwitch1">
+                            <li>
+                                        <div class="news_pic">
+
+                                    <a href="newsinfo?cid=1&amp;id=4190&amp;pid=46">
+                                        <img src="/uploadfiles/more/150104/201501040932518925_thumbs.jpg" />
+                                    </a><span>
+                                        <a href="newsinfo?cid=1&amp;id=4190&amp;pid=46" title="图书馆五层西侧阅览室试运行开放通知">
+                                            图书馆五层西侧阅览室试运行开放通知
+                                        </a>
+                                    </span>
+                                </div>
+
+
+                                <div class="news_list">
+
+                                    <ul>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4991&pid=46" title="北航图书馆举办“前沿选题与精准投稿”专题学术报告">北航图书馆举办“前沿选题与精准投稿...</a><span>2016-04-01</span></li>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4971&pid=46" title="“助你的学术能力一飞冲天”专题学术报告会">“助你的学术能力一飞冲天”专题学术...</a><span>2016-03-29</span></li>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4969&pid=46" title="图书馆馆藏调整及阅览室名称调整通知">图书馆馆藏调整及阅览室名称调整通知...</a><span>2016-03-28</span></li>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4959&pid=46" title="图书馆清明节放假通知">图书馆清明节放假通知</a><span>2016-03-22</span></li>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4942&pid=46" title="北航图书馆成立首届学术委员会">北航图书馆成立首届学术委员会</a><span>2016-03-18</span></li>
+                                                      <li><a style="float:left" href="Spring2016WOS/index.htm" title="Web of Science在线大讲堂2016年春季课程">Web of Science在线大讲堂2016年春季...</a><span>2016-03-14</span></li>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4923&pid=46" title="Emerald平台远程访问功能推广通知">Emerald平台远程访问功能推广通知</a><span>2016-03-11</span></li>
+                                              <li><a style="float:left" href="newsinfo?cid=1&id=4922&pid=46" title="Taylor &amp; Francis的网络课堂开讲通知">Taylor & Francis的网络课堂开讲通知...</a><span>2016-03-11</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--news_scroll-->
+                    </div>
+                    <div class="undis" id="news_sub2">
+
+
+                        <div class="more"><a href="NewsList?cid=2&pid=46">更多>></a></div>
+
+                        <ul class="news_scroll" id="picSwitch2">
+                            <li>
+                                        <div class="news_pic">
+
+
+                                            <a href="newsinfo?cid=2&amp;id=190&amp;pid=46">
+                                                <img src="/uploadfiles/more/140711/201407112316475312_thumbs.jpg" />
+                                            </a>
+                                            <span>
+                                                <a href="newsinfo?cid=2&amp;id=190&amp;pid=46" title="[新增]Scopus数据库">
+                                                    [新增]Scopus数据库
+                                                </a>
+                                            </span>
+
+                                        </div>
+
+
+                                <div class="news_list">
+                        <ul>
+                                            <li>
+                                                <a style="float:left" href="resourceinfo?id=132" title="[试用]Key to Metals - Total Materia全球材料性能数据库开通试用">
+                                                    [试用]Key to Metals - Total Mater...
+                                                </a><span>2016-03-29</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="resourceinfo?id=126" title="[试用]Airitilibrary台湾学术文献数据库开通试用">
+                                                    [试用]Airitilibrary台湾学术文献数...
+                                                </a><span>2016-03-17</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="resourceinfo?id=131" title="[试用]InCites数据库开通试用">
+                                                    [试用]InCites数据库开通试用
+                                                </a><span>2016-03-16</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="newsinfo?cid=2&id=4901&pid=46" title="[新增]Wiley回溯期刊数据库开通">
+                                                    [新增]Wiley回溯期刊数据库开通
+                                                </a><span>2016-03-03</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="resourceinfo?id=130" title="[新增]IOP电子图书开通使用">
+                                                    [新增]IOP电子图书开通使用
+                                                </a><span>2016-01-19</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="newsinfo?cid=2&id=4866&pid=46" title="SciFinder数据库最新使用说明">
+                                                    SciFinder数据库最新使用说明
+                                                </a><span>2016-01-15</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="newsinfo?cid=2&id=4859&pid=46" title="NoteExpress参考文献管理与检索系统开通通知">
+                                                    NoteExpress参考文献管理与检索系统...
+                                                </a><span>2016-01-13</span>
+                                            </li>
+                                            <li>
+                                                <a style="float:left" href="newsinfo?cid=2&id=4839&pid=46" title="JCR数据库平台升级通知">
+                                                    JCR数据库平台升级通知
+                                                </a><span>2016-01-04</span>
+                                            </li>
+
+                            </ul>
+                        </div>
+                            </li>
+
+                        </ul>
+                        <!--news_scroll-->
+                    </div>
+                </div>
+            </div>
+            <!--news-->
+        </div>
+        <!--left end-->
+        <!--right begin-->
+        <div class="right">
+            <div class="services">
+                <div class="rig_title">快速链接</div>
+                <ul>
+                            <li class="ser1"><a href="pageinfo?cid=30&pid=27"><img src="/templates/bh/images/serviceIco/1.png" id="serviceIcoA1" onmouseover="this.src = '/templates/bh/images/serviceIco/1a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/1.png'" />查收查引</a></li>
+                            <li class="ser2"><a href="pageinfo?cid=29&pid=27"><img src="/templates/bh/images/serviceIco/2.png" id="serviceIcoA2" onmouseover="this.src = '/templates/bh/images/serviceIco/2a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/2.png'" />常用工具</a></li>
+                            <li class="ser3"><a href="NewsList?cid=31&pid=27"><img src="/templates/bh/images/serviceIco/3.png" id="serviceIcoA3" onmouseover="this.src = '/templates/bh/images/serviceIco/3a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/3.png'" />读者培训</a></li>
+                            <li class="ser4"><a href="NewsList?cid=32&pid=27"><img src="/templates/bh/images/serviceIco/4.png" id="serviceIcoA4" onmouseover="this.src = '/templates/bh/images/serviceIco/4a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/4.png'" />馆际互借</a></li>
+                            <li class="ser5"><a href="pageinfo?cid=33&pid=27"><img src="/templates/bh/images/serviceIco/5.png" id="serviceIcoA5" onmouseover="this.src = '/templates/bh/images/serviceIco/5a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/5.png'" />开放时间</a></li>
+                            <li class="ser6"><a href="pageinfo?cid=34&pid=27"><img src="/templates/bh/images/serviceIco/6.png" id="serviceIcoA6" onmouseover="this.src = '/templates/bh/images/serviceIco/6a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/6.png'" />科技查新</a></li>
+                            <li class="ser7"><a href="pageinfo?cid=35&pid=27"><img src="/templates/bh/images/serviceIco/7.png" id="serviceIcoA7" onmouseover="this.src = '/templates/bh/images/serviceIco/7a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/7.png'" />论文提交</a></li>
+                            <li class="ser8"><a href="pageinfo?cid=36&pid=27"><img src="/templates/bh/images/serviceIco/8.png" id="serviceIcoA8" onmouseover="this.src = '/templates/bh/images/serviceIco/8a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/8.png'" />论文检测</a></li>
+                            <li class="ser9"><a href="jgzy_list?cid=37&pid=27"><img src="/templates/bh/images/serviceIco/9.png" id="serviceIcoA9" onmouseover="this.src = '/templates/bh/images/serviceIco/9a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/9.png'" />图书荐购</a></li>
+                            <li class="ser10"><a href="pageinfo?cid=38&pid=27"><img src="/templates/bh/images/serviceIco/10.png" id="serviceIcoA10" onmouseover="this.src = '/templates/bh/images/serviceIco/10a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/10.png'" />图书借阅</a></li>
+                            <li class="ser11"><a href="pageinfo?cid=39&pid=27"><img src="/templates/bh/images/serviceIco/11.png" id="serviceIcoA11" onmouseover="this.src = '/templates/bh/images/serviceIco/11a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/11.png'" />校外访问</a></li>
+                            <li class="ser12"><a href="pageinfo?cid=40&pid=27"><img src="/templates/bh/images/serviceIco/12.png" id="serviceIcoA12" onmouseover="this.src = '/templates/bh/images/serviceIco/12a.png'" onmouseout="this.src = '/templates/bh/images/serviceIco/12.png'" />移动服务</a></li>
+
+
+                </ul>
+
+            </div>
+            <!--services-->
+
+            <div class="digital">
+                <div class="rig_title">数字资源</div>
+                <ul>
+                                <li ><a target="_blank" href="resources?cid=26&amp;pid=19">数据库列表</a></li>
+                                <li ><a target="_blank" href="resources?o=1">试用数据库</a></li>
+                                <li ><a target="_blank" href="http://www.cceu.org.cn/demo/findfreeej.htm">期刊导航</a></li>
+                                <li >
+                                    <a href="pageinfo?cid=50&pid=47">北航SCI</a>
+                                </li>
+                                <li ><a target="_blank" href="http://buaa.ir.libsou.com/">北航机构库</a></li>
+                                <li >
+                                    <a href="pageinfo?cid=52&pid=47">开放获取</a>
+                                </li>
+                                <li >
+                                    <a href="pageinfo?cid=53&pid=47">其它资源</a>
+                                </li>
+                                <li >
+                                    <a href="pageinfo?cid=80&pid=47">学术站点</a>
+                                </li>
+                                <li ><a target="_blank" href="http://opac.buaalib.com/reader/login.php">我的登录</a></li>
+
+
+                </ul>
+            </div>
+            <!--digital-->
+        </div>
+        <!--right end-->
+
+        <div class="clear"></div>
+
+        <div class="otherLink">
+            <ul>
+                        <li style="background: url(/uploadfiles/more/140630/201406301354394589_thumbs.jpg) no-repeat right center #a77800"><strong><a href="singlenewsinfo?cid=45&id=20&pid=0">馆办<br/>年刊</a></strong></li>
+                        <li style="background: url(/uploadfiles/more/140630/201406301355382902_thumbs.jpg) no-repeat right center #0083a7"><strong><a href="singlenewsinfo?cid=45&id=21&pid=0">捐赠</a></strong></li>
+                        <li style="background: url(/uploadfiles/more/140630/201406301356090906_thumbs.jpg) no-repeat right center #83a700"><strong><a href="singlenewsinfo?cid=45&id=22&pid=0">新生<br/>专栏</a></strong></li>
+                        <li style="background: url(/uploadfiles/more/140630/201406301353292402_thumbs.jpg) no-repeat right center #0059a7"><strong><a href="singlenewsinfo?cid=45&id=19&pid=0">图书<br/>视界</a></strong></li>
+
+
+            </ul>
+        </div>
+        <!--otherLink-->
+
+    </div>
+    <!--main wrap-->
+
+    <!--add footNav 2014/6/27-->
+    <div class="footNav wrap">
+        <div class="footNav_list">
+            <dl style="margin-right: 0px;">
+                <dd>关于本馆</dd>
+                        <dd><a href="pageinfo?cid=76&pid=4" class="fly">本馆概况</a></dd>
+                        <dd><a href="zzjgpageinfo?cid=5&pid=4" class="fly">组织机构</a></dd>
+                        <dd><a href="pageinfo?cid=11&pid=4" class="fly">馆藏分布</a></dd>
+                        <dd><a href="public_list?cid=77&pid=4" class="fly">阅览室简介</a></dd>
+                        <dd><a href="public_list?cid=10&pid=4" class="fly">读者须知</a></dd>
+                        <dd><a href="pageinfo?cid=8&pid=4" class="fly">图情学硕士点</a></dd>
+
+
+            </dl>
+            <dl style="margin-right: 0px;">
+                <dd>资源服务</dd>
+                        <dd><a href="resources?cid=26&pid=19" class="fly">数据库列表</a></dd>
+                        <dd><a href="http://opac.lib.buaa.edu.cn" class="fly">馆藏目录</a></dd>
+                        <dd><a href="NewsList?cid=20&pid=19" class="fly">分馆资源</a></dd>
+                        <dd><a href="NewsList?cid=32&amp;pid=27" class="fly">馆际互借</a></dd>
+
+            </dl>
+            <dl style="margin-right: 0px;">
+                <dd>馆内公告</dd>
+                        <dd><a href="NewsList?cid=1&pid=46" class="fly">新闻动态</a></dd>
+                        <dd><a href="NewsList?cid=2&pid=46" class="fly">资源动态</a></dd>
+
+            </dl>
+            <dl style="margin-right: 0px;">
+                <dd>服务指南</dd>
+                        <dd><a href="pageinfo?cid=92&pid=42" class="fly">你问我答</a></dd>
+                        <dd><a href="NewsList?cid=91&pid=42" class="fly">自助服务</a></dd>
+                        <dd><a href="pageinfo?cid=85&pid=42" class="fly">WIFI服务</a></dd>
+                        <dd><a href="NewsList?cid=44&pid=42" class="fly">更多服务</a></dd>
+
+            </dl>
+        </div>
+        <div class="footNav_code">
+            <span>
+                <img src="/templates/bh/images/wx.jpg" width="150" height="150" /><br />
+                微信公众号
+            </span>
+            <span>
+                <img src="/templates/bh/images/mobile.png" width="150" height="150" /><br />
+                移动图书馆
+            </span>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+    <!--add footNav   add2014/6/27-->
+    <!--footer begin-->
+    
+
+<div class="footer">
+  <div class="wrap">
+    <div class="freLink"><a href="http://www.buaa.edu.cn" target="_blank">北航主页</a>|<a href="showinfo?cid=89&pid=88" target="_blank">高校图书馆</a>|<a href="http://oa.lib.buaa.edu.cn" target="_blank">协同办公</a>|<a href="showinfo?cid=87&pid=88" target="_blank">联系我们</a>|<a href="#">馆内导游</a>|<a href="en/mode1.htm">English Version</a></div>
+    <p>北京航空航天大学图书馆&copy;版权所有 京ICP备05004617号-3&nbsp;&nbsp;京公网安备1101080018号&nbsp;&nbsp;<span style="color: rgba(82, 119, 184, 1); font-size:10px; ">您的IP地址:106.39.41.132，属于[校内地址]</span></p>
+  </div>
+</div>
+
+        <script type="text/javascript" src="/plus/pv.aspx?cid=0&title=首页&contentid=-1"></script>
+
+<div style="display:none"><script src="http://s9.cnzz.com/z_stat.php?id=1253267338&web_id=1253267338" language="JavaScript"></script></div>
+
+    <!--footer end-->
+</body>
+    </script></html>

@@ -1,0 +1,141 @@
+76,95c76
+<     <p class="detail-txt">　　<strong>海水会不会越来越咸？</strong><br /> 　　海水是咸的，其原因是海水中含有各种盐分，平均每1000克海水中含35克盐。有人估计，如果把海水中所有的盐分都提取出来，铺在陆地上，可得到厚153米的盐层;如果铺在我国的国土上，可使我国平均高出海面2400米左右。<br /> 　　<strong>海洋刚形成时，海水和江河湖水一样，是淡的。</strong><br /> 　　后来，雨水不断地冲刷岩石和土壤，并把岩石和土壤中的盐类物质冲入江河，而江河的水流到大海，使海洋中的盐分不断增加。与此同时，海中水分不断蒸发(盐几乎不会蒸发)，这就使盐的浓度越来越大。当然，这个过程是很漫长的。 <br /> <br /> </p>
+<     <div style="text-align:center;">
+<      <img src="http://pic.wenwo.com/fimg/4662117005_600.jpg" alt="海水越来越咸" />
+<     </div>
+<     <br /> 　　
+<     <strong>这么说来，海洋一定会越来越咸了？</strong>
+<     <br /> 　　含盐量高达25%的死海似乎肯定了这种推测。其实不然。因为海洋也通过以下几种方式 &quot;释放&quot;盐分、把盐分&quot;归还&quot;于陆地：
+<     <br /> 　　1、海洋中含盐类的可溶性物质的浓度达到一定程度时，会互相结合成不溶性化合物，沉入海洋的底部。
+<     <br /> 　　2、海洋中的生物体内吸收了一定的盐类物质，当海洋生物死去后，它的尸体沉到海底。
+<     <br /> 　　3、台风暴发时，狂风巨浪，海水被卷到陆地上，海水中的盐类物质也被带到陆地;从漫长的陆地变迁历史看，在海洋的海湾地带，由于地壳的升高而与海洋隔断。这些被隔离的地带，在太阳光的&quot;肆虐&quot;下，变成陆地，留下大量盐分。
+<     <br />
+<     <br />
+<     <div style="text-align:center;">
+<      <img src="http://pic.wenwo.com/fimg/4607517004_600.jpg" alt="海水越来越咸" />
+<      <br />
+<     </div>
+<     <br /> 　　
+<     <strong>那么，海水会不会越变越淡呢？</strong>
+<     <br /> 　　这也不大可能，雨水和江河湖水每天连续不断地流入海内，海水的咸度会保持相对的平衡状态。当然，这不排除在某一个海域某一段时间，海水会变咸或变淡。
+<     <br />
+---
+>     <p class="detail-txt"></p>
+
+
+
+
+
+97,113c78,118
+<    <div class="detail-footer">
+<     <div class="detail-share cf">
+<      <div class="share-con fl">
+<       <span class="fl">分享到：</span>
+<       <div class="jiathis_style_24x24">
+<        <a class="jiathis_button_qzone"></a>
+<        <a class="jiathis_button_tsina"></a>
+<        <a class="jiathis_button_tqq"></a>
+<        <a class="jiathis_button_weixin"></a>
+<        <a class="jiathis_button_renren"></a>
+<        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+<       </div>
+<       <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<      </div>
+<      <div class="fr goods-con">
+<       <span class="fl">赞（<span id="praise"> 1 </span>）</span>
+<       <a href="javascript:void(0)" class="btn-goods" onclick="praise()"></a>
+---
+>   </div>
+>   <span END></span END>　　
+>   <strong>海水会不会越来越咸？</strong>
+>   <br /> 　　海水是咸的，其原因是海水中含有各种盐分，平均每1000克海水中含35克盐。有人估计，如果把海水中所有的盐分都提取出来，铺在陆地上，可得到厚153米的盐层;如果铺在我国的国土上，可使我国平均高出海面2400米左右。
+>   <br /> 　　
+>   <strong>海洋刚形成时，海水和江河湖水一样，是淡的。</strong>
+>   <br /> 　　后来，雨水不断地冲刷岩石和土壤，并把岩石和土壤中的盐类物质冲入江河，而江河的水流到大海，使海洋中的盐分不断增加。与此同时，海中水分不断蒸发(盐几乎不会蒸发)，这就使盐的浓度越来越大。当然，这个过程是很漫长的。
+>   <br />
+>   <br />
+>   <div style="text-align:center;">
+>    <img src="http://pic.wenwo.com/fimg/4662117005_600.jpg" alt="海水越来越咸" />
+>   </div>
+>   <br /> 　　
+>   <strong>这么说来，海洋一定会越来越咸了？</strong>
+>   <br /> 　　含盐量高达25%的死海似乎肯定了这种推测。其实不然。因为海洋也通过以下几种方式 &quot;释放&quot;盐分、把盐分&quot;归还&quot;于陆地：
+>   <br /> 　　1、海洋中含盐类的可溶性物质的浓度达到一定程度时，会互相结合成不溶性化合物，沉入海洋的底部。
+>   <br /> 　　2、海洋中的生物体内吸收了一定的盐类物质，当海洋生物死去后，它的尸体沉到海底。
+>   <br /> 　　3、台风暴发时，狂风巨浪，海水被卷到陆地上，海水中的盐类物质也被带到陆地;从漫长的陆地变迁历史看，在海洋的海湾地带，由于地壳的升高而与海洋隔断。这些被隔离的地带，在太阳光的&quot;肆虐&quot;下，变成陆地，留下大量盐分。
+>   <br />
+>   <br />
+>   <div style="text-align:center;">
+>    <img src="http://pic.wenwo.com/fimg/4607517004_600.jpg" alt="海水越来越咸" />
+>    <br />
+>   </div>
+>   <br /> 　　
+>   <strong>那么，海水会不会越变越淡呢？</strong>
+>   <br /> 　　这也不大可能，雨水和江河湖水每天连续不断地流入海内，海水的咸度会保持相对的平衡状态。当然，这不排除在某一个海域某一段时间，海水会变咸或变淡。
+>   <br />
+>   <p END></p END>
+>   <div END></div END>
+>   <div class="detail-footer">
+>    <div class="detail-share cf">
+>     <div class="share-con fl">
+>      <span class="fl">分享到：</span>
+>      <div class="jiathis_style_24x24">
+>       <a class="jiathis_button_qzone"></a>
+>       <a class="jiathis_button_tsina"></a>
+>       <a class="jiathis_button_tqq"></a>
+>       <a class="jiathis_button_weixin"></a>
+>       <a class="jiathis_button_renren"></a>
+>       <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+
+
+
+
+
+114a120
+>      <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+
+
+
+
+
+116,124c122,124
+<     <div class="review-list">
+<      <h3>往期回顾</h3>
+<      <ul>
+<       <li><a href="/d-b/56f8e5ab0cf2b885491f71ba.html" style="font-size: 14px">“鬼打墙”到底是怎么回事？</a></li>
+<       <li><a href="/d-b/56f8cefe0cf2b885491f71b8.html" style="font-size: 14px">孕妇真的不能用麻醉药吗？</a></li>
+<       <li><a href="/d-b/56f4ec0c0cf24697f3b627f9.html" style="font-size: 14px">一天之中什么时候最适合拉粑粑？</a></li>
+<       <li><a href="/d-b/56f4e6560cf24697f3b627f7.html" style="font-size: 14px">五脏六腑到底指哪些器官？</a></li>
+<       <li><a href="/d-b/56f4d1910cf24697f3b627f5.html" style="font-size: 14px">为什么许多雄性动物比雌性更花哨？</a></li>
+<      </ul>
+---
+>     <div class="fr goods-con">
+>      <span class="fl">赞（<span id="praise"> 1 </span>）</span>
+>      <a href="javascript:void(0)" class="btn-goods" onclick="praise()"></a>
+
+
+
+
+
+
+126a127,136
+>    <div class="review-list">
+>     <h3>往期回顾</h3>
+>     <ul>
+>      <li><a href="/d-b/56f8e5ab0cf2b885491f71ba.html" style="font-size: 14px">“鬼打墙”到底是怎么回事？</a></li>
+>      <li><a href="/d-b/56f8cefe0cf2b885491f71b8.html" style="font-size: 14px">孕妇真的不能用麻醉药吗？</a></li>
+>      <li><a href="/d-b/56f4ec0c0cf24697f3b627f9.html" style="font-size: 14px">一天之中什么时候最适合拉粑粑？</a></li>
+>      <li><a href="/d-b/56f4e6560cf24697f3b627f7.html" style="font-size: 14px">五脏六腑到底指哪些器官？</a></li>
+>      <li><a href="/d-b/56f4d1910cf24697f3b627f5.html" style="font-size: 14px">为什么许多雄性动物比雌性更花哨？</a></li>
+>     </ul> 
+>    </div>
+
+
+
+
+
+128,129c138
+<   <span END></span END>
+<   <p END></p END>
+---
+>   <div END></div END>

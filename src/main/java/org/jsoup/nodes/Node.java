@@ -584,7 +584,20 @@ public abstract class Node implements Cloneable {
     public boolean equals(Object o) {
         if (this == o) return true;
         // todo: have nodes hold a child index, compare against that and parent (not children)
-        return false;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Node node = (Node) o;
+
+        if (childNodes != null ? !childNodes.equals(node.childNodes) : node.childNodes != null) {
+
+            // sxf add for diff
+//            System.out.println("expect: " + childNodes);
+//            System.out.println("now: " + node.childNodes);
+//            System.exit(0);
+            return false;
+        }
+        return !(attributes != null ? !attributes.equals(node.attributes) : node.attributes != null);
     }
 
     @Override

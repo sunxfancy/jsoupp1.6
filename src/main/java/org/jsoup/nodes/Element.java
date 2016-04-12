@@ -1125,7 +1125,8 @@ public class Element extends Node {
 
     @Override
     public boolean equals(Object o) {
-        return this == o;
+        if (this == o) return true;
+        return super.equals(o);
     }
 
     @Override

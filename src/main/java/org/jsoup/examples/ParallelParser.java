@@ -68,7 +68,9 @@ public class ParallelParser {
                 end++;
             }
             inputs[i] = input.substring(start, end);
+//            System.out.println(inputs[i].substring(0, 20));
             System.out.println("input[" + i + "]  from " + start + "~" + end);
+//            System.out.println(inputs[i].substring(inputs[i].length()-20));
         }
         for (int i = 1; i < numThreads; i++) {
             inputs[i] = "<body>" + inputs[i];
